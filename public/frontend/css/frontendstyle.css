@@ -34,7 +34,6 @@ p.header-nav {
     text-align: center;
     cursor: pointer;   
     font-size: 14px;
-
 }
 
 .header-active{
@@ -118,4 +117,35 @@ position: relative;
 .color-blue{
     color:  var(--blue-color);
 
+}
+input.input-register-warranty {
+    padding: 7px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    background-color: #f5f5f5;
+}
+.lable-input{
+  line-height: 36px;
+  font-weight: 700;
+  text-align: end;
+}
+.input-check-warrantt{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 0 14px
+}
+
+.btn-primary-ct{
+    outline: none;
+    padding: 6px;
+    border: 1px solid var(--blue-color);
+    color: white;
+    background-color: var(--blue-color);
+}
+.text-check-war {
+    font-size: 14px;
 }

@@ -31,8 +31,8 @@
                             </div>
                         </a>
                         </div>
-                            <div class="col col-3"><p class='header-nav '>Đăng ký sản phẩm</p></div>
-                            <div class="col col-3"><p class='header-nav'>Kiểm tra tình trạng bảo hành</p></div>
+                            <div class="col col-3  <?php if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] == '/register-warranty' ) { echo "header-active";}  {echo " ";} ?>"> <a  href="{{route('register-warranty')}}" style=' text-decoration: none;'><p class='header-nav '>Đăng ký sản phẩm</p></a> </div>
+                            <div class="col col-3  <?php if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] == '/check-warranty' ) { echo "header-active";}  {echo " ";} ?>"> <a  href="{{route('check-warranty')}}" style=' text-decoration: none;'><p class='header-nav '>Kiểm tra tình trạng bảo hành</p></a> </div>
                             <div class="col col-3"><p class='header-nav'>Đặt lịch bảo trì online</p></div>
                         </div>
                     </div>
@@ -47,7 +47,8 @@
 
     <!----------------- Include ----------->
     @yield('home')
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 </html>

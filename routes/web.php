@@ -18,12 +18,15 @@ use App\Http\Controllers\SerialController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// ----------------------------FRONTEND----------------------------------
 Route::get('/', [IndexController::class, 'home'])->name('/');
+Route::get('/register-warranty', [IndexController::class, 'registerWarranty'])->name('register-warranty');
+Route::get('/check-warranty', [IndexController::class, 'checkWarranty'])->name('check-warranty');
 
 
 
 
+// ----------------------------BACKEND----------------------------------
 // ADMIN
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::post('/checklogin', [AdminController::class, 'checklogin'])->name('checklogin');

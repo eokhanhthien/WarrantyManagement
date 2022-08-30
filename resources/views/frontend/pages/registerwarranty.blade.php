@@ -1,8 +1,4 @@
-<?php
-// echo "<pre>";
-// print_r($_SERVER['PATH_INFO']);die;
-?>
-@extends('layout')
+@extends('frontend.layout')
 @section('home')
 <div class="content">
     <div class="container-content">
@@ -14,53 +10,34 @@
                     </div>
                 </div>
             
-
                 <div class = "panel">
-                <div class = "panel-title">Số sê-ri mẫu</div>
-                <div class = "panel-heading ">Vui lòng xem các ví dụ dưới đây khi đăng ký sản phẩm của bạn:</div>
+                <div class = "panel-title">Đăng ký sản phẩm</div>
+                <div class = "panel-heading ">Tôi có thể tra số seri ở đâu?</div>
                 
-                <table class = "table">
-                    <tr>
-                        <th>Mẫu sản phẩm Epson</th>
-                        <th>Mẫu Sê-ri sản phẩm </th>
-                        <th>Nhận xét </th>
-                    </tr>
-                    
-                    <tr>
-                        <td>Máy in phun</td>
-                        <td>RADK123456</td>	
-                        <td>10 ký tự chữ và số</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Máy in phun</td>
-                        <td>RADK123456</td>	
-                        <td>10 ký tự chữ và số</td>
-                    </tr>
-                    <tr>
-                        <td>Máy in phun</td>
-                        <td>RADK123456</td>	
-                        <td>10 ký tự chữ và số</td>
-                    </tr>
-                    <tr>
-                        <td>Máy in phun</td>
-                        <td>RADK123456</td>	
-                        <td>10 ký tự chữ và số</td>
-                    </tr>
-                    <tr>
-                        <td>Máy in phun</td>
-                        <td>RADK123456</td>	
-                        <td>10 ký tự chữ và số</td>
-                    </tr>
-                    <tr>
-                        <td>Máy in phun</td>
-                        <td>RADK123456</td>	
-                        <td>10 ký tự chữ và số</td>
-                    </tr>
-
-                </table>
-                
+                <div class="row mb-3">
+                    <div class="col col-2 lable-input" >Số serial  <span class='text-danger'>*</span> </div>
+                    <div class="col col-3"><input type='text' class="input-register-warranty" placeholder = "Ex. RV123123123"/></div>
                 </div>
+
+                <div class="row mb-3">
+                    <div class="col col-2 lable-input" >Tên máy  <span class='text-danger'>*</span> </div>
+                    <div class="col col-3"><input type='text' class="input-register-warranty" placeholder = ""/></div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col col-2 lable-input" >Ngày mua  <span class='text-danger'>*</span> </div>
+                    <div class="col col-3"><input  type='date' class="input-register-warranty" /></div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col col-2 lable-input" >Chứng từ mua hàng  <span class='text-danger'>*</span> </div>
+                    <div class="col col-3"><input  type='file' class="input-register-warranty" /></div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col col-5 text-end"><button class='btn btn-primary'>Tiếp theo</button></div>
+                </div>
+                </div>
+          
 
 
                 <div class="check-serial">
