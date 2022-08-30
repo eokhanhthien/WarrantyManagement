@@ -16,7 +16,7 @@ class ProductController extends Controller
             return view('backend.login');
 
         } 
-        $data = Product::get()->toArray();
+        $data = Product::paginate(5);
         return view('backend.include.product.index',['data' => $data]);
     }
 

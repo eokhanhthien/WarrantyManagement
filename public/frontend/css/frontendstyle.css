@@ -1,0 +1,121 @@
+:root {
+    --blue-color: #1587eb;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    height: 50px;
+    background-color: #033c73;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    overflow: hidden;
+}
+.size-logo{
+    height: 50px;
+    /* width: 146px; */
+    background-color: white;
+    padding: 6px 6px 0 12px;
+    margin: auto;
+
+}
+.size-logo img{
+    width: 100%;
+}
+p.header-nav {
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;   
+    font-size: 14px;
+
+}
+
+.header-active{
+    background-color:  #022f5a;
+}
+.size-logo-home {
+    width: 30px;
+    height: 30px;
+    line-height: 50px;
+    margin: auto;
+}
+.size-logo-home img{
+    width: 100%;
+}
+
+.col-1-2{
+    flex: 0 0 auto;
+    width: 4.1667%;
+}
+.container-content{
+    width: 1140px;
+    margin: 0px auto 20px auto;
+}
+.banner{
+height: 330px;
+background-image: url("https://customer.epson.asia/app/img/onlineregistration.jpg");
+background-repeat: no-repeat;
+background-attachment: fixed;
+position: relative;
+}
+.baner-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 900px;
+    padding: 14px;
+    transform: translate(-50%,-50%);
+    /* background-color: #b3d4fc; */
+    background-image:
+    linear-gradient(to right , #ffffff, rgba(0, 0, 0, 0) 1100px);
+}
+
+.banner img{
+    width: 100%;
+    height: 100%;
+}
+.panel{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* padding: 10px 0; */
+    font-size: 14px;
+    margin-top: 20px;
+}
+.panel-title {
+    padding: 10px;
+    background-color: var(--blue-color);
+    color: white;
+}
+.panel-heading{
+    padding: 10px;
+}
+
+.check-serial {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 26px;
+    border-radius: 4px;
+}
+
+.check-title{
+    color:  var(--blue-color);
+    font-weight: 500
+}
+.check-note{
+    color:  var(--blue-color);
+    font-size: 14px;
+}
+.check-img{
+    width: 100%;
+}
+.color-blue{
+    color:  var(--blue-color);
+
+}

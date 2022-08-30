@@ -17,8 +17,10 @@ class SerialController extends Controller
 
         } 
         $serial = Serial::get()->toArray();
+        $serial_active = Serial::where(['status'=> 1])->get()->toArray();
+        $serial_not_active = Serial::where(['status'=> 0])->get()->toArray();
         
-        return view('backend.include.serial.index',['serial' => $serial]);
+        return view('backend.include.serial.index',['serial' => $serial , 'serial_active'=>$serial_active ,'serial_not_active' => $serial_not_active]);
     }
 
     public function serialAdd(){

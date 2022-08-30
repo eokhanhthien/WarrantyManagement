@@ -153,3 +153,13 @@ p.label-add-order {
   display: inline-block;
   margin-bottom: 10px;
 }
+.btn-ct{
+  padding: 7px 12px;
+  cursor: pointer;
+  color: white;
+  border-radius: 4px;
+}
+.btn-ct a{
+  color: white;
+
+}

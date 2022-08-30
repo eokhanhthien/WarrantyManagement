@@ -1,5 +1,6 @@
 @extends('backend.layout')
 @section('order')
+<link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.csss">
 <div class="container-fluid">
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
@@ -37,7 +38,7 @@
                                 <h4 class="card-title">Danh sách sản phẩm</h4>
                       
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="table mb-3" id='productTable'>
                                         <thead>
                                             <tr>
                                                 <th>STT</th>
@@ -71,6 +72,8 @@
 
                                         </tbody>
                                     </table>
+
+                                    {{$data->links('pagination::bootstrap-4')}}
                                 </div>
                             </div>
                         </div>
@@ -81,4 +84,18 @@
                 <!-- ============================================================== -->
             </div>
 
+
+            <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+            <br><script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js" defer ></script>            
+            <script>
+                $(document).ready( function () {
+                    $('#productTable').DataTable({
+                        paging: false,
+                        ordering: false,
+                        info: false,
+                    });
+                    
+                    // $('#productTable').DataTable();
+                } );
+            </script>
 @endsection
