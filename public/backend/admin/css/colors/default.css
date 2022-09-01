@@ -138,6 +138,7 @@ p.label-add-order {
   cursor: pointer;
   border: 1px solid #ccc;
   margin: 4px 0px;
+  max-width: 100%;
 }
 .text-success-ct {
   color: #03c300 !important;

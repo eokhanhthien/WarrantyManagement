@@ -25,7 +25,7 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <button class="btn btn-primary mr-10"> <a href="{{route('order-add')}}">Thêm đơn mới</a> </button>
+                <button class="btn btn-primary mr-10"> <a href="{{route('order-add')}}">Lập đơn mới</a> </button>
                 <div class="row">
                     <!-- column -->
                     <div class="col-12">

@@ -1,7 +1,13 @@
 @extends('backend.layout')
 @section('order')
 <meta name="_token" content="{{ csrf_token() }}">
-
+<style>
+    .item_option{
+        background-color: #efefef;
+        padding: 20px 0;
+        border-radius: 5px;
+    }
+</style>
 <div class="container-fluid">
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
@@ -30,12 +36,17 @@
                 <div class="wide">
                     <div class="row g-0">
                         <div class="col-4"> <p class="label-add-order">Tên khách hàng:</p> </div>
-                        <div class="col-8"><input class="input-add-order" type="text" placeholder="Full name" name="data_order[name]"></div>
+                        <div class="col-8"><input class="input-add-order" type="text" placeholder="Full name" name="data_order[name]" required></div>
                     </div>
 
                    <div class="row mt-3 g-0">
                         <div class="col-4"> <p class="label-add-order">Số điện thoại:</p> </div>
-                        <div class="col-8"><input class="input-add-order" type="text" placeholder="Phone" name="data_order[phone]"></div>
+                        <div class="col-8"><input class="input-add-order" type="text" placeholder="Phone" name="data_order[phone]" required></div>
+                    </div>
+
+                    <div class="row mt-3 g-0">
+                        <div class="col-4"> <p class="label-add-order">Email:</p> </div>
+                        <div class="col-8"><input class="input-add-order" type="text" placeholder="Email" name="data_order[email]" required></div>
                     </div>
                    
                     <div class="row g-0">
@@ -45,7 +56,7 @@
                         <p class="address-tag">Tỉnh/thành phố:</p> 
                     </div>
                     <div class="col col-xl-8 ">
-                        <select name="data_order[shipping_address_city]" id="city" class="address-main choose city" >
+                        <select name="data_order[address_city]" id="city" class="address-main choose city" >
                         <option value="">Chọn tỉnh / Thành phố</option>
                         <?php if(isset($data) && $data != NULL){ ?>
                             <?php foreach($data as $key => $val){?>
@@ -61,7 +72,7 @@
                         <p class="address-tag">Quận/huyện:</p> 
                     </div>
                     <div class="col col-xl-8">
-                        <select name="data_order[shipping_address_province]" id="province" class="address-main choose province" >
+                        <select name="data_order[address_province]" id="province" class="address-main choose province" >
                             <option value="">Chọn quận / huyện</option>
                         </select>
                     </div>
@@ -72,7 +83,7 @@
                         <p class="address-tag">Xã phường/thị trấn:</p> 
                     </div>
                     <div class="col col-xl-8">
-                        <select name="data_order[shipping_address_wards]" id="wards" class="address-main wards" >
+                        <select name="data_order[address_wards]" id="wards" class="address-main wards" >
                             <option value="">Chọn xã phường / thị trấn</option>
                         </select>
                     </div>
@@ -81,9 +92,10 @@
             </div>
 
                     <div class="form-group col-12">         
-                                            <a href="javascript:void(0)" onclick="createOption()" class="btn btn-primary">Thêm sản phẩm</a>
+                                            <a href="javascript:void(0)" onclick="createOption()" class="btn btn-primary btnADD">Thêm sản phẩm</a>
                                             <div id="multi_option">
-                                            <div class="row item_option mt-30">          
+                                            <div class="row item_option mt-30">     
+                                            <div class="number-option col-12 text-danger">Sản phẩm : 1</div>         
                                             <div class="row mb-10">
                                                 <div class="col col-4 lable-input">
                                                     <p class="address-tag">Hãng <span class='text-danger'>*</span></p> 
@@ -105,7 +117,7 @@
                                                     <p class="address-tag">Sản phẩm <span class='text-danger'>*</span></p> 
                                                 </div>
                                                 <div class="col col-8">
-                                                    <select  id="product" class="address-main  product input-register-warranty" name="data_option[0][name-product]"  required>
+                                                    <select  id="product" class="address-main  product0 input-register-warranty" name="data_option[0][name-product]"  required>
                                                         <option value="">Chọn sản phẩm</option>
                                                     </select>
                                                 </div>
@@ -122,6 +134,13 @@
 
                                             </div>
                                             </div>
+                    </div>
+
+                    <div class="row mt-3 g-0">
+                        <div class="col-4"> <p class="label-add-order">Ghi chú:</p> </div>
+                        <div class="col-8">
+                            <textarea name="data_order[note]" id="" cols="50" rows="10"></textarea>
+                        </div>
                     </div>
 
                 </div>
@@ -166,14 +185,40 @@
 
 <script>
     $(document).ready(function() {
-    $('.choose-product').change(function() {
+    // $('.choose-product').change(function() {
+    //     var action = $(this).attr('id');
+    //     // var matp = $(this).val();
+    //     var matp = $(this).find(':selected').data('manu');
+    //     var result = '';
+    //     if(action=='manu'){
+    //         result = 'product';
+    //     }
+    //     $.ajax({
+    //             url: "{{route('product-choose')}}",
+    //             method:"post",
+    //             data: {
+    //                 action:action,
+    //                 matp : matp,
+    //                 _token: '{{csrf_token()}}'
+    //             }, 
+    //             success : function(response) {
+    //                 $('.'+result).html(response);
+    //             }
+    //         })
+    // })   
+    
+    
+    var choose_product = document.querySelectorAll('.choose-product');
+    // console.log(choose_product);
+    
+    for(let i=0;i< choose_product.length;i++){
+        choose_product[i].onchange = function(){
+        console.log(i);
         var action = $(this).attr('id');
-        // var matp = $(this).val();
         var matp = $(this).find(':selected').data('manu');
-        var result = '';
-        if(action=='manu'){
-            result = 'product';
-        }
+        var result = `product${i}`;
+        // console.log(`product${i}`);
+      
         $.ajax({
                 url: "{{route('product-choose')}}",
                 method:"post",
@@ -186,7 +231,11 @@
                     $('.'+result).html(response);
                 }
             })
-    })
+
+        };
+    }
+
+
 });
 </script>
 
@@ -199,7 +248,7 @@
                   
                      
                                             <div class="row item_option mt-30"> 
-                                            <div class="number-option col-12">Sản phẩm : ${count_items + 1 }</div>         
+                                            <div class="number-option col-12 text-danger">Sản phẩm : ${count_items + 1 }</div>         
                                             <div class="row mb-10">
                                                 <div class="col col-4 lable-input">
                                                     <p class="address-tag">Hãng <span class='text-danger'>*</span></p> 
@@ -221,7 +270,7 @@
                                                     <p class="address-tag">Sản phẩm <span class='text-danger'>*</span></p> 
                                                 </div>
                                                 <div class="col col-8">
-                                                    <select id="product" class="address-main  product input-register-warranty" name="data_option[${count_items}][name-product]"  required>
+                                                    <select id="product" class="address-main  product${count_items} input-register-warranty" name="data_option[${count_items}][name-product]"  required>
                                                         <option value="">Chọn sản phẩm</option>
                                                     </select>
                                                 </div>
@@ -238,6 +287,35 @@
 
                                             </div>
     `);
+
+   
+
+    var choose_product = document.querySelectorAll('.choose-product');
+    // console.log(choose_product);
+    
+    for(let i=0;i< choose_product.length;i++){
+        choose_product[i].onchange = function(){
+    //    console.log(i);
+        var action = $(this).attr('id');
+        var matp = $(this).find(':selected').data('manu');
+        var result = `product${i}`;
+        // console.log(`product${i}`);
+      
+        $.ajax({
+                url: "{{route('product-choose')}}",
+                method:"post",
+                data: {
+                    action:action,
+                    matp : matp,
+                    _token: '{{csrf_token()}}'
+                }, 
+                success : function(response) {
+                    $('.'+result).html(response);
+                }
+            })
+
+        };
+    }
 }
 
 function delete_Option(__this){
