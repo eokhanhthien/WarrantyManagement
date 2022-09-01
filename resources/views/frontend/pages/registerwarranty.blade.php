@@ -11,31 +11,56 @@
                 </div>
             
                 <div class = "panel">
+                <form action="{{route('add-register-warranty')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class = "panel-title">Đăng ký sản phẩm</div>
-                <div class = "panel-heading ">Tôi có thể tra số seri ở đâu?</div>
+                <div class = "panel-heading ">Các thông tin trên hóa đơn mua hàng</div>
                 
                 <div class="row mb-3">
                     <div class="col col-2 lable-input" >Số serial  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input type='text' class="input-register-warranty" placeholder = "Ex. RV123123123"/></div>
+                    <div class="col col-3"><input name='serial' type='text' class="input-register-warranty" placeholder = "Ex. RV123123123" required /></div>
                 </div>
 
-                <div class="row mb-3">
-                    <div class="col col-2 lable-input" >Tên máy  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input type='text' class="input-register-warranty" placeholder = ""/></div>
+                <div class="row mb-10">
+                    <div class="col col-2 lable-input">
+                        <p class="address-tag">Hãng <span class='text-danger'>*</span></p> 
+                    </div>
+                    <div class="col col-3 ">
+                        <select  id="city" class="address-main choose city input-register-warranty" required >
+                        <option value="">Chọn hãng</option>
+                        <?php if(isset($manufacturer) && $manufacturer != NULL){ ?>
+                            <?php foreach($manufacturer as $key => $val){?>
+                                <option value="<?= $val['id'] ?>" data-city="<?= $val['id'] ?>"><?= $val['name'] ?></option>
+                            <?php } ?>
+                        <?php } ?>
+                        </select>
+                    </div>
+                    </div>
+
+                <div class="row mb-10">
+                    <div class="col col-2 lable-input">
+                        <p class="address-tag">Sản phẩm <span class='text-danger'>*</span></p> 
+                    </div>
+                    <div class="col col-3">
+                        <select name="id_product" id="province" class="address-main choose province input-register-warranty" required>
+                            <option value="">Chọn sản phẩm</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="row mb-3">
                     <div class="col col-2 lable-input" >Ngày mua  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input  type='date' class="input-register-warranty" /></div>
+                    <div class="col col-3"><input  name='date-buy' type='date' class="input-register-warranty" required /></div>
                 </div>
 
                 <div class="row mb-3">
                     <div class="col col-2 lable-input" >Chứng từ mua hàng  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input  type='file' class="input-register-warranty" /></div>
+                    <div class="col col-3"><input name='attach' type='file' class="input-register-warranty" required /></div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col col-5 text-end"><button class='btn btn-primary'>Tiếp theo</button></div>
+                    <div class="col col-5 text-end"><button type='submit' class='btn btn-primary'>Tiếp theo</button></div>
                 </div>
+                </form>
                 </div>
           
 
@@ -71,4 +96,34 @@
 </div>
 
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+    $('.choose').change(function() {
+        var action = $(this).attr('id');
+        // var matp = $(this).val();
+        var matp = $(this).find(':selected').data('city');
+        var result = '';
+        if(action=='city'){
+            result = 'province';
+        }else{
+            result = 'wards';
+        }
+        $.ajax({
+                url: "{{route('serial-choose')}}",
+                method:"post",
+                data: {
+                    action:action,
+                    matp : matp,
+                    _token: '{{csrf_token()}}'
+                }, 
+                success : function(response) {
+                    $('#'+result).html(response);
+                }
+            })
+    })
+});
+</script>
 @endsection

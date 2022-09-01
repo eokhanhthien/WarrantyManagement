@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\City;
 use App\Models\Province;
 use App\Models\Wards;
+use App\Models\Manufacturer;
+use App\Models\Product;
+
 use Session;
 
 class OrderController extends Controller
@@ -24,8 +27,9 @@ class OrderController extends Controller
         $city = City::get()->toArray();
         // echo "<pre>";
         // print_r( $city);die;
+        $manufacturer = Manufacturer::get()->toArray();
 
-        return view('backend.include.order.add',["data"=>$city]);
+        return view('backend.include.order.add',["data"=>$city , 'manufacturer' => $manufacturer]);
     }
 
     function getAddress(){
@@ -55,6 +59,33 @@ class OrderController extends Controller
             echo $output;
         }
 
+    }
+    public function getProduct(){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $output = '';
+            if($_POST['action'] == 'manu'){
+                // $select_province = $this->ProvinceModels->select_array('*',['matp' => $_POST['matp']] );
+                $select_product = Product::where('id_manu', $_POST['matp'])->get()->toArray();
+                // echo "<pre>";
+                // print_r( $select_product);die;
+                $output = '<option value="" >Chọn sản phẩm </option>';
+                foreach($select_product as $key => $val){
+                    $output .=  '<option value="'.$val['id'].'" data-manu="'.$val['id'].'" >'. $val['name'] .'</option>';
+                }
+                
+            }
+            // else{
+            //     // $select_wards = $this->WardsModels->select_array('*',['maqh' => $_POST['matp']] );
+            //     $select_wards = Wards::where('maqh', $_POST['matp'])->get()->toArray();
+
+            //     $output = '<option value="" >Chọn xã phường / thị trấn</option>';
+            //     foreach($select_wards as $key => $val){
+            //         $output .=  '<option value= "'.$val['name_xaphuong'].'" >'. $val['name_xaphuong'] .'</option>';
+            //     }
+            // }
+            echo $output;
+        }
     }
 
     function addOrder(){

@@ -118,7 +118,7 @@ position: relative;
     color:  var(--blue-color);
 
 }
-input.input-register-warranty {
+.input-register-warranty {
     padding: 7px;
     outline: none;
     border: 1px solid #ccc;
@@ -148,4 +148,8 @@ input.input-register-warranty {
 }
 .text-check-war {
     font-size: 14px;
+}
+.where-serial{
+    display: inline-block;
+    cursor: pointer;
 }

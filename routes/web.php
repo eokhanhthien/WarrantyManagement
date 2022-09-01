@@ -22,6 +22,7 @@ use App\Http\Controllers\SerialController;
 Route::get('/', [IndexController::class, 'home'])->name('/');
 Route::get('/register-warranty', [IndexController::class, 'registerWarranty'])->name('register-warranty');
 Route::get('/check-warranty', [IndexController::class, 'checkWarranty'])->name('check-warranty');
+Route::post('/add-register-warranty', [IndexController::class, 'addRegisterWarranty'])->name('add-register-warranty');
 
 
 
@@ -36,6 +37,7 @@ Route::get('/order', [OrderController::class, 'index'])->name('order');
 Route::get('/order-add', [OrderController::class, 'add'])->name('order-add');
 Route::post('/order-address', [OrderController::class, 'getAddress'])->name('order-address');
 Route::post('/add-order', [OrderController::class, 'addOrder'])->name('add-order');
+Route::post('/product-choose', [OrderController::class, 'getProduct'])->name('product-choose');
 
 
 // MANUFACTURER

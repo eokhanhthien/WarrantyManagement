@@ -10,7 +10,7 @@
                     </div>
                 </div>
             
-                <div type="button" class="text-primary mt-4 mb-3" data-toggle="modal" data-target=".bd-example-modal-lg">Tôi có thể tra số seri ở đâu?</div>
+                <div class="text-primary mt-4 mb-3 where-serial" data-toggle="modal" data-target=".bd-example-modal-lg">Tôi có thể tra số seri ở đâu?</div>
 
                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
@@ -28,7 +28,7 @@
                             <div class="check-title">Làm thế nào để bạn tìm thấy số sê-ri của bạn?</div>
                             <p>Có thể tra số seri tại nhãn dán* nằm ở mặt sau, hai bên hoặc đáy sản phẩm.</p>
                             <br>
-                            <div class="check-title">*Hình ảnh nhãn dán trên thực tế có thể sẽ khác.</div>
+                            <div class="check-title text-check-war">*Hình ảnh nhãn dán trên thực tế có thể sẽ khác.</div>
 
                             </div>
                         </div>

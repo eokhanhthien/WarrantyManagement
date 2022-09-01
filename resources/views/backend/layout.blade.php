@@ -128,7 +128,7 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                         <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý sản phẩm</div>
+                         <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý sản phẩm</div></li>
 
                         <li> <a class="waves-effect waves-dark" href="{{route('manufacturer')}} " aria-expanded="false"><i
                                     class="fa fa-user-circle-o"></i><span class="hide-menu">Quản lý hãng</span></a>
@@ -139,11 +139,11 @@
                         <li> <a class="waves-effect waves-dark" href="{{route('serial')}} " aria-expanded="false"><i
                                     class="fa fa-smile-o"></i><span class="hide-menu">Quản lý Serial</span></a>
                         </li>
-                        <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý đơn bảo trì, bảo hành</div>
+                        <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Phiếu mua hàng</div></li>
                         <li> <a class="waves-effect waves-dark" href="{{route('order')}} "aria-expanded="false"><i
                                     class="fa fa-tachometer"></i><span class="hide-menu">Đơn hàng</span></a>
                         </li>
-                        <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý nhân viên</div>
+                        <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý nhân viên</div></li>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
                                     class="fa fa-globe"></i><span class="hide-menu">Map</span></a>
