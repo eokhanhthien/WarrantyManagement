@@ -36,17 +36,17 @@
                 <div class="wide">
                     <div class="row g-0">
                         <div class="col-4"> <p class="label-add-order">Tên khách hàng:</p> </div>
-                        <div class="col-8"><input class="input-add-order" type="text" placeholder="Full name" name="data_order[name]" required></div>
+                        <div class="col-8"><input class="input-add-order" type="text" placeholder="Full name" name="data_order[name_customer]" required></div>
                     </div>
 
                    <div class="row mt-3 g-0">
                         <div class="col-4"> <p class="label-add-order">Số điện thoại:</p> </div>
-                        <div class="col-8"><input class="input-add-order" type="text" placeholder="Phone" name="data_order[phone]" required></div>
+                        <div class="col-8"><input class="input-add-order" type="text" placeholder="Phone" name="data_order[phone_customer]" required></div>
                     </div>
 
                     <div class="row mt-3 g-0">
                         <div class="col-4"> <p class="label-add-order">Email:</p> </div>
-                        <div class="col-8"><input class="input-add-order" type="text" placeholder="Email" name="data_order[email]" required></div>
+                        <div class="col-8"><input class="input-add-order" type="text" placeholder="Email" name="data_order[email_customer]" required></div>
                     </div>
                    
                     <div class="row g-0">

@@ -9,6 +9,8 @@ use App\Models\Wards;
 use App\Models\Manufacturer;
 use App\Models\Product;
 
+use App\Models\Order;
+
 use Session;
 
 class OrderController extends Controller
@@ -75,23 +77,35 @@ class OrderController extends Controller
                 }
                 
             }
-            // else{
-            //     // $select_wards = $this->WardsModels->select_array('*',['maqh' => $_POST['matp']] );
-            //     $select_wards = Wards::where('maqh', $_POST['matp'])->get()->toArray();
 
-            //     $output = '<option value="" >Chọn xã phường / thị trấn</option>';
-            //     foreach($select_wards as $key => $val){
-            //         $output .=  '<option value= "'.$val['name_xaphuong'].'" >'. $val['name_xaphuong'] .'</option>';
-            //     }
-            // }
             echo $output;
         }
     }
 
-    function addOrder(){
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                echo "<pre>";
-                print_r( $_POST);die;
-        }
+    function addOrder(Request $request){
+        // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        //         echo "<pre>";
+        //         print_r( $_POST);die;
+        // }
+        $data = $request->all();
+        
+        // $checkout_code = substr(md5(microtime()),rand(0,26),5);
+        // $order = new Order();
+        // $order->order_code = $checkout_code;
+        // $order->name_customer = $data['data_order']['name_customer'];
+        // $order->phone_customer = $data['data_order']['phone_customer'];
+        // $order->email_customer = $data['data_order']['email_customer'];
+        // $order->address_city = $data['data_order']['address_city'];
+        // $order->address_province = $data['data_order']['address_province'];
+        // $order->address_wards = $data['data_order']['address_wards'];
+        // $order->note = $data['data_order']['note'];
+        // $order->created_at = gmdate('Y-m-d H:i:s', time() + 7*3600);
+
+        // $order->save();
+
+        // $order_id = $order->id;
+        echo "<pre>";
+        print_r( $data);die;
+
     }
 }
