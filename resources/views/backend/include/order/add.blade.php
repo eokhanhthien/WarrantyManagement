@@ -123,11 +123,22 @@
                                                 </div>
                                             </div>
 
-                                            <div class="row">
+                                            <div class="row mb-1">
                                                 <div class="col-4"> <p class="label-add-order">Số Seri sản phẩm:</p> </div>
                                                 <div class="col-8"><input class="input-add-order" type="text" placeholder="Serial"  name="data_option[0][serial]"  ></div>
                                             </div>
 
+                                            <div class="row">
+                                                <div class="col-4"> <p class="label-add-order">Thời gian bảo hành:</p> </div>
+                                                <div class="col-8">
+                                                    <select class="input-add-order" name="data_option[0][warranty_time]" id="">
+                                                        <option value=''>Chọn thời gian</option>
+                                                        <option value='6'>6 tháng</option>
+                                                        <option value='12'>12 tháng</option>
+                                                        <option value='24'>24 tháng</option>
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <!-- <div class="col-2">
                                                 <a href="javascript:void(0)" onclick="delete_Option(this)" class="btn btn-danger d-block">Xóa</a>
                                             </div> -->
@@ -276,11 +287,22 @@
                                                 </div>
                                             </div>
 
-                                            <div class="row">
+                                            <div class="row mb-1">
                                                 <div class="col-4"> <p class="label-add-order">Số Seri sản phẩm:</p> </div>
                                                 <div class="col-8"><input class="input-add-order" type="text" placeholder="Serial"  name="data_option[${count_items}][serial]" ></div>
                                             </div>
 
+                                            <div class="row">
+                                                <div class="col-4"> <p class="label-add-order">Thời gian bảo hành:</p> </div>
+                                                <div class="col-8">
+                                                    <select class="input-add-order" name="data_option[${count_items}][warranty_time]" id="">
+                                                        <option value=''>Chọn thời gian</option>
+                                                        <option value='6'>6 tháng</option>
+                                                        <option value='12'>12 tháng</option>
+                                                        <option value='24'>24 tháng</option>
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <div class="col-2">
                                                 <a href="javascript:void(0)" onclick="delete_Option(this)" class="btn btn-danger d-block">Xóa</a>
                                             </div>

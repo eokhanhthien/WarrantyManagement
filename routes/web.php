@@ -38,6 +38,9 @@ Route::get('/order-add', [OrderController::class, 'add'])->name('order-add');
 Route::post('/order-address', [OrderController::class, 'getAddress'])->name('order-address');
 Route::post('/add-order', [OrderController::class, 'addOrder'])->name('add-order');
 Route::post('/product-choose', [OrderController::class, 'getProduct'])->name('product-choose');
+Route::get('/order-view-detail/{order_code}', [OrderController::class, 'orderViewDetail'])->name('order-view-detail');
+Route::delete('/order/{order_code}/delete', [OrderController::class, 'deleteOrder'])->name('order-delete');
+Route::get('/order-print/{order_code}', [OrderController::class, 'printorder'])->name('order-print');
 
 
 // MANUFACTURER

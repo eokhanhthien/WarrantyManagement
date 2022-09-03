@@ -10,6 +10,8 @@ use App\Models\Manufacturer;
 use App\Models\Product;
 
 use App\Models\Order;
+use App\Models\OrderDetail;
+use App\Models\Serial;
 
 use Session;
 
@@ -22,7 +24,9 @@ class OrderController extends Controller
             return view('backend.login');
 
         } 
-        return view('backend.include.order.order');
+        $order = Order::get()->toArray();
+
+        return view('backend.include.order.order', ['order' => $order]);
     }
 
     public function add(Request $request){
@@ -89,23 +93,204 @@ class OrderController extends Controller
         // }
         $data = $request->all();
         
-        // $checkout_code = substr(md5(microtime()),rand(0,26),5);
-        // $order = new Order();
-        // $order->order_code = $checkout_code;
-        // $order->name_customer = $data['data_order']['name_customer'];
-        // $order->phone_customer = $data['data_order']['phone_customer'];
-        // $order->email_customer = $data['data_order']['email_customer'];
-        // $order->address_city = $data['data_order']['address_city'];
-        // $order->address_province = $data['data_order']['address_province'];
-        // $order->address_wards = $data['data_order']['address_wards'];
-        // $order->note = $data['data_order']['note'];
-        // $order->created_at = gmdate('Y-m-d H:i:s', time() + 7*3600);
+        $checkout_code = substr(md5(microtime()),rand(0,26),5);
+        $order = new Order();
+        $order->order_code = $checkout_code;
+        $order->name_customer = $data['data_order']['name_customer'];
+        $order->phone_customer = $data['data_order']['phone_customer'];
+        $order->email_customer = $data['data_order']['email_customer'];
+        $order->address_city = $data['data_order']['address_city'];
+        $order->address_province = $data['data_order']['address_province'];
+        $order->address_wards = $data['data_order']['address_wards'];
+        $order->note = $data['data_order']['note'];
+        $order->created_at = gmdate('Y-m-d H:i:s', time() + 7*3600);
 
-        // $order->save();
+        $order->save();
 
-        // $order_id = $order->id;
-        echo "<pre>";
-        print_r( $data);die;
+        $order_id = $order->id;
+
+        $array = [];
+        foreach($data['data_option'] as $value){
+            $array[] = $value['name-product'];
+        }
+
+        $arr_product = Product::whereIn('id', $array)->get()->toArray();
+        if(isset($arr_product) && $arr_product != NULL){
+            foreach($arr_product as $key => $val){
+                $order_detail= new OrderDetail();
+                $order_detail->order_code = $checkout_code;
+                $order_detail->product_id = $val['id']; 
+                $order_detail->product_name = $val['name']; 
+                $order_detail->product_price = $val['price']; 
+                $order_detail->product_image = $val['image']; 
+                $order_detail->product_serial = $data['data_option'][$key]['serial']; 
+                $order_detail->save();
+            }
+        }
+
+
+        foreach($data['data_option'] as $key => $val){
+            $serial = new Serial();
+            $serial->id_product = $val['name-product'];
+            $serial->serial_number = $val['serial'];
+            $serial->status = 0;
+            $serial->warranty_time = $val['warranty_time'];
+            $serial->activate_time = $order->created_at;
+            $serial->expired_time = date('Y-m-d H:i:s' , strtotime("+".$val['warranty_time']."months", strtotime($serial->activate_time)));
+            $serial->save();
+        }
+
+        return redirect()->route('order')->with('message','Lập đơn hàng thành công');
+        // echo "<pre>";
+        // print_r(  $data['data_option']);die;
+    }
+
+    function orderViewDetail($order_code){
+        // print_r($order_code);die;
+        $product = OrderDetail::where(['order_code'=> $order_code])->get()->toArray();
+        $info_order = Order::where(['order_code'=> $order_code])->get()->first()->toArray();
+
+        return view('backend.include.order.order_detail',['product' =>  $product , 'info_order'=> $info_order]);
 
     }
+
+    function printorder($order_code){
+        require_once 'print_pdf/vendor/autoload.php';
+        $mpdf = new \Mpdf\Mpdf();
+        $product = OrderDetail::where(['order_code'=> $order_code])->get()->toArray();
+        $info_order = Order::where(['order_code'=> $order_code])->get()->first()->toArray();
+
+
+        $output = '';
+        $output .= '
+        <style>
+        table, td, th {
+            border: 1px solid;
+          }
+          
+          table {
+            width: 100%;
+            border-collapse: collapse;
+          }
+        .text-center{
+            text-align: center;
+        }
+        .mt-20{
+            margin: 20px 0 10px 0;
+        }
+        .order_info_tag{
+            font-weight: 600;
+        }
+        .row{
+            line-height: 22px;
+        }
+
+        .text-end {
+            float:left;
+
+        }
+        .text-custom{
+            display: inline;
+        }
+        </style>
+
+        <div class="text-center"><h2>Hóa đơn</h2></div>
+
+        <div class="mt-20" >Thông tin khách hàng</div>
+        <div class="order-info ">
+            <div class="row">
+                <span class="col order_info_tag">Tên khách hàng:</span>
+                <span class="col">'.$info_order['name_customer'] .'</span>
+            </div>
+            
+            <div class="row">
+                <span class="col order_info_tag">Số điện thoại:</span>
+                <span class="col">'.$info_order['phone_customer'] .'</span>
+            </div>
+
+            <div class="row">
+            <span class="col order_info_tag">Email:</span>
+            <span class="col">'.$info_order['email_customer'] .'</span>
+            </div>
+
+            <div class="row">
+            <span class="col order_info_tag">Tỉnh/thành phố:</span>
+            <span class="col">'.$info_order['address_city'] .'</span>
+            </div>
+
+            <div class="row">
+            <span class="col order_info_tag">Quận/huyện:</span>
+            <span class="col">'.$info_order['address_province'] .'</span>
+            </div>
+
+            <div class="row">
+            <span class="col order_info_tag">Xã/phường/thị trấn:</span>
+            <span class="col">'.$info_order['address_wards'] .'</span>
+            </div>
+
+            <div class="row">
+            <span class="col order_info_tag">Ghi chú:</span>
+            <span class="col">'.$info_order['note'] .'</span>
+            </div>
+
+            <div class="row">
+            <span class="col order_info_tag">Mã đơn:</span>
+            <span class="col">'.$info_order['order_code'] .'</span>
+            </div>
+
+            <div class="row">
+            <span class="col order_info_tag">Ngày mua:</span>
+            <span class="col">'.$info_order['created_at'] .'</span>
+            </div>
+
+        </div>
+
+        <div class="mt-20" >Danh sách sản phẩm</div>
+        <table class="table table-striped jambo_table bulk_action">
+        <thead>
+        <tr class="headings">
+            <th>STT</th>
+            <th>Tên sản phẩm</th>
+            <th>Số serial</th>
+            <th>Giá</th>
+        </tr>
+        </thead>
+
+        <tbody>';
+        $totalMoney=0;
+        foreach($product as $key => $val){
+            $totalMoney += $val['product_price'];
+
+            $output .= '<tr>
+            <td>'.($key+1).'</td>
+            <td>'.$val['product_name'].'</td>
+           
+            <td>'.$val['product_serial'].'</td>
+            <td>'.number_format($val['product_price']).'đ</td>
+                      
+        </tr>';
+        }
+
+
+        $output .= ' </tbody>
+                    </table>
+                    ';
+
+      $output .= '
+        <div class="row mt-20">
+            <span class="col order_info_tag ">Tổng tiền: </span>
+            <span class="col">'.number_format($totalMoney).'</span>
+        </div>
+
+        ';
+        $output .= '
+        
+        <span class="text-custom" >Người lập đơn </span>
+
+         ';
+
+        $mpdf->WriteHTML($output);
+        $mpdf->Output();
+    }
+    
 }

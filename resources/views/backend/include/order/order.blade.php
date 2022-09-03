@@ -7,6 +7,12 @@
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
+                @if (session('message'))
+                    <div class="text-success-ct">
+                        {{ session('message') }}
+                    </div>
+                @endif
+
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
                         <h3 class="text-themecolor">Đơn hàng</h3>
@@ -37,49 +43,31 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
+                                                <th>STT</th>
+                                                <th>Mã đơn hàng</th>
+                                                <th>Ngày tạo</th>
+                                                <th>action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach($order as $key => $val)
                                             <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
+                                                <td>{{$key+1}}</td>
+                                                <td>{{$val['order_code']}}</td>
+                                                <td>{{date('d/m/Y' , strtotime($val['created_at']))}}</td>
+                                                <td>
+                                                <a  href="{{route('order-view-detail',$val['order_code'])}}" ><button class='btn btn-primary'>Xem chi tiết</button></a>
+                                                    <form method="POST" action="{{route('order-delete',$val['order_code'])}}">  
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn btn-danger mt-2'>Xóa</button>
+                                                    </form>
+                                                
+                                                </td>               
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Deshmukh</td>
-                                                <td>Gaylord</td>
-                                                <td>@Ritesh</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sanghani</td>
-                                                <td>Gusikowski</td>
-                                                <td>@Govinda</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Roshan</td>
-                                                <td>Rogahn</td>
-                                                <td>@Hritik</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Joshi</td>
-                                                <td>Hickle</td>
-                                                <td>@Maruti</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Nigam</td>
-                                                <td>Eichmann</td>
-                                                <td>@Sonu</td>
-                                            </tr>
+                                            @endforeach
+                                       
+                                          
                                         </tbody>
                                     </table>
                                 </div>
