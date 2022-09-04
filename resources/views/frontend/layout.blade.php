@@ -31,7 +31,7 @@
                             </div>
                         </a>
                         </div>
-                            <div class="col col-3  <?php if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] == '/register-warranty' ) { echo "header-active";}  {echo " ";} ?>"> <a  href="{{route('register-warranty')}}" style=' text-decoration: none;'><p class='header-nav '>Đăng ký sản phẩm</p></a> </div>
+                            <div class="col col-3  <?php if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] == '/register-warranty' || isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] == '/register-warranty-info-customer' ) { echo "header-active";}  {echo " ";} ?>"> <a  href="{{route('register-warranty')}}" style=' text-decoration: none;'><p class='header-nav '>Đăng ký sản phẩm</p></a> </div>
                             <div class="col col-3  <?php if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] == '/check-warranty' ) { echo "header-active";}  {echo " ";} ?>"> <a  href="{{route('check-warranty')}}" style=' text-decoration: none;'><p class='header-nav '>Kiểm tra tình trạng bảo hành</p></a> </div>
                             <div class="col col-3"><p class='header-nav'>Đặt lịch bảo trì online</p></div>
                         </div>

@@ -136,12 +136,26 @@
                         <li> <a class="waves-effect waves-dark" href="{{route('product')}} " aria-expanded="false"><i
                                     class="fa fa-table"></i><span class="hide-menu">Quản lý sản phẩm</span></a>
                         </li>
+
+                        <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Kích hoạt bảo hành</div></li>
+                        <li> <a class="waves-effect waves-dark" href="{{route('order')}} "aria-expanded="false"><i
+                                    class="fa fa-tachometer"></i><span class="hide-menu">Hóa đơn mua hàng</span></a>
+                        </li>
+
                         <li> <a class="waves-effect waves-dark" href="{{route('serial')}} " aria-expanded="false"><i
                                     class="fa fa-smile-o"></i><span class="hide-menu">Quản lý Serial</span></a>
                         </li>
-                        <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Phiếu mua hàng</div></li>
-                        <li> <a class="waves-effect waves-dark" href="{{route('order')}} "aria-expanded="false"><i
-                                    class="fa fa-tachometer"></i><span class="hide-menu">Đơn hàng</span></a>
+
+                        <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
+                                    class="fa fa-globe"></i><span class="hide-menu">Kích hoạt online</span></a>
+                        </li>
+                        <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Yêu cầu bảo hành, bảo trì</div></li>
+                    
+                        <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
+                                    class="fa fa-globe"></i><span class="hide-menu">Bảo hành</span></a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
+                                    class="fa fa-globe"></i><span class="hide-menu">Bảo trì</span></a>
                         </li>
                         <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý nhân viên</div></li>
                         </li>

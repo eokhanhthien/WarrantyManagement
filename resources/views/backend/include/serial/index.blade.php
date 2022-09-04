@@ -30,7 +30,7 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <button class="btn-ct btn-success mr-10"> <a href="{{route('serial-add')}}">Thêm serial mới</a> </button>
+                <!-- <button class="btn-ct btn-success mr-10"> <a href="{{route('serial-add')}}">Thêm serial mới</a> </button> -->
                 <!-- Tabs navs -->
 <ul class="nav nav-tabs nav-fill" id="ex1" role="tablist">
   <li class="nav-item" role="presentation">

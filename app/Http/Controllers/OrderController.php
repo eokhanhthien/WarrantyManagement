@@ -186,17 +186,20 @@ class OrderController extends Controller
         }
 
         .text-end {
-            float:left;
+            margin: 0px 0 0px 400px;
+
 
         }
         .text-custom{
             display: inline;
         }
         </style>
+        <div class="text-center"><h4>Cộng hòa - Xã hội - Chủ nghĩa - Việt Nam</h4></div>
+        <div class="text-center"><h4>Độc lập - Tự do - Hạnh Phúc</h4></div>
+        <div class="text-end"><p>..............., ngày ...... tháng ...... năm 2022 </p></div>
+        <div class="text-center"><h1>Hóa đơn</h1></div>
 
-        <div class="text-center"><h2>Hóa đơn</h2></div>
-
-        <div class="mt-20" >Thông tin khách hàng</div>
+        <div class="mt-20" > <strong>Thông tin khách hàng</strong></div>
         <div class="order-info ">
             <div class="row">
                 <span class="col order_info_tag">Tên khách hàng:</span>
@@ -245,7 +248,7 @@ class OrderController extends Controller
 
         </div>
 
-        <div class="mt-20" >Danh sách sản phẩm</div>
+        <div class="mt-20" ><strong>Danh sách sản phẩm</strong></div>
         <table class="table table-striped jambo_table bulk_action">
         <thead>
         <tr class="headings">

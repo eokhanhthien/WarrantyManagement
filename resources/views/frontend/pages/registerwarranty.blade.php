@@ -9,7 +9,7 @@
                         <p>Để biết thêm thông tin, vui lòng truy cập trang đăng ký sản phẩm.</p>
                     </div>
                 </div>
-            
+
                 <div class = "panel">
                 <form action="{{route('add-register-warranty')}}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -18,7 +18,7 @@
                 
                 <div class="row mb-3">
                     <div class="col col-2 lable-input" >Số serial  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input name='serial' type='text' class="input-register-warranty" placeholder = "Ex. RV123123123" required /></div>
+                    <div class="col col-3"><input name='product_serial' type='text' class="input-register-warranty" placeholder = "Ex. RV123123123" required /></div>
                 </div>
 
                 <div class="row mb-10">
@@ -42,24 +42,32 @@
                         <p class="address-tag">Sản phẩm <span class='text-danger'>*</span></p> 
                     </div>
                     <div class="col col-3">
-                        <select name="id_product" id="province" class="address-main choose province input-register-warranty" required>
+                        <select name="product_id" id="province" class="address-main choose province input-register-warranty" required>
                             <option value="">Chọn sản phẩm</option>
                         </select>
                     </div>
                 </div>
-
+                <div class="row mb-3">
+                    <div class="col col-2 lable-input" >Mã đơn  <span class='text-danger'>*</span> </div>
+                    <div class="col col-3"><input  name='order_code' type='text' class="input-register-warranty" required /></div>
+                </div>
                 <div class="row mb-3">
                     <div class="col col-2 lable-input" >Ngày mua  <span class='text-danger'>*</span> </div>
                     <div class="col col-3"><input  name='date-buy' type='date' class="input-register-warranty" required /></div>
                 </div>
 
-                <div class="row mb-3">
+                <!-- <div class="row mb-3">
                     <div class="col col-2 lable-input" >Chứng từ mua hàng  <span class='text-danger'>*</span> </div>
                     <div class="col col-3"><input name='attach' type='file' class="input-register-warranty" required /></div>
-                </div>
+                </div> -->
                 <div class="row mb-3">
                     <div class="col col-5 text-end"><button type='submit' class='btn btn-primary'>Tiếp theo</button></div>
                 </div>
+                @if (session('message'))
+                    <div class="panel-heading text-error-ct">
+                        {{ session('message') }}
+                    </div>
+                @endif
                 </form>
                 </div>
           
