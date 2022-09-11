@@ -157,3 +157,26 @@ position: relative;
     color: #ff0000 !important;
     font-size: 14px;
   }
+
+  .register-success {
+    padding: 16px;
+    background-color: aliceblue;
+    margin: 16px;
+    color: green;
+}
+.register-success p{
+    margin-bottom: 0;
+}
+.info-product-check {
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 20px;
+}
+.noti-check {
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 4px;
+    color: blue;
+}

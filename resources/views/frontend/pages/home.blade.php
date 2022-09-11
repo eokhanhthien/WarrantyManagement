@@ -33,28 +33,28 @@
                     </tr>
                     
                     <tr>
-                        <td>Máy in phun</td>
-                        <td>RADK123456</td>	
+                        <td>Máy chiếu doanh nghiệp</td>
+                        <td>TU2K4502800</td>	
+                        <td>11 ký tự chữ và số</td>
+                    </tr>
+                    <tr>
+                        <td>Máy in kim</td>
+                        <td>R9DY042200</td>	
                         <td>10 ký tự chữ và số</td>
                     </tr>
                     <tr>
-                        <td>Máy in phun</td>
-                        <td>RADK123456</td>	
+                        <td>Máy in Laser (AcuLaser)</td>
+                        <td>Q6VF230020</td>	
                         <td>10 ký tự chữ và số</td>
                     </tr>
                     <tr>
-                        <td>Máy in phun</td>
-                        <td>RADK123456</td>	
+                        <td>Máy quét</td>
+                        <td>JMMZ101659</td>	
                         <td>10 ký tự chữ và số</td>
                     </tr>
                     <tr>
-                        <td>Máy in phun</td>
-                        <td>RADK123456</td>	
-                        <td>10 ký tự chữ và số</td>
-                    </tr>
-                    <tr>
-                        <td>Máy in phun</td>
-                        <td>RADK123456</td>	
+                        <td>Máy in nhiệt</td>
+                        <td>PX5Z000401</td>	
                         <td>10 ký tự chữ và số</td>
                     </tr>
 

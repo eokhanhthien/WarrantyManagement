@@ -68,6 +68,15 @@
                         {{ session('message') }}
                     </div>
                 @endif
+
+                @if (session('register-success'))
+                    <div class="register-success">
+                        {{ session('register-success') }}
+                        <p>Cảm ơn bạn đã mua sản phẩm của chúng tôi</p>
+                        <p>Bạn có thể xem phạm vi bảo hành sản phẩm bằng cách <a href="{{route('check-warranty')}}">kiểm tra bảo hành</a> </p>
+                    </div>
+                @endif
+
                 </form>
                 </div>
           

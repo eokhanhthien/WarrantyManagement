@@ -1,3 +1,7 @@
+<?php
+        // echo "<pre>";
+        // print_r(Session::get('isWarranty')['order_code']);die;
+        ?>
 @extends('frontend.layout')
 @section('home')
 <div class="content">
@@ -11,33 +15,34 @@
                 </div>
 
                 <div class = "panel">
-                <form action="{{route('add-register-warranty')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('comfirm-register-warranty')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class = "panel-title">Đăng ký sản phẩm</div>
                 <div class = "panel-heading ">Thông tin khách hàng</div>
                 
                 <div class="row mb-3">
                     <div class="col col-2 lable-input" >Tên khách đăng ký  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input name='customer_name' type='text' class="input-register-warranty" placeholder = "Ex. RV123123123" required /></div>
+                    <div class="col col-3"><input name='customer_name' type='text' class="input-register-warranty" placeholder = "Ex. Nguyễn Văn A" required /></div>
                 </div>
 
               
                 <div class="row mb-3">
                     <div class="col col-2 lable-input" >Email  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input  name='customer_email' type='text' class="input-register-warranty" required /></div>
+                    <div class="col col-3"><input  name='customer_email' type='text' class="input-register-warranty" placeholder = "Ex. thien123@gmail.com" required /></div>
                 </div>
                 <div class="row mb-3">
                     <div class="col col-2 lable-input" >Số điện thoại  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input  name='customer_phone' type='text' class="input-register-warranty" required /></div>
+                    <div class="col col-3"><input  name='customer_phone' type='text' class="input-register-warranty" placeholder = "Ex. 0946144333" required /></div>
                 </div>
-                <div class="row mb-3">
-                    <div class="col col-2 lable-input" >Mã đơn hàng  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input  name='order_code' type='text' class="input-register-warranty" required /></div>
-                </div>
-                <div class="row mb-3">
+
+                    <div class="col col-3"><input  name='order_code' type='hidden' value='<?= Session::get('isWarranty')['order_code'] ?>' class="input-register-warranty"  /></div>
+                    <div class="col col-3"><input  name='product_id' type='hidden' value='<?= Session::get('isWarranty')['product_id'] ?>' class="input-register-warranty"  /></div>
+                    <div class="col col-3"><input  name='product_serial' type='hidden' value='<?= Session::get('isWarranty')['product_serial'] ?>' class="input-register-warranty"  /></div>
+              
+                <!-- <div class="row mb-3">
                     <div class="col col-2 lable-input" >Chứng từ mua hàng  <span class='text-danger'>*</span> </div>
                     <div class="col col-3"><input name='attach' type='file' class="input-register-warranty" required /></div>
-                </div>
+                </div> -->
                 <div class="row mb-3">
                     <div class="col col-5 text-end"><button type='submit' class='btn btn-primary'>Đăng ký</button></div>
                 </div>

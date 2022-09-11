@@ -22,8 +22,11 @@ use App\Http\Controllers\SerialController;
 Route::get('/', [IndexController::class, 'home'])->name('/');
 Route::get('/register-warranty', [IndexController::class, 'registerWarranty'])->name('register-warranty');
 Route::get('/check-warranty', [IndexController::class, 'checkWarranty'])->name('check-warranty');
+Route::post('/check-serial', [IndexController::class, 'checkSerial'])->name('check-serial');
 Route::post('/add-register-warranty', [IndexController::class, 'addRegisterWarranty'])->name('add-register-warranty');
 Route::get('/register-warranty-info-customer', [IndexController::class, 'RegisterWarrantyInfo'])->name('register-warranty-info-customer');
+Route::post('/comfirm-register-warranty', [IndexController::class, 'comfirmRegisterWarranty'])->name('comfirm-register-warranty');
+
 
 
 
