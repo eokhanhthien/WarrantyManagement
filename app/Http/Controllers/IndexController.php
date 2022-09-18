@@ -15,6 +15,8 @@ use App\Models\ClaimWarrantyDetail;
 use App\Models\ClaimWarranty;
 use Session;
 
+use App\Http\Controllers\MailerPHP; 
+
 class IndexController extends Controller
 {
     public function home(){
@@ -131,6 +133,7 @@ class IndexController extends Controller
     }
 
     function sendClaimWarranty(Request $request){
+        // require_once 'mail/sendmail.php';
         $data =  $request->all();
         // echo "<pre>";
         // print_r($data);die;
@@ -166,6 +169,16 @@ class IndexController extends Controller
                     $claimwarrantydetail->address_wards = $data['address_wards'];
 
                     $claimwarrantydetail->save();
+
+                    $noidung ="";
+                    $tieude = 'Yêu cầu bảo hành';
+                    $noidung .="<p>Yêu cầu bảo hành của quý khách đã được tiếp nhận thành công với mã yêu cầu là: ".$checkout_code."</p>";
+                    $noidung .="<p>Kỹ thuật viên sẽ đến kiểm tra tình trạng máy của bạn (trễ nhất một tuần)</p>";
+                    $emailyeucau = $data['customer_email'];
+
+                    $mail= new MailerPHP();
+                    $mail->sendMail( $tieude,$noidung,$emailyeucau);
+
                     return redirect()->route('claim-warranty')->with('register-success','Gửi yêu cầu bảo hành thành công, kết quả sẽ sớm được gửi qua mail của bạn');
 
                 }
