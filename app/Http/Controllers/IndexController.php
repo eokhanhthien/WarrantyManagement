@@ -11,6 +11,7 @@ use App\Models\OrderDetail;
 use App\Models\Order;
 use App\Models\Serial;
 use App\Models\InfoCustomerRegister;
+use App\Models\ClaimWarrantyDetail;
 use App\Models\ClaimWarranty;
 use Session;
 
@@ -59,8 +60,9 @@ class IndexController extends Controller
             if( date('d/m/Y' , strtotime($findOrder[0]['created_at'])) === date('d/m/Y' , strtotime($data['date-buy']))){
                 $product = OrderDetail::where(['order_code'=> $data['order_code'] ,'product_id' => $data['product_id'] , 'product_serial' => $data['product_serial'] ])->get()->toArray();
                 if(isset($product) && $product != NULL){
-                 
-                   Session::put('isWarranty', [
+                $findSerial= Serial::where(['id_product'=> $data['product_id']])->get()->first()->toArray();
+                 if($findSerial['status'] === 0){
+                      Session::put('isWarranty', [
                     'status' => 0,
                     'order_code' => $data['order_code'],
                     'product_id' => $data['product_id'] ,
@@ -68,7 +70,12 @@ class IndexController extends Controller
                 ]);
                     // echo "<pre>";
                     // print_r($product);die; 
-                    return redirect()->route('register-warranty-info-customer');
+                    return redirect()->route('register-warranty-info-customer'); 
+                 }
+                 else{
+                    return redirect()->route('register-warranty')->with('message','sản phẩm đã được kích hoạt bảo hành');
+                 }
+                
            
                 }
                 else{
@@ -133,20 +140,32 @@ class IndexController extends Controller
         $product = Serial::where(['id_product' => $data['product_id'] , 'serial_number' => $data['product_serial'] ])->get()->first()->toArray();
             if($product['activate_time'] <= $product['expired_time']){
                 if($product['status']===1){
-                    echo "<pre>";  
-                    print_r($data);die;
+                    // echo "<pre>";  
+                    // print_r($data);die;
+                    $checkout_code = substr(md5(microtime()),rand(0,26),5);
+                    
+                    $claimwarrantydetail = new ClaimWarrantyDetail();
                     $claimwarranty = new ClaimWarranty();
-                    $claimwarranty->customer_name = $data['customer_name'];
-                    $claimwarranty->customer_email = $data['customer_email'];
-                    $claimwarranty->customer_phone = $data['customer_phone'];
-                    $claimwarranty->product_serial = $data['product_serial'];
-                    $claimwarranty->product_id = $data['product_id'];
-                    $claimwarranty->address_city = $data['address_city'];
-                    $claimwarranty->address_province = $data['address_province'];
-                    $claimwarranty->address_wards = $data['address_wards'];
+
+
+                    $claimwarranty->customer_name = $data['customer_name']; 
+                    $claimwarranty->claim_code = $checkout_code;
                     $claimwarranty->status = 0;
                     $claimwarranty->created_at = gmdate('Y-m-d H:i:s', time() + 7*3600);
                     $claimwarranty->save();
+
+
+                    $claimwarrantydetail->customer_name = $data['customer_name'];
+                    $claimwarrantydetail->claim_code = $checkout_code;
+                    $claimwarrantydetail->customer_email = $data['customer_email'];
+                    $claimwarrantydetail->customer_phone = $data['customer_phone'];
+                    $claimwarrantydetail->product_serial = $data['product_serial'];
+                    $claimwarrantydetail->product_id = $data['product_id'];
+                    $claimwarrantydetail->address_city = $data['address_city'];
+                    $claimwarrantydetail->address_province = $data['address_province'];
+                    $claimwarrantydetail->address_wards = $data['address_wards'];
+
+                    $claimwarrantydetail->save();
                     return redirect()->route('claim-warranty')->with('register-success','Gửi yêu cầu bảo hành thành công, kết quả sẽ sớm được gửi qua mail của bạn');
 
                 }
