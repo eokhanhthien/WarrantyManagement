@@ -17,7 +17,7 @@
         <div class="container-content">
             <div class="container-fluid g-0">
                 <div class="row">
-                    <div class="col col-9">
+                    <div class="col col-12">
                         <div class="row g-0">
                         <div class="col col-2">
                             <div class="size-logo">
@@ -31,14 +31,13 @@
                             </div>
                         </a>
                         </div>
-                            <div class="col col-3  <?php if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] == '/register-warranty' || isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] == '/register-warranty-info-customer' ) { echo "header-active";}  {echo " ";} ?>"> <a  href="{{route('register-warranty')}}" style=' text-decoration: none;'><p class='header-nav '>Đăng ký sản phẩm</p></a> </div>
+                            <div class="col col-2  <?php if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] == '/register-warranty' || isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] == '/register-warranty-info-customer' ) { echo "header-active";}  {echo " ";} ?>"> <a  href="{{route('register-warranty')}}" style=' text-decoration: none;'><p class='header-nav '>Đăng ký sản phẩm</p></a> </div>
                             <div class="col col-3  <?php if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] == '/check-warranty' ) { echo "header-active";}  {echo " ";} ?>"> <a  href="{{route('check-warranty')}}" style=' text-decoration: none;'><p class='header-nav '>Kiểm tra tình trạng bảo hành</p></a> </div>
-                            <div class="col col-3"><p class='header-nav'>Đặt lịch bảo trì online</p></div>
+                            <div class="col col-2 <?php if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] == '/claim-warranty' ) { echo "header-active";}  {echo " ";} ?>"> <a  href="{{route('claim-warranty')}}" style=' text-decoration: none;'><p class='header-nav '>Yêu cầu bảo hành</p></a> </div>
+                            <div class="col col-2"><p class='header-nav'>Đặt lịch bảo trì online</p></div>
                         </div>
                     </div>
-                    <div class="col col-3">
-                        <p class='header-nav'>Hotline: 0946144333</p>
-                    </div>
+                
                 </div>
             </div>
         </div>

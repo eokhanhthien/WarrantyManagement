@@ -196,29 +196,7 @@
 
 <script>
     $(document).ready(function() {
-    // $('.choose-product').change(function() {
-    //     var action = $(this).attr('id');
-    //     // var matp = $(this).val();
-    //     var matp = $(this).find(':selected').data('manu');
-    //     var result = '';
-    //     if(action=='manu'){
-    //         result = 'product';
-    //     }
-    //     $.ajax({
-    //             url: "{{route('product-choose')}}",
-    //             method:"post",
-    //             data: {
-    //                 action:action,
-    //                 matp : matp,
-    //                 _token: '{{csrf_token()}}'
-    //             }, 
-    //             success : function(response) {
-    //                 $('.'+result).html(response);
-    //             }
-    //         })
-    // })   
-    
-    
+
     var choose_product = document.querySelectorAll('.choose-product');
     // console.log(choose_product);
     

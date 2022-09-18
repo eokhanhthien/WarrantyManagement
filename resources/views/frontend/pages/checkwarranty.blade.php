@@ -87,15 +87,15 @@
                               
                 <table class = "table">     
                     <tr style='border : 0px solid transparent'>
-                        <td>Bảo hành Đầu in/ Đèn <strong>24 months Carry-in warranty</strong></td>
+                        <td>Bảo hành Đầu in/ Đèn <strong><?php echo Session::get('serial_check')['warranty_time'] ?> months Carry-in warranty</strong></td>
                         <td>Ngày hết hạn bảo hành đầu in đến <strong> <?php echo Session::get('serial_check')['expired_time'] ?> </strong></td>	
                     </tr>
                     <tr style='border : 0px solid transparent'>
-                        <td>Bảo hành linh kiện thay thế <strong>24 months Carry-in warranty</strong></td>
+                        <td>Bảo hành linh kiện thay thế <strong><?php echo Session::get('serial_check')['warranty_time'] ?> months Carry-in warranty</strong></td>
                         <td>Ngày kết thúc bảo hành linh kiện đến <strong> <?php echo Session::get('serial_check')['expired_time'] ?> </strong></td>	
                     </tr>
                     <tr style='border : 0px solid transparent'>
-                        <td>Chi phí nhân công <strong>24 months Carry-in warranty</strong></td>
+                        <td>Chi phí nhân công <strong><?php echo Session::get('serial_check')['warranty_time'] ?> months Carry-in warranty</strong></td>
                         <td>Ngày kết thúc hỗ trợ chi phí nhân công đến <strong> <?php echo Session::get('serial_check')['expired_time'] ?> </strong></td>	
                     </tr>
                   

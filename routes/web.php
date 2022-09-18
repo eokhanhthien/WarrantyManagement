@@ -26,6 +26,8 @@ Route::post('/check-serial', [IndexController::class, 'checkSerial'])->name('che
 Route::post('/add-register-warranty', [IndexController::class, 'addRegisterWarranty'])->name('add-register-warranty');
 Route::get('/register-warranty-info-customer', [IndexController::class, 'RegisterWarrantyInfo'])->name('register-warranty-info-customer');
 Route::post('/comfirm-register-warranty', [IndexController::class, 'comfirmRegisterWarranty'])->name('comfirm-register-warranty');
+Route::get('/claim-warranty', [IndexController::class, 'claimWarranty'])->name('claim-warranty');
+Route::post('/send-claim-warranty', [IndexController::class, 'sendClaimWarranty'])->name('send-claim-warranty');
 
 
 

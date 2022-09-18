@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Manufacturer;
+use App\Models\City;
 use App\Models\Product;
 
 use App\Models\OrderDetail;
 use App\Models\Order;
 use App\Models\Serial;
 use App\Models\InfoCustomerRegister;
+use App\Models\ClaimWarranty;
 use Session;
 
 class IndexController extends Controller
@@ -19,6 +21,7 @@ class IndexController extends Controller
     }
 
     public function registerWarranty(){
+        // Xóa đi Session nếu quay lại trang trước
         Session::forget('isWarranty')  ;
         $manufacturer = Manufacturer::get()->toArray();
         return view('frontend.pages.registerwarranty',['manufacturer' => $manufacturer]);
@@ -111,6 +114,57 @@ class IndexController extends Controller
         return redirect()->route('register-warranty')->with('register-success','Kích hoạt bảo hành thành công');
         // echo "<pre>";
         // print_r($serial_active );die;
+    }
+
+    function claimWarranty(){
+        $city = City::get()->toArray();
+        $manufacturer = Manufacturer::get()->toArray();
+        return view('frontend.pages.claimwarranty',["data"=>$city , 'manufacturer' => $manufacturer]);
+
+    }
+
+    function sendClaimWarranty(Request $request){
+        $data =  $request->all();
+        // echo "<pre>";
+        // print_r($data);die;
+        $product = Serial::where(['id_product' => $data['product_id'] , 'serial_number' => $data['product_serial'] ])->get()->first();
+
+        if(isset($product) && $product != NULL){
+        $product = Serial::where(['id_product' => $data['product_id'] , 'serial_number' => $data['product_serial'] ])->get()->first()->toArray();
+            if($product['activate_time'] <= $product['expired_time']){
+                if($product['status']===1){
+                    echo "<pre>";  
+                    print_r($data);die;
+                    $claimwarranty = new ClaimWarranty();
+                    $claimwarranty->customer_name = $data['customer_name'];
+                    $claimwarranty->customer_email = $data['customer_email'];
+                    $claimwarranty->customer_phone = $data['customer_phone'];
+                    $claimwarranty->product_serial = $data['product_serial'];
+                    $claimwarranty->product_id = $data['product_id'];
+                    $claimwarranty->address_city = $data['address_city'];
+                    $claimwarranty->address_province = $data['address_province'];
+                    $claimwarranty->address_wards = $data['address_wards'];
+                    $claimwarranty->status = 0;
+                    $claimwarranty->created_at = gmdate('Y-m-d H:i:s', time() + 7*3600);
+                    $claimwarranty->save();
+                    return redirect()->route('claim-warranty')->with('register-success','Gửi yêu cầu bảo hành thành công, kết quả sẽ sớm được gửi qua mail của bạn');
+
+                }
+                else{
+                return redirect()->route('claim-warranty')->with('message','Sản phẩm chưa được kích hoạt bảo hành');
+                }
+
+              }
+              else{
+                return redirect()->route('claim-warranty')->with('message','Sản phẩm của bạn đã hết thời gian bảo hành');
+            }
+        }
+        else{
+            return redirect()->route('claim-warranty')->with('message','Không tìm thấy sản phẩm tương tự');
+        }
+
+        // if($product[0]['id']);
+        
     }
 
 }
