@@ -7,6 +7,8 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ManufacturerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SerialController;
+use App\Http\Controllers\ClaimWarrantyController;
+use App\Http\Controllers\Technicianstroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,3 +77,17 @@ Route::get('/serial/{id}/edit', [SerialController::class, 'serialEdit'])->name('
 Route::post('/serial/{id}/update', [SerialController::class, 'update'])->name('serial-update');
 
 Route::delete('/serial/{id}/delete', [SerialController::class, 'delete'])->name('serial-delete');
+
+// CLAIM WARRANTY
+Route::get('/claim-warranty-show', [ClaimWarrantyController::class, 'index'])->name('claim-warranty-show');
+Route::get('/claimwarranty-view-detail/{claim_code}', [ClaimWarrantyController::class, 'ClaimWarrantyViewDetail'])->name('claimwarranty-view-detail');
+
+
+// TECHNICIAN
+Route::get('/technicians', [Technicianstroller::class, 'index'])->name('technicians');
+Route::get('/technicians-add', [Technicianstroller::class, 'add'])->name('technicians-add');
+Route::post('/add-technicians', [Technicianstroller::class, 'addTechnicians'])->name('add-technicians');
+Route::get('/technicians/{id}/edit', [Technicianstroller::class, 'edit'])->name('technicians-edit');
+Route::post('/technicians/{id}/update', [Technicianstroller::class, 'update'])->name('technicians-update');
+Route::delete('/technicians/{id}/delete', [Technicianstroller::class, 'deletete'])->name('technicians-delete');
+

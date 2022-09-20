@@ -11,7 +11,7 @@ class Admin extends Model
     public $timestamps = false;
     protected $table = 'tbl_user';
     protected $fillable = [
-        'username' , 'password','email' , 'role' 
+        'fullname','username' , 'password','email' , 'role' 
     ];
     
 }

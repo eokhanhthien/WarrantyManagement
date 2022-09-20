@@ -145,29 +145,24 @@
                         <li> <a class="waves-effect waves-dark" href="{{route('serial')}} " aria-expanded="false"><i
                                     class="fa fa-smile-o"></i><span class="hide-menu">Quản lý Serial</span></a>
                         </li>
-
+<!-- 
                         <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
                                     class="fa fa-globe"></i><span class="hide-menu">Kích hoạt online</span></a>
-                        </li>
+                        </li> -->
                         <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Yêu cầu bảo hành, bảo trì</div></li>
                     
-                        <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="{{route('claim-warranty-show')}}" aria-expanded="false"><i
                                     class="fa fa-globe"></i><span class="hide-menu">Bảo hành</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
                                     class="fa fa-globe"></i><span class="hide-menu">Bảo trì</span></a>
                         </li>
                         <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý nhân viên</div></li>
+                       
+                        <li> <a class="waves-effect waves-dark" href="{{route('technicians')}}" aria-expanded="false"><i
+                                    class="fa fa-globe"></i><span class="hide-menu">Kỹ thuật viên</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
-                                    class="fa fa-globe"></i><span class="hide-menu">Map</span></a>
-                        </li>
-                        <li> <a class="waves-effect waves-dark" href="pages-blank.html" aria-expanded="false"><i
-                                    class="fa fa-bookmark-o"></i><span class="hide-menu">Blank</span></a>
-                        </li>
-                        <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
-                                    class="fa fa-question-circle"></i><span class="hide-menu">404</span></a>
-                        </li>
+
                     </ul>
 
                 </nav>
