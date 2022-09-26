@@ -154,6 +154,7 @@ class IndexController extends Controller
                     $claimwarranty->customer_name = $data['customer_name']; 
                     $claimwarranty->claim_code = $checkout_code;
                     $claimwarranty->status = 0;
+                    $claimwarranty->type = 1;
                     $claimwarranty->created_at = gmdate('Y-m-d H:i:s', time() + 7*3600);
                     $claimwarranty->save();
 

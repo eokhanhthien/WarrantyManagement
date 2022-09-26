@@ -1,5 +1,5 @@
-@extends('backend.layout')
-@section('order')
+@extends('backend.layoutTechnician')
+@section('includeTechnicians')
 <?php
 // print_r($claimwarranty);die;
 ?>
@@ -31,7 +31,7 @@
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
-                <button class="btn btn-primary mr-10"> <a href="{{route('claim-warranty-show')}}">Quay lại</a> </button>
+                <button class="btn btn-primary mr-10"> <a href="{{route('employee')}}">Quay lại</a> </button>
 
                 <!-- ============================================================== -->
                 <!-- <button class="btn btn-primary mr-10"> <a href="{{route('order-add')}}">Lập đơn mới</a> </button> -->
@@ -74,43 +74,7 @@
                         
                     </div>
                 </div>
-            <?php  if($claimwarranty['status'] === 0){ ?>
-                <form method='post' action="{{route('claim-warranty-job')}}">
-                @csrf
-                <div class="row">
-                            <div class="col-2"> <p class="label-add-order">Phân công nhân viên</p> </div>
-                                <div class="col-2">
-                                    <select class="input-add-order" name="id_technician">
-                                    <option value=''> Chọn nhân viên</option>
-                                        @foreach($employees as $key => $val)
-                                            <option value = "{{$val['id']}}" >{{$val['fullname']}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                 </div>
-                 <input type="hidden" name ="claim_code" value ="{{$claimDetail['claim_code']}}">
-                            <button class='btn btn-success'>Giao nhiệm vụ</button>
-                </form>
-            <?php }else if($claimwarranty['status'] === 1){ ?>
-                <form method='post' action="{{route('claim-warranty-job-turn',$job['id_technician'])}}">
-                @csrf
-                <div class="row">
-                            <div class="col-2"> <p class="label-add-order">Phân công nhân viên</p> </div>
-                                <div class="col-2">
-                                    <select class="input-add-order" name="id_technician">
-                                    <option value=''> Chọn nhân viên</option>
-                                        @foreach($employees as $key => $val)
-                                            <option value = "{{$val['id']}}" <?php echo $val['id'] == $job['id_technician']?'selected' : ''  ?> >{{$val['fullname']}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                 </div>
-                 <input type="hidden" name ="claim_code" value ="{{$claimDetail['claim_code']}}">
-                            <button class='btn btn-success'>Sửa nhiệm vụ</button>
-                </form>
 
-
-            <?php } ?>
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->

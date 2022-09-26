@@ -13,13 +13,21 @@ class ManufacturerController extends Controller
 {
     
     public function index(){
-        if( !Session::get('admin'))
-        {
-            return view('backend.login');
+        if(Session::get('admin') != NULL && Session::get('admin')['role'] === 1){
+            // $claimwarranty = ClaimWarranty::paginate(5);;
 
-        } 
-        $data = Manufacturer::get()->toArray();
-        return view('backend.include.manufacturer.manufacturer',['data' => $data]);
+            $data = Manufacturer::get()->toArray();
+            return view('backend.include.manufacturer.manufacturer',['data' => $data]);
+        }
+        else if(Session::get('admin') != NULL && Session::get('admin')['role'] === 2){
+            return redirect()->route('employee');
+            // return view('frontend.pages.checkwarranty');
+            
+        }
+        else{
+            return view('backend.login');
+        }
+
     }
 
     public function manufacturer(){

@@ -19,14 +19,21 @@ class OrderController extends Controller
 {
     // Từ file views ->>> đi vào
     public function index(){
-        if( !Session::get('admin'))
-        {
+        if(Session::get('admin') != NULL && Session::get('admin')['role'] === 1){
+            // $claimwarranty = ClaimWarranty::paginate(5);;
+
+            $order = Order::get()->toArray();
+            return view('backend.include.order.order', ['order' => $order]);
+        }
+        else if(Session::get('admin') != NULL && Session::get('admin')['role'] === 2){
+            return redirect()->route('employee');
+            // return view('frontend.pages.checkwarranty');
+            
+        }
+        else{
             return view('backend.login');
+        }
 
-        } 
-        $order = Order::get()->toArray();
-
-        return view('backend.include.order.order', ['order' => $order]);
     }
 
     public function add(Request $request){

@@ -11,16 +11,24 @@ use Session;
 class SerialController extends Controller
 {
     public function index(){
-        if( !Session::get('admin'))
-        {
-            return view('backend.login');
+        if(Session::get('admin') != NULL && Session::get('admin')['role'] === 1){
+            // $claimwarranty = ClaimWarranty::paginate(5);;
 
-        } 
-        $serial = Serial::get()->toArray();
-        $serial_active = Serial::where(['status'=> 1])->get()->toArray();
-        $serial_not_active = Serial::where(['status'=> 0])->get()->toArray();
-        
-        return view('backend.include.serial.index',['serial' => $serial , 'serial_active'=>$serial_active ,'serial_not_active' => $serial_not_active]);
+            $serial = Serial::get()->toArray();
+            $serial_active = Serial::where(['status'=> 1])->get()->toArray();
+            $serial_not_active = Serial::where(['status'=> 0])->get()->toArray();
+            
+            return view('backend.include.serial.index',['serial' => $serial , 'serial_active'=>$serial_active ,'serial_not_active' => $serial_not_active]);
+        }
+        else if(Session::get('admin') != NULL && Session::get('admin')['role'] === 2){
+            return redirect()->route('employee');
+            // return view('frontend.pages.checkwarranty');
+            
+        }
+        else{
+            return view('backend.login');
+        }
+
     }
 
     public function serialAdd(){

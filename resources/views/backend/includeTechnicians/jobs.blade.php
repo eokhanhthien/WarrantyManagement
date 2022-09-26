@@ -1,8 +1,6 @@
-@extends('backend.layout')
-@section('order')
-<?php
-// print_r(Session::get('admin'));die;
-?>
+@extends('backend.layoutTechnician')
+@section('includeTechnicians')
+<link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.csss">
 <div class="container-fluid">
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
@@ -15,10 +13,10 @@
 
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Yêu cầu bảo hành</h3>
+                        <h3 class="text-themecolor">Công việc của bạn</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Yêu cầu bảo hành</li>
+                            <li class="breadcrumb-item active">Công việc của bạn</li>
                         </ol>
                     </div>
                     <div class="col-md-7 align-self-center">
@@ -31,48 +29,41 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <!-- <button class="btn btn-primary mr-10"> <a href="{{route('order-add')}}">Lập đơn mới</a> </button> -->
+                <!-- <button class="btn btn-success mr-10"> <a href="{{route('product-add')}}">Thêm sản phẩm</a> </button> -->
                 <div class="row">
                     <!-- column -->
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Danh sách đơn hàng</h4>
+                                <h4 class="card-title">Danh sách sản phẩm</h4>
                       
                                 <div class="table-responsive">
-                                    <table class="table" id="claimwarrantyTable">
+                                    <table class="table mb-3" id='productTable'>
                                         <thead>
                                             <tr>
                                                 <th>STT</th>
-                                                <th>Mã yêu cầu</th>
-                                                <th>Tên khách hàng</th>
-                                                <th>Trạng thái</th>
-                                                <th>Ngày yêu cầu</th>
-                                                <th>action</th>
+                                                <th>Mã đơn</th>
+                                                <th>Ngày nhận công việc</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($claimwarranty as $key => $val)
+                                        @foreach($jobemployee as $key => $val)
                                             <tr>
-                                                <td>{{$key+1}}</td>
-                                                <td>{{$val['claim_code']}}</td>
-                                                <td>{{$val['customer_name']}}</td>
-                                                <td><?php if($val['status'] === 0){ echo "Chưa xử lý"; }else if($val['status'] === 1){ echo "Đã giao công việc"; }else if($val['status'] === 2){ echo "Đồng ý bảo hành"; }else{echo "Từ chối bảo hành";} ?></td>
-                                                <td>{{date('d/m/Y' , strtotime($val['created_at']))}}</td>
+                                                <td>{{ $key+1 }}</td>
+                                                <td>{{ $val['order_code'] }}</td>
+                                                <td>{{ $val['created_at'] }}</td>
                                                 <td>
-                                                <a  href="{{route('claimwarranty-view-detail',$val['claim_code'])}}" ><button class='btn btn-primary'>Xem chi tiết</button></a>
-                                                    
-                                                
-                                                </td>               
+                                                    <a  href="{{route('employee-view-detail',$val['order_code'])}}" ><button class='btn btn-primary'>Xem chi tiết</button></a>
+                                                 
+                                                </td>
                                             </tr>
-                                            @endforeach
-                                       
-                                          
+                                        @endforeach
+
                                         </tbody>
                                     </table>
 
-                                    {{$claimwarranty->links('pagination::bootstrap-4')}}
-
+                                    <!-- {{$jobemployee->links('pagination::bootstrap-4')}} -->
                                 </div>
                             </div>
                         </div>
@@ -82,11 +73,13 @@
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
             </div>
+
+
             <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
             <br><script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js" defer ></script>            
             <script>
                 $(document).ready( function () {
-                    $('#claimwarrantyTable').DataTable({
+                    $('#productTable').DataTable({
                         paging: false,
                         ordering: false,
                         info: false,

@@ -110,7 +110,7 @@
                                 id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
                                     src="{{asset('backend/assets/images/users/1.jpg')}}" alt="user" class="" /> <span
                                     class="hidden-md-down">{{Session::get('admin')['username']}} &nbsp;</span> </a>
-                                    <a href="{{route('logout')}}"><button class='btn-cus    tom m-2'>  Đăng xuất</button></a>
+                                    <a href="{{route('logout')}}"><button class='btn btn-warning m-2'>  Đăng xuất</button></a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
                         </li>
                     </ul>
@@ -129,40 +129,19 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                         <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý sản phẩm</div></li>
+                         <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Công việc</div></li>
 
                         <li> <a class="waves-effect waves-dark" href="{{route('manufacturer')}} " aria-expanded="false"><i
-                                    class="fa fa-user-circle-o"></i><span class="hide-menu">Quản lý hãng</span></a>
+                                    class="fa fa-user-circle-o"></i><span class="hide-menu">Công việc được giao</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="{{route('product')}} " aria-expanded="false"><i
-                                    class="fa fa-table"></i><span class="hide-menu">Quản lý sản phẩm</span></a>
-                        </li>
-
-                        <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Kích hoạt bảo hành</div></li>
-                        <li> <a class="waves-effect waves-dark" href="{{route('order')}} "aria-expanded="false"><i
-                                    class="fa fa-tachometer"></i><span class="hide-menu">Hóa đơn mua hàng</span></a>
-                        </li>
-
-                        <li> <a class="waves-effect waves-dark" href="{{route('serial')}} " aria-expanded="false"><i
-                                    class="fa fa-smile-o"></i><span class="hide-menu">Quản lý Serial</span></a>
-                        </li>
+                       
 <!-- 
                         <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
                                     class="fa fa-globe"></i><span class="hide-menu">Kích hoạt online</span></a>
                         </li> -->
                         <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Yêu cầu bảo hành, bảo trì</div></li>
                     
-                        <li> <a class="waves-effect waves-dark" href="{{route('claim-warranty-show')}}" aria-expanded="false"><i
-                                    class="fa fa-globe"></i><span class="hide-menu">Bảo hành</span></a>
-                        </li>
-                        <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
-                                    class="fa fa-globe"></i><span class="hide-menu">Bảo trì</span></a>
-                        </li>
-                        <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý nhân viên</div></li>
                        
-                        <li> <a class="waves-effect waves-dark" href="{{route('technicians')}}" aria-expanded="false"><i
-                                    class="fa fa-globe"></i><span class="hide-menu">Kỹ thuật viên</span></a>
-                        </li>
 
                     </ul>
 
@@ -180,7 +159,7 @@
         <div class="page-wrapper">
 
 
-            @yield('order')
+            @yield('includeTechnicians')
            
             
          

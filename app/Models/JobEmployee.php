@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ClaimWarranty extends Model
+class JobEmployee extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = 'tbl_claim_warranty';
+    protected $table = 'tbl_job_employee';
     protected $fillable = [
-        'claim_code' , 'customer_name', 'status','type','created_at'
+        'id_technician', 'order_code' , 'created_at' 
     ];
 }

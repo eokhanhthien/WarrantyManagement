@@ -11,13 +11,21 @@ use Session;
 class ProductController extends Controller
 {
     public function index(){
-        if( !Session::get('admin'))
-        {
-            return view('backend.login');
+        if(Session::get('admin') != NULL && Session::get('admin')['role'] === 1){
+            // $claimwarranty = ClaimWarranty::paginate(5);;
 
-        } 
-        $data = Product::paginate(5);
-        return view('backend.include.product.index',['data' => $data]);
+            $data = Product::paginate(5);
+            return view('backend.include.product.index',['data' => $data]);
+        }
+        else if(Session::get('admin') != NULL && Session::get('admin')['role'] === 2){
+            return redirect()->route('employee');
+            // return view('frontend.pages.checkwarranty');
+            
+        }
+        else{
+            return view('backend.login');
+        }
+
     }
 
     public function productAdd(){
