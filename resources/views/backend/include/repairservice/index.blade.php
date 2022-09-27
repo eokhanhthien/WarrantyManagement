@@ -1,9 +1,5 @@
-@extends('backend.layoutTechnician')
-@section('includeTechnicians')
-<?php
-// echo "<pre>";
-//  print_r($jobemployee);die;
- ?>
+@extends('backend.layout')
+@section('order')
 <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.csss">
 <div class="container-fluid">
                 <!-- ============================================================== -->
@@ -17,10 +13,10 @@
 
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Công việc của bạn</h3>
+                        <h3 class="text-themecolor">Quản lý dịch vụ sửa chữa</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Công việc của bạn</li>
+                            <li class="breadcrumb-item active">Quản lý dịch vụ sửa chữa</li>
                         </ol>
                     </div>
                     <div class="col-md-7 align-self-center">
@@ -33,7 +29,7 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <!-- <button class="btn btn-success mr-10"> <a href="{{route('product-add')}}">Thêm sản phẩm</a> </button> -->
+                <button class="btn btn-success mr-10"> <a href="{{route('repair-service-add')}}">Thêm dịch vụ sửa chữa</a> </button>
                 <div class="row">
                     <!-- column -->
                     <div class="col-12">
@@ -46,22 +42,25 @@
                                         <thead>
                                             <tr>
                                                 <th>STT</th>
-                                                <th>Mã đơn</th>
-                                                <th>Ngày nhận công việc</th>
-                                                <th>Tình trạng</th>
+                                                <th>Tên dịch vụ</th>
+                                                <th>Giá</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($jobemployee as $key => $val)
+                                        @foreach($data as $key => $val)
                                             <tr>
                                                 <td>{{ $key+1 }}</td>
-                                                <td>{{ $val['order_code'] }}</td>
-                                                <td>{{ $val['created_at'] }}</td>
-                                                <td><?php echo $val['status'] === 1 ? 'Đang xử lý': 'Đã hoàn thành' ?></td>
+                                                <td>{{ $val['name'] }}</td>
+                                                <td>{{ $val['price'] }}</td>
+
                                                 <td>
-                                                    <a  href="{{route('employee-view-detail',$val['order_code'])}}" ><button class='btn btn-primary'>Xem chi tiết</button></a>
-                                                 
+                                                    <a  href="{{route('repair-service-edit',$val['id'])}}" ><button class='btn btn-primary'>Sửa</button></a>
+                                                    <form method="POST" action="{{route('repair-service-delete',$val['id'])}}">  
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn btn-danger mt-2'>Xóa</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -69,7 +68,7 @@
                                         </tbody>
                                     </table>
 
-                                    <!-- {{$jobemployee->links('pagination::bootstrap-4')}} -->
+                                    {{$data->links('pagination::bootstrap-4')}}
                                 </div>
                             </div>
                         </div>

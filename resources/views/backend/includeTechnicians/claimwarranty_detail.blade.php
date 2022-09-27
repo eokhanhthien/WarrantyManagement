@@ -75,6 +75,42 @@
                     </div>
                 </div>
 
+
+                <form action="{{route('solution')}}" method="post">
+                @csrf
+
+                <div class="row g-0 mb-10 mt-5">
+                    <div class="col col-xl-2">
+                        <strong><p class="address-tag">Hướng xử lý:</p> </strong>
+                    </div>
+                    <div class="col col-xl-8">
+                        <select name='solution' class="address-main wards">
+                            <option value="">----Chọn hướng xử lý----</option>
+                            <option value="1">Đồng ý bảo hành</option>
+                            <option value="2">Từ chối bảo hành</option>
+                            <option value="3">Sửa dịch vụ</option>
+                        </select>
+                    </div>
+                </div>
+                <input type="checkbox" id="1" name="'repair[]" value="1">
+                <label for="1"> I have a bike</label><br>                
+                <input type="checkbox" id="2" name="'repair[]" value="2">
+                <label for="2"> I have a bike</label><br>   
+                <input type="checkbox" id="3" name="'repair[]" value="3">
+                <label for="3"> I have a bike</label><br>   
+
+                <div class="row g-0 mb-10 mt-5">
+                    <div class="col col-xl-2">
+                        <strong><p class="address-tag">Ghi chú:</p> </strong>
+                    </div>
+                    <div class="col col-xl-8">
+                       <textarea name="note" id="" cols="30" rows="10" placeholder='Ghi chú cho sản phẩm'></textarea>
+                    </div>
+                </div>
+
+                <button type='submit' class ='btn btn-success'>Xác nhận</button>
+                </form>
+
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->

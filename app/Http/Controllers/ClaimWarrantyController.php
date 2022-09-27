@@ -51,6 +51,7 @@ class ClaimWarrantyController extends Controller
         $JobEmployee = new JobEmployee();
         $JobEmployee->id_technician = $data['id_technician'];
         $JobEmployee->order_code = $data['claim_code'];
+        $JobEmployee->status = 1;
         $JobEmployee->created_at = gmdate('Y-m-d H:i:s', time() + 7*3600);
         $JobEmployee->save();
 

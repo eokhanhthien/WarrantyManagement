@@ -27,4 +27,10 @@ class EmployeeController extends Controller
         return view('backend.includeTechnicians.claimwarranty_detail',['claimDetail' =>  $claimDetail]);
 
     }
+
+    function solution(Request $request){
+        $data =  $request->all();
+        echo "<pre>";
+        print_r($data);die;
+    }
 }

@@ -158,10 +158,15 @@
                         <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
                                     class="fa fa-globe"></i><span class="hide-menu">Bảo trì</span></a>
                         </li>
-                        <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý nhân viên</div></li>
+                        <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý nhân sự</div></li>
                        
                         <li> <a class="waves-effect waves-dark" href="{{route('technicians')}}" aria-expanded="false"><i
-                                    class="fa fa-globe"></i><span class="hide-menu">Kỹ thuật viên</span></a>
+                                    class="fa fa-globe"></i><span class="hide-menu">Thành viên</span></a>
+                        </li>
+
+                        <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý dịch vụ</div></li>
+                        <li> <a class="waves-effect waves-dark" href="{{route('repair-service')}}" aria-expanded="false"><i
+                                    class="fa fa-globe"></i><span class="hide-menu">Sữa chữa</span></a>
                         </li>
 
                     </ul>

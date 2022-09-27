@@ -10,6 +10,7 @@ use App\Http\Controllers\SerialController;
 use App\Http\Controllers\ClaimWarrantyController;
 use App\Http\Controllers\Technicianstroller;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\RepairServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,7 @@ Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
 // Technicians
 Route::get('/employee', [EmployeeController::class, 'index'])->name('employee');
 Route::get('/employee-view-detail/{order_code}', [EmployeeController::class, 'viewDtail'])->name('employee-view-detail');
+Route::post('/solution', [EmployeeController::class, 'solution'])->name('solution');
 
 
 // ORDER
@@ -100,3 +102,10 @@ Route::get('/technicians/{id}/edit', [Technicianstroller::class, 'edit'])->name(
 Route::post('/technicians/{id}/update', [Technicianstroller::class, 'update'])->name('technicians-update');
 Route::delete('/technicians/{id}/delete', [Technicianstroller::class, 'deletete'])->name('technicians-delete');
 
+//REPAIR SERVICE    
+Route::get('/repair-service', [RepairServiceController::class, 'index'])->name('repair-service');
+Route::get('/repair-service-add', [RepairServiceController::class, 'add'])->name('repair-service-add');
+Route::post('/add-repair-service', [RepairServiceController::class, 'addRepairService'])->name('add-repair-service');
+Route::get('/repair-service/{id}/edit', [RepairServiceController::class, 'edit'])->name('repair-service-edit');
+Route::post('/repair-service/{id}/update', [RepairServiceController::class, 'update'])->name('repair-service-update');
+Route::delete('/repair-service/{id}/delete', [RepairServiceController::class, 'deletete'])->name('repair-service-delete');
