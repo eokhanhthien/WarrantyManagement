@@ -150,7 +150,7 @@
                     <div class="row mt-3 g-0">
                         <div class="col-4"> <p class="label-add-order">Ghi chú:</p> </div>
                         <div class="col-8">
-                            <textarea name="data_order[note]" id="" cols="50" rows="10"></textarea>
+                            <textarea name="data_order[note]" id="" cols="50" rows="10" required></textarea>
                         </div>
                     </div>
 

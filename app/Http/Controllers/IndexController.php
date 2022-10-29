@@ -62,7 +62,8 @@ class IndexController extends Controller
             if( date('d/m/Y' , strtotime($findOrder[0]['created_at'])) === date('d/m/Y' , strtotime($data['date-buy']))){
                 $product = OrderDetail::where(['order_code'=> $data['order_code'] ,'product_id' => $data['product_id'] , 'product_serial' => $data['product_serial'] ])->get()->toArray();
                 if(isset($product) && $product != NULL){
-                $findSerial= Serial::where(['id_product'=> $data['product_id']])->get()->first()->toArray();
+                $findSerial= Serial::where(['id_product'=> $data['product_id'], 'serial_number' => $data['product_serial']])->get()->first()->toArray();
+                // print_r($findSerial);die;
                  if($findSerial['status'] === 0){
                       Session::put('isWarranty', [
                     'status' => 0,
@@ -161,6 +162,7 @@ class IndexController extends Controller
 
                     $claimwarrantydetail->customer_name = $data['customer_name'];
                     $claimwarrantydetail->claim_code = $checkout_code;
+                    $claimwarrantydetail->type = 1;
                     $claimwarrantydetail->customer_email = $data['customer_email'];
                     $claimwarrantydetail->customer_phone = $data['customer_phone'];
                     $claimwarrantydetail->product_serial = $data['product_serial'];

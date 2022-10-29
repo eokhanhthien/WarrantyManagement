@@ -36,11 +36,11 @@ class ClaimWarrantyController extends Controller
         // print_r($claim_code);die;
         $claimDetail = ClaimWarrantyDetail::where(['claim_code'=> $claim_code])->get()->first()->toArray();
         $claimwarranty = ClaimWarranty::where(['claim_code'=> $claim_code])->get()->first()->toArray();
-        $job = JobEmployee::where(['order_code'=> $claim_code])->get()->first()->toArray();
+        $job = JobEmployee::where(['order_code'=> $claim_code])->get()->toArray();
         $employees=  Admin::where(['role'=> 2])->get()->toArray();
         // $info_order = Order::where(['claim_code'=> $claim_code])->get()->first()->toArray();
         // echo "<pre>";
-        // print_r($employees);die;
+        // print_r($job);die;
 
         return view('backend.include.claimwarranty.claimwarranty_detail',['claimDetail' =>  $claimDetail , 'employees' => $employees ,'claimwarranty' => $claimwarranty ,'job' => $job]);
 
@@ -64,7 +64,7 @@ class ClaimWarrantyController extends Controller
 
     function jobTurn(Request $request , $id){
         $data =  $request->all();
-
+        // print_r($data['id_technician']);die;
         $JobEmployee = JobEmployee::find($id);
         $JobEmployee->id_technician = $data['id_technician'];
         $JobEmployee->created_at = gmdate('Y-m-d H:i:s', time() + 7*3600);

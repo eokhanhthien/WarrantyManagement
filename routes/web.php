@@ -11,7 +11,7 @@ use App\Http\Controllers\ClaimWarrantyController;
 use App\Http\Controllers\Technicianstroller;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\RepairServiceController;
-
+use App\Http\Controllers\StatisticalController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,6 +47,7 @@ Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
 Route::get('/employee', [EmployeeController::class, 'index'])->name('employee');
 Route::get('/employee-view-detail/{order_code}', [EmployeeController::class, 'viewDtail'])->name('employee-view-detail');
 Route::post('/solution', [EmployeeController::class, 'solution'])->name('solution');
+Route::get('/comfirm-fisnish/{order_code}', [EmployeeController::class, 'comfirmFisnish'])->name('comfirm-fisnish');
 
 
 // ORDER
@@ -109,3 +110,7 @@ Route::post('/add-repair-service', [RepairServiceController::class, 'addRepairSe
 Route::get('/repair-service/{id}/edit', [RepairServiceController::class, 'edit'])->name('repair-service-edit');
 Route::post('/repair-service/{id}/update', [RepairServiceController::class, 'update'])->name('repair-service-update');
 Route::delete('/repair-service/{id}/delete', [RepairServiceController::class, 'deletete'])->name('repair-service-delete');
+
+
+// statistical
+Route::get('/statistical', [StatisticalController::class, 'index'])->name('statistical');

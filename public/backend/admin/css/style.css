@@ -6073,3 +6073,10 @@ File: scss
     overflow: hidden;
   }
 }
+
+label {
+  color: black;
+}
+.row {
+  color: black;
+}

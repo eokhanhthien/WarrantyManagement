@@ -11,6 +11,6 @@ class ClaimWarrantyDetail extends Model
     public $timestamps = false;
     protected $table = 'tbl_claim_warranty_detail';
     protected $fillable = [
-        'claim_code','customer_name' , 'customer_email' , 'customer_phone' , 'product_serial' , 'product_id' , 'address_city' , 'address_province' , 'address_wards' , 
+        'claim_code','type','customer_name' , 'customer_email' , 'customer_phone' , 'product_serial' , 'product_id' , 'address_city' , 'address_province' , 'address_wards' , 
     ];
 }
