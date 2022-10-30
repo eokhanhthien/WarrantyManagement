@@ -171,7 +171,7 @@
 
                         <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Thống kê</div></li>
                         <li> <a class="waves-effect waves-dark" href="{{route('statistical')}}" aria-expanded="false"><i
-                                    class="fa fa-globe"></i><span class="hide-menu">Nhân viên</span></a>
+                                    class="fa fa-globe"></i><span class="hide-menu">Công việc</span></a>
                         </li>
 
                     </ul>

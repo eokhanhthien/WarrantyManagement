@@ -211,7 +211,8 @@
                     </div>
                     </div>
 
-                    <button class='btn btn-success'>Xác nhận đã hoàn thành</button>
+                    <a  href="{{route('comfirm-fisnish',$jobemployee['order_code'])}}" ><button class='btn btn-success'>Xác nhận đã hoàn thành</button></a>
+
                 <?php }else{?>
                     <h2 style = "color: green;" >Đã hoàn thành</h2>
                 <?php }?>
