@@ -111,7 +111,16 @@
 
 
             <?php }else{ ?>
-                <h3>Đơn đang được thực hiện</h3>
+                <div class="row">
+                <h4 class="col-4" style=" color : blue" >Đơn đang được thực hiện bởi kỹ thuật viên:</h4>
+                <div class="col-2">
+                <select class="input-add-order" name="id_technician">
+                                        @foreach($employees as $key => $val)
+                                            <option value = "{{$val['id']}}" <?php echo $val['id'] == $job[0]['id_technician']?'selected' : ''  ?> >{{$val['fullname']}}</option>
+                                        @endforeach
+                </select>
+            </div>
+        </div>
             <?php } ?>
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->

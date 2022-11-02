@@ -138,8 +138,9 @@ class IndexController extends Controller
         $data =  $request->all();
         // echo "<pre>";
         // print_r($data);die;
+        $ISclaimwarrantydetail = ClaimWarrantyDetail::where(['product_serial' => $data['product_serial']])->get()->first();;
         $product = Serial::where(['id_product' => $data['product_id'] , 'serial_number' => $data['product_serial'] ])->get()->first();
-
+    if( !isset($ISclaimwarrantydetail) && $ISclaimwarrantydetail == NULL){
         if(isset($product) && $product != NULL){
         $product = Serial::where(['id_product' => $data['product_id'] , 'serial_number' => $data['product_serial'] ])->get()->first()->toArray();
             if($product['activate_time'] <= $product['expired_time']){
@@ -197,6 +198,10 @@ class IndexController extends Controller
         else{
             return redirect()->route('claim-warranty')->with('message','Không tìm thấy sản phẩm tương tự');
         }
+    }  
+    else{
+        return redirect()->route('claim-warranty')->with('message','Sản phẩm này đã được yêu cầu trước đó');
+    }
 
         // if($product[0]['id']);
         

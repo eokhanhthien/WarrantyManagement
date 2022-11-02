@@ -101,7 +101,7 @@
                     </div>  
                 @endforeach
         <!-- Cong viec chua hoan thanh -->
-        <h3 class="mt-5">Công chưa hoàn thành <img style ="width: 40px;" src="{{asset('frontend/images/nowaranty.png')}}"></h3>
+        <h3 class="mt-5">Công việc chưa hoàn thành <img style ="width: 40px;" src="{{asset('frontend/images/nowaranty.png')}}"></h3>
                 @foreach($employee as $keyid => $idEmployee)
                 <?php 
                 $totalJob=0;
@@ -235,7 +235,7 @@
                         <div class="col col-5  ">
                             <div class="graph" style ="width: <?php echo $width ?>%"  ></div>
                         </div>
-                        <div class="col col-2  point_employee"><strong> <strong><?php echo $active ?> serial </strong></strong> </div>    
+                        <div class="col col-2  point_employee"><strong> <strong><?php echo $notActive ?> serial </strong></strong> </div>    
                 </div> 
 
               
