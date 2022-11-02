@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\JobEmployee;
 use App\Models\Admin;
 use App\Models\Serial;
+use App\Models\Product;
+use App\Models\Manufacturer;
 use Session;
 
 class StatisticalController extends Controller
@@ -19,6 +21,7 @@ class StatisticalController extends Controller
         $jobemployee = JobEmployee::get()->toArray();
         $employee = Admin::get()->toArray();
         $serial = Serial::get()->toArray();
+        
         $array = [];
         foreach($employee as $value){
             if($value['id'] != 5){
@@ -26,8 +29,16 @@ class StatisticalController extends Controller
             }
             
         }
+        $product = Product::get()->toArray();
+        $manufacturer = Manufacturer::get()->toArray();
+
+        $arrayManu = [];
+        foreach($manufacturer as $value){
+                $arrayManu[] = $value['id']; 
+        }
+
         // echo "<pre>";
-        // print_r($array);die;
-        return view('backend.include.statistical.statistical',['jobemployee'=> $jobemployee , 'employee' => $array ,'name' => $employee ,'serial'=>$serial] );
+        // print_r($arrayManu);die;
+        return view('backend.include.statistical.statistical',['jobemployee'=> $jobemployee , 'employee' => $array ,'name' => $employee ,'serial'=>$serial ,'product'=> $product , 'manufacturer' => $arrayManu ,'manufacturerName' => $manufacturer] );
     }
 }

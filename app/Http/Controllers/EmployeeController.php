@@ -53,6 +53,9 @@ class EmployeeController extends Controller
         // print_r($JobEmployee);die;
 
             $JobEmployee->status = $data['solution'];
+            $claimWarranty = ClaimWarranty::where(['claim_code'=> $JobEmployee['order_code']])->get()->first();
+            $claimWarranty->status = $data['solution'];
+            $claimWarranty->save();
             $JobEmployee->save();
     
             return redirect()->back();
@@ -60,9 +63,11 @@ class EmployeeController extends Controller
 
     function comfirmFisnish($claim_code){
             $jobemployee = JobEmployee::where(['order_code'=> $claim_code])->get()->first();
-            // print_r($jobemployee);die;
-
+            $claimWarranty = ClaimWarranty::where(['claim_code'=> $claim_code])->get()->first();
+            // print_r($claimWarranty);die;
+            $claimWarranty->status = 5;
             $jobemployee->status = 5;
+            $claimWarranty->save();
             $jobemployee->save();
     
             return redirect()->back();

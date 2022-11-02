@@ -59,7 +59,7 @@
                                                 <td>{{ $val['order_code'] }}</td>
                                                 <td>{{ $val['created_at'] }}</td>
                                                 <td><?php if($val['status'] === 1){?>
-                                                   <p>Chưa xử lý </p>
+                                                   <p>Chưa xử lý <img style ="width: 40px;" src="{{asset('frontend/images/new.png')}}"></p>
                                                     <?php } elseif($val['status'] === 2 ){?>
                                                   <p>Đang sửa (Bảo hành)<img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"> </p>
                                                     <?php }elseif($val['status'] === 3){?>

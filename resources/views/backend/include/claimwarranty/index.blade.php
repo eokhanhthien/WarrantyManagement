@@ -57,7 +57,22 @@
                                                 <td>{{$key+1}}</td>
                                                 <td>{{$val['claim_code']}}</td>
                                                 <td>{{$val['customer_name']}}</td>
-                                                <td><?php if($val['status'] === 0){ echo "Chưa xử lý"; }else if($val['status'] === 1){ echo "Đã giao công việc"; }else if($val['status'] === 2){ echo "Đồng ý bảo hành"; }else{echo "Từ chối bảo hành";} ?></td>
+                                                <!-- <td><?php if($val['status'] === 0){ echo "Chưa xử lý"; }else if($val['status'] === 1){ echo "Đã giao công việc"; }else if($val['status'] === 2){ echo "Đồng ý bảo hành"; }else{echo "Từ chối bảo hành";} ?></td> -->
+                                                <td><?php if($val['status'] === 0){?>
+                                                   <p>Chưa xử lý <img style ="width: 40px;" src="{{asset('frontend/images/new.png')}}"></p>
+                                                    <?php } elseif($val['status'] === 1 ){?>
+                                                  <p>Đã giao công việc <img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"> </p>
+                                                    <?php }elseif($val['status'] === 2 ){?>
+                                                  <p>Đang sửa (Bảo hành) <img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"> </p>
+                                                    <?php }elseif($val['status'] === 3){?>
+                                                  <p>Từ chối bảo hành<img style ="width: 40px;" src="{{asset('frontend/images/cancel.png')}}"> </p>
+                                                    <?php }elseif($val['status'] === 4){?> 
+                                                  <p>Đang sửa (Dịch vụ) <img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"> </p>
+                                                  <?php }else {?> 
+                                                  <p>Hoàn thành<img style ="width: 40px;" src="{{asset('frontend/images/checkmark.png')}}"> </p>
+                                                    <?php } ?> 
+                                                
+                                                </td>
                                                 <td>{{date('d/m/Y' , strtotime($val['created_at']))}}</td>
                                                 <td>
                                                 <a  href="{{route('claimwarranty-view-detail',$val['claim_code'])}}" ><button class='btn btn-primary'>Xem chi tiết</button></a>

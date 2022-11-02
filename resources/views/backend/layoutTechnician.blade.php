@@ -108,9 +108,14 @@
                         <li class="nav-item dropdown u-pro">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="#"
                                 id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                    src="{{asset('backend/assets/images/users/1.jpg')}}" alt="user" class="" /> <span
+                                    src="{{asset('frontend/images/technician.png')}}" alt="user" class="" /> <span
                                     class="hidden-md-down">{{Session::get('admin')['username']}} &nbsp;</span> </a>
-                                    <a href="{{route('logout')}}"><button class='btn btn-warning m-2'>  Đăng xuất</button></a>
+                                    <a href="{{route('logout')}}"><button class='btncustom m-2' style ="
+                                                background-color: cornflowerblue !important;
+                                                padding: 6px;
+                                                border: none;
+                                                border-radius: 4px;
+                                                color: white;">  Đăng xuất</button></a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
                         </li>
                     </ul>

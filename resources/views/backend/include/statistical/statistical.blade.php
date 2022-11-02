@@ -10,11 +10,12 @@
                             <li class="breadcrumb-item active">Thống kê công việc</li>
                         </ol>
                     </div>
-                    <h3>Thống kê công việc của nhân viên (Tất cả)</h3>
+                    <h3>Tất cả công việc<img style ="width: 40px;" src="{{asset('frontend/images/member.png')}}"></h3>
                     <div class="col-md-7 align-self-center">
                     </div>
                 </div>
-
+                <div style="color: #00a924;
+                            font-weight: 600;">Tổng công việc: {{count($jobemployee)}} đơn</div>
 
                 @foreach($employee as $keyid => $idEmployee)
                 <?php 
@@ -56,15 +57,108 @@
 
 
 
-                <h3 class="mt-4">Công việc đã hoàn thành</h3>
+                <h3 class="mt-5">Công việc đã hoàn thành <img style ="width: 40px;" src="{{asset('frontend/images/work.png')}}"></h3>
                 @foreach($employee as $keyid => $idEmployee)
                 <?php 
                 $totalJob=0;
                 $total = count($jobemployee);
 
                 ?>  
+                
                 @foreach($jobemployee as $key => $val)
                     @if($idEmployee===$val['id_technician'] && $val['status'] === 5 )
+                    <?php 
+                        $totalJob ++;
+                    ?>
+                    @elseif($idEmployee===$val['id_technician'] && $val['status'] === 3 )
+                    <?php 
+                        $totalJob ++;
+                    ?>
+                    @endif
+                @endforeach
+
+                
+                <div class="statistical_employee mt-2">
+                    <div class="row"> 
+               
+                        <div class="col col-1 name_employee">
+                            <?php 
+                                foreach($name as $kay => $idem){
+                                    if($idEmployee == $idem['id']){
+                                        echo $idem['fullname'];
+                                    }
+                                }
+                            ?>
+                        </div>
+                        <?php
+                            $width = ($totalJob/$total)*100;
+                        ?>
+                        <div class="col col-5  ">
+                            <div class="graph" style ="width: <?php echo $width ?>%"  ></div>
+                        </div>
+                        <div class="col col-2  point_employee"><strong><strong><?php echo $totalJob ?> đơn</strong></strong> </div>
+                        </div>
+                    </div>  
+                @endforeach
+        <!-- Cong viec chua hoan thanh -->
+        <h3 class="mt-5">Công chưa hoàn thành <img style ="width: 40px;" src="{{asset('frontend/images/nowaranty.png')}}"></h3>
+                @foreach($employee as $keyid => $idEmployee)
+                <?php 
+                $totalJob=0;
+                $total = count($jobemployee);
+
+                ?>  
+                
+                @foreach($jobemployee as $key => $val)
+                    @if($idEmployee===$val['id_technician'] && $val['status'] === 1 )
+                    <?php 
+                        $totalJob ++;
+                    ?>
+                    @elseif($idEmployee===$val['id_technician'] && $val['status'] === 2 )
+                    <?php 
+                        $totalJob ++;
+                    ?>
+                    @elseif($idEmployee===$val['id_technician'] && $val['status'] === 4 )
+                    <?php 
+                        $totalJob ++;
+                    ?>
+                    @endif
+                @endforeach
+
+                
+                <div class="statistical_employee mt-2">
+                    <div class="row"> 
+               
+                        <div class="col col-1 name_employee">
+                            <?php 
+                                foreach($name as $kay => $idem){
+                                    if($idEmployee == $idem['id']){
+                                        echo $idem['fullname'];
+                                    }
+                                }
+                            ?>
+                        </div>
+                        <?php
+                            $width = ($totalJob/$total)*100;
+                        ?>
+                        <div class="col col-5  ">
+                            <div class="graph" style ="width: <?php echo $width ?>%"  ></div>
+                        </div>
+                        <div class="col col-2  point_employee"><strong><strong><?php echo $totalJob ?> đơn</strong></strong> </div>
+                        </div>
+                    </div>  
+                @endforeach
+        <!-- BI tu choi bao hanh -->
+                <h3 class="mt-5">Đơn bị từ chối bảo hành <img style ="width: 40px;" src="{{asset('frontend/images/nowaranty.png')}}"></h3>
+                @foreach($employee as $keyid => $idEmployee)
+                <?php 
+                $totalJob=0;
+                $total = count($jobemployee);
+
+                ?>  
+                
+                @foreach($jobemployee as $key => $val)
+                    @if($idEmployee===$val['id_technician'] && $val['status'] === 3 )
                     <?php 
                         $totalJob ++;
                     ?>  
@@ -95,8 +189,7 @@
                     </div>  
                 @endforeach
 
-
-                <h3 class="mt-4">Thống kê số serial</h3>
+                <h3 class="mt-5">Thống kê số serial <img style ="width: 40px;" src="{{asset('frontend/images/seri.png')}}"></h3>
                 <?php 
                 $totalSeri = count($serial);
                 $active = 0;
@@ -145,7 +238,46 @@
                         <div class="col col-2  point_employee"><strong> <strong><?php echo $active ?> serial </strong></strong> </div>    
                 </div> 
 
+              
                 
+                <h3 class="mt-5">Sản phẩm <img style ="width: 40px;" src="{{asset('frontend/images/product.png')}}"></h3>
+                @foreach($manufacturer as $keyid => $idManufacturer)
+                <?php 
+                $totalproduct=0;
+                $total = count($manufacturer);
+
+                ?>  
+                @foreach($product as $key => $val)
+                    @if($idManufacturer===$val['id_manu']  )
+                    <?php 
+                        $totalproduct ++;
+                    ?>  
+                    @endif
+                @endforeach
+
+                
+                <div class="statistical_employee mt-2">
+                    <div class="row"> 
+               
+                        <div class="col col-1 name_employee">
+                            <?php 
+                                foreach($manufacturerName as $kay => $namebrand){
+                                    if($idManufacturer == $namebrand['id']){
+                                        echo $namebrand['name'];
+                                    }
+                                }
+                            ?>
+                        </div>
+                        <?php
+                            $width = ($totalproduct/$total)*100;
+                        ?>
+                        <div class="col col-5  ">
+                            <div class="graph" style ="width: <?php echo $width ?>%"  ></div>
+                        </div>
+                        <div class="col col-2  point_employee"><strong><strong><?php echo $totalproduct ?> sản phẩm</strong></strong> </div>
+                        </div>
+                    </div>  
+                @endforeach
 </div>
 
 @endsection

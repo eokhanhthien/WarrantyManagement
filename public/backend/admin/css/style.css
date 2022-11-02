@@ -6080,3 +6080,11 @@ label {
 .row {
   color: black;
 }
+
+.solution_No,
+.solution_Yes{
+  display: none;
+}
+.active_solution{
+  display: block;
+}

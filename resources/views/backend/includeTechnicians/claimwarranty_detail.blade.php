@@ -91,7 +91,7 @@
                         <strong><p class="address-tag">Hướng xử lý:</p> </strong>
                     </div>
                     <div class="col col-xl-8">
-                        <select name='solution' class="address-main wards" required>
+                        <select name='solution' class="address-main wards" id="choose_solution" required>
                             <option value="">----Chọn hướng xử lý----</option>
                             <option value="2">Đồng ý bảo hành</option>
                             <option value="3">Từ chối bảo hành</option>
@@ -100,10 +100,27 @@
                     </div>
                 </div>
 
+                <div class= "solution_No">
+                        <input type="checkbox" id="NoRepair" name="repair[]" value="0">
+                        <label for="NoRepair"  style = "color: red"> Xác nhận từ chối bảo hành</label><br>  
+                </div>
+
+                <div class= "solution_Yes">
                 @foreach($repairservice as $key => $val)
-                <input type="checkbox" id="{{$key}}" name="repair[]" value="{{$val['id']}}">
+                <input type="checkbox" id="{{$key}}" name="repair[]" value="{{$val['id']}}" >
                 <label for="{{$key}}"> {{$val['name']}}</label><br>    
                 @endforeach
+                </div>
+                
+                <div class="row g-0 mb-10 mt-5">
+                    <div class="col col-xl-2">
+                        <strong><p class="address-tag">Ghi chú:</p> </strong>
+                    </div>
+                    <div class="col col-xl-8">
+                       <textarea name="note" id="" cols="30" rows="10" placeholder='Ghi chú cho sản phẩm' ></textarea>
+                    </div>
+                </div>
+
                 <!-- <input type="checkbox" id="1" name="'repair[]" value="1">
                 <label for="1"> I have a bike</label><br>                
                 <input type="checkbox" id="2" name="'repair[]" value="2">
@@ -113,14 +130,7 @@
                 <input type="hidden" name="order_code" value=" <?php echo $jobemployee['order_code'] ?>">
                 <input type="hidden" name="id" value=" <?php echo $jobemployee['id'] ?>">
 
-                <div class="row g-0 mb-10 mt-5">
-                    <div class="col col-xl-2">
-                        <strong><p class="address-tag">Ghi chú:</p> </strong>
-                    </div>
-                    <div class="col col-xl-8">
-                       <textarea name="note" id="" cols="30" rows="10" placeholder='Ghi chú cho sản phẩm'></textarea>
-                    </div>
-                </div>
+
 
                 <button type='submit' class ='btn btn-success'>Xác nhận</button>
                 </form>
@@ -223,5 +233,19 @@
 
 
             </div>
-
+            <script>
+            var choose_solution = document.querySelector("#choose_solution");
+            var solution_No = document.querySelector(".solution_No");
+            var solution_Yes = document.querySelector(".solution_Yes");
+            choose_solution.onchange = () =>{
+                solution_Yes.classList.remove("active_solution")
+                solution_No.classList.remove("active_solution")
+                if(choose_solution.value == 2 || choose_solution.value == 4){
+                    solution_Yes.classList.add("active_solution")
+                }
+                else if(choose_solution.value == 3){
+                    solution_No.classList.add("active_solution")
+                }
+            }
+            </script>
 @endsection

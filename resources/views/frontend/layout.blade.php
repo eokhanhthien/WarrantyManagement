@@ -7,6 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{asset('frontend/images/warranty.png')}}">
 
         <title>Trang chủ</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -34,7 +35,7 @@
                             <div class="col col-2  <?php if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] == '/register-warranty' || isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] == '/register-warranty-info-customer' ) { echo "header-active";}  {echo " ";} ?>"> <a  href="{{route('register-warranty')}}" style=' text-decoration: none;'><p class='header-nav '>Đăng ký sản phẩm</p></a> </div>
                             <div class="col col-3  <?php if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] == '/check-warranty' ) { echo "header-active";}  {echo " ";} ?>"> <a  href="{{route('check-warranty')}}" style=' text-decoration: none;'><p class='header-nav '>Kiểm tra tình trạng bảo hành</p></a> </div>
                             <div class="col col-2 <?php if(isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] == '/claim-warranty' ) { echo "header-active";}  {echo " ";} ?>"> <a  href="{{route('claim-warranty')}}" style=' text-decoration: none;'><p class='header-nav '>Yêu cầu bảo hành</p></a> </div>
-                            <div class="col col-2"><p class='header-nav'>Đặt lịch bảo trì online</p></div>
+                            <!-- <div class="col col-2"><p class='header-nav'>Đặt lịch bảo trì online</p></div> -->
                         </div>
                     </div>
                 
