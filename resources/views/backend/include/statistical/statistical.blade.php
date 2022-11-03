@@ -10,12 +10,70 @@
                             <li class="breadcrumb-item active">Thống kê công việc</li>
                         </ol>
                     </div>
-                    <h3>Tất cả công việc<img style ="width: 40px;" src="{{asset('frontend/images/member.png')}}"></h3>
+                    <h3>Tất cả công việc<img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"></h3>
                     <div class="col-md-7 align-self-center">
                     </div>
                 </div>
+
+                <div class="row"> 
+               
+               <div class="col col-1 name_employee">
+                   Tất cả công việc
+               </div>
+               <div class="col col-5  ">
+                   <div class="graph" style ="width: 100%"  ></div>
+               </div>
+               <div class="col col-2  point_employee"><strong><strong>{{count($jobemployee)}} công việc</strong></strong> </div>
+               </div>
+
+                <?php 
+                  $totalFinal = 0;
+                  $totalJob = count($jobemployee);
+                ?>
+
+               @foreach($jobemployee as $key => $val) 
+                  <?php if( $val['status'] == 5 || $val['status'] == 3){ 
+                    $totalFinal ++;
+                  }
+                  ?>
+                @endforeach
+
+
+            <div class="row mt-2"> 
+               
+               <div class="col col-1 name_employee">
+                   Đã hoàn thành
+               </div>
+                        <?php
+                            $width = ($totalFinal/$totalJob)*100;
+                        ?>
+               <div class="col col-5  ">
+                    <div class="graph" style ="width: <?php echo $width ?>%"  ></div>
+               </div>
+               <div class="col col-2  point_employee"><strong><strong>{{$totalFinal}} công việc</strong></strong> </div>
+            </div>
+
+            <div class="row mt-2"> 
+               
+               <div class="col col-1 name_employee">
+                   Chưa hoàn thành
+               </div>
+                        <?php
+                            $width = (($totalJob - $totalFinal)/$totalJob)*100;
+                        ?>
+               <div class="col col-5  ">
+                    <div class="graph" style ="width: <?php echo $width ?>%"  ></div>
+               </div>
+               <div class="col col-2  point_employee"><strong><strong>{{$totalJob - $totalFinal}} công việc</strong></strong> </div>
+            </div>
+
+
+
+            <h3 class="mt-5">Công việc theo từng nhân viên <img style ="width: 40px;" src="{{asset('frontend/images/member.png')}}"></h3>
+
                 <div style="color: #00a924;
-                            font-weight: 600;">Tổng công việc: {{count($jobemployee)}} đơn</div>
+                            font-weight: 600;">Tất cả công việc</div>
+
 
                 @foreach($employee as $keyid => $idEmployee)
                 <?php 
@@ -57,7 +115,8 @@
 
 
 
-                <h3 class="mt-5">Công việc đã hoàn thành <img style ="width: 40px;" src="{{asset('frontend/images/work.png')}}"></h3>
+                <div style="color: #00a924;
+                            font-weight: 600;">Đã hoàn thành</div>
                 @foreach($employee as $keyid => $idEmployee)
                 <?php 
                 $totalJob=0;
@@ -101,7 +160,8 @@
                     </div>  
                 @endforeach
         <!-- Cong viec chua hoan thanh -->
-        <h3 class="mt-5">Công việc chưa hoàn thành <img style ="width: 40px;" src="{{asset('frontend/images/nowaranty.png')}}"></h3>
+        <div style="color: #00a924;
+                            font-weight: 600;">Chưa hoàn thành</div>
                 @foreach($employee as $keyid => $idEmployee)
                 <?php 
                 $totalJob=0;
@@ -149,7 +209,8 @@
                     </div>  
                 @endforeach
         <!-- BI tu choi bao hanh -->
-                <h3 class="mt-5">Đơn bị từ chối bảo hành <img style ="width: 40px;" src="{{asset('frontend/images/nowaranty.png')}}"></h3>
+        <div style="color: #00a924;
+                            font-weight: 600;">Đã từ chối bảo hành</div>
                 @foreach($employee as $keyid => $idEmployee)
                 <?php 
                 $totalJob=0;
@@ -182,7 +243,7 @@
                             $width = ($totalJob/$total)*100;
                         ?>
                         <div class="col col-5  ">
-                            <div class="graph" style ="width: <?php echo $width ?>%"  ></div>
+                            <div class="graph" style ="width: <?php echo $width ?>%; background-color: #ff4c4c;"  ></div>
                         </div>
                         <div class="col col-2  point_employee"><strong><strong><?php echo $totalJob ?> đơn</strong></strong> </div>
                         </div>
@@ -211,7 +272,7 @@
                             $width = 100;
                         ?>
                         <div class="col col-5  ">
-                            <div class="graph" style ="width: <?php echo $width ?>%"  ></div>
+                            <div class="graph" style ="width: <?php echo $width ?>%;background-color: #51f19c;"  ></div>
                         </div>
                         <div class="col col-2  point_employee"><strong> <strong><?php echo $totalSeri ?> serial </strong></strong> </div>    
                 </div>  
@@ -222,7 +283,7 @@
                             $width = ($active/$totalSeri)*100;
                         ?>
                         <div class="col col-5  ">
-                            <div class="graph" style ="width: <?php echo $width ?>%"  ></div>
+                            <div class="graph" style ="width: <?php echo $width ?>% ; background-color: #51f19c;"  ></div>
                         </div>
                         <div class="col col-2  point_employee"><strong> <strong><?php echo $active ?> serial </strong></strong> </div>    
                 </div> 
@@ -233,7 +294,7 @@
                             $width = ($notActive/$totalSeri)*100;
                         ?>
                         <div class="col col-5  ">
-                            <div class="graph" style ="width: <?php echo $width ?>%"  ></div>
+                            <div class="graph" style ="width: <?php echo $width ?>%;background-color: #51f19c;"  ></div>
                         </div>
                         <div class="col col-2  point_employee"><strong> <strong><?php echo $notActive ?> serial </strong></strong> </div>    
                 </div> 
@@ -272,7 +333,7 @@
                             $width = ($totalproduct/$total)*100;
                         ?>
                         <div class="col col-5  ">
-                            <div class="graph" style ="width: <?php echo $width ?>%"  ></div>
+                            <div class="graph" style ="width: <?php echo $width ?>% ;background-color: #16d7ff;"  ></div>
                         </div>
                         <div class="col col-2  point_employee"><strong><strong><?php echo $totalproduct ?> sản phẩm</strong></strong> </div>
                         </div>

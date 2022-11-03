@@ -106,11 +106,11 @@
                                                 <td>{{ ($val['status'])==1?date('d/m/Y' , strtotime("+".$val['warranty_time']."months", strtotime($val['activate_time']))): 'Chưa kích hoạt' }}</td>
 
                                                 <td>
-                                                    <a  href="{{route('serial-edit',$val['id'])}}" ><button class='btn-ct btn-primary'>Sửa</button></a>
+                                                    <a  href="{{route('serial-edit',$val['id'])}}" ><button class='btn-ct btn-primary'><img style ="width: 40px;" src="{{asset('frontend/images/edit.png')}}"></button></a>
                                                     <form method="POST" action="{{route('serial-delete',$val['id'])}}">  
                                                         @method('DELETE')
                                                         @csrf
-                                                        <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn-ct btn-danger mt-2'>Xóa</button>
+                                                        <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn-ct btn-danger mt-2'><img style ="width: 40px;" src="{{asset('frontend/images/remove.png')}}"></button>
                                                     </form>
                                                 </td>
                                             </tr>
@@ -160,11 +160,11 @@
                                                 <td>{{ ($val['status'])==1?date('d/m/Y' , strtotime("+".$val['warranty_time']."months", strtotime($val['activate_time']))): 'Chưa kích hoạt' }}</td>
 
                                                 <td>
-                                                    <a  href="{{route('serial-edit',$val['id'])}}" ><button class='btn-ct btn-primary'>Sửa</button></a>
+                                                    <a  href="{{route('serial-edit',$val['id'])}}" ><button class='btn-ct btn-primary'><img style ="width: 40px;" src="{{asset('frontend/images/edit.png')}}"></button></a>
                                                     <form method="POST" action="{{route('serial-delete',$val['id'])}}">  
                                                         @method('DELETE')
                                                         @csrf
-                                                        <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn-ct btn-danger mt-2'>Xóa</button>
+                                                        <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn-ct btn-danger mt-2'><img style ="width: 40px;" src="{{asset('frontend/images/remove.png')}}"></button>
                                                     </form>
                                                 </td>
                                             </tr>
@@ -214,11 +214,11 @@
                                                 <td>{{ ($val['status'])==1?date('d/m/Y' , strtotime("+".$val['warranty_time']."months", strtotime($val['activate_time']))): 'Chưa kích hoạt' }}</td>
 
                                                 <td>
-                                                    <a  href="{{route('serial-edit',$val['id'])}}" ><button class='btn-ct btn-primary'>Sửa</button></a>
+                                                    <a  href="{{route('serial-edit',$val['id'])}}" ><button class='btn-ct btn-primary'><img style ="width: 40px;" src="{{asset('frontend/images/edit.png')}}"></button></a>
                                                     <form method="POST" action="{{route('serial-delete',$val['id'])}}">  
                                                         @method('DELETE')
                                                         @csrf
-                                                        <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn-ct btn-danger mt-2'>Xóa</button>
+                                                        <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn-ct btn-danger mt-2'><img style ="width: 40px;" src="{{asset('frontend/images/remove.png')}}"></button>
                                                     </form>
                                                 </td>
                                             </tr>

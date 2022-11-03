@@ -59,20 +59,20 @@
                                                 <td>{{ $val['order_code'] }}</td>
                                                 <td>{{ $val['created_at'] }}</td>
                                                 <td><?php if($val['status'] === 1){?>
-                                                   <p>Chưa xử lý <img style ="width: 40px;" src="{{asset('frontend/images/new.png')}}"></p>
+                                                   <p><img style ="width: 40px;" src="{{asset('frontend/images/new.png')}}"> Chưa xử lý </p>
                                                     <?php } elseif($val['status'] === 2 ){?>
-                                                  <p>Đang sửa (Bảo hành)<img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"> </p>
+                                                  <p><img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"> Đang sửa (Bảo hành)</p>
                                                     <?php }elseif($val['status'] === 3){?>
-                                                  <p>Từ chối bảo hành<img style ="width: 40px;" src="{{asset('frontend/images/cancel.png')}}"> </p>
+                                                  <p><img style ="width: 40px;" src="{{asset('frontend/images/cancel.png')}}"> Từ chối bảo hành</p>
                                                     <?php }elseif($val['status'] === 4){?> 
-                                                  <p>Đang sửa (Dịch vụ) <img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"> </p>
+                                                  <p><img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"> Đang sửa (Dịch vụ) </p>
                                                   <?php }else {?> 
-                                                  <p>Hoàn thành<img style ="width: 40px;" src="{{asset('frontend/images/checkmark.png')}}"> </p>
+                                                  <p><img style ="width: 40px;" src="{{asset('frontend/images/checkmark.png')}}"> Hoàn thành</p>
                                                     <?php } ?> 
                                                 
                                                 </td>
                                                 <td>
-                                                    <a  href="{{route('employee-view-detail',$val['order_code'])}}" ><button class='btn btn-primary'>Xem chi tiết</button></a>
+                                                    <a  href="{{route('employee-view-detail',$val['order_code'])}}" ><button class='btn btn-primary'><img style ="width: 40px;" src="{{asset('frontend/images/eye.png')}}"></button></a>
                                                  
                                                 </td>
                                             </tr>

@@ -31,7 +31,7 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <button class="btn btn-primary mr-10"> <a href="{{route('order-add')}}">Lập đơn mới</a> </button>
+                <button class="btn btn-primary mr-10"> <a href="{{route('order-add')}}">Lập đơn mới <img style ="width: 40px;" src="{{asset('frontend/images/plus.png')}}"></a> </button>
                 <div class="row">
                     <!-- column -->
                     <div class="col-12">
@@ -56,11 +56,11 @@
                                                 <td>{{$val['order_code']}}</td>
                                                 <td>{{date('d/m/Y' , strtotime($val['created_at']))}}</td>
                                                 <td>
-                                                <a  href="{{route('order-view-detail',$val['order_code'])}}" ><button class='btn btn-primary'>Xem chi tiết</button></a>
+                                                <a  href="{{route('order-view-detail',$val['order_code'])}}" ><button class='btn btn-primary'><img style ="width: 40px;" src="{{asset('frontend/images/eye.png')}}"></button></a>
                                                     <form method="POST" action="{{route('order-delete',$val['order_code'])}}">  
                                                         @method('DELETE')
                                                         @csrf
-                                                        <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn btn-danger mt-2'>Xóa</button>
+                                                        <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn btn-danger mt-2'><img style ="width: 40px;" src="{{asset('frontend/images/remove.png')}}"></button>
                                                     </form>
                                                 
                                                 </td>               

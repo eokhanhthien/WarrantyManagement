@@ -115,7 +115,7 @@
                                                 padding: 6px;
                                                 border: none;
                                                 border-radius: 4px;
-                                                color: white;">  Đăng xuất</button></a>
+                                                color: white;">  Đăng xuất <img style ="width: 40px;" src="{{asset('frontend/images/logout.png')}}"></button></a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
                         </li>
                     </ul>

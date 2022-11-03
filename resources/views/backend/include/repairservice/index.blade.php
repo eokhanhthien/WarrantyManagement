@@ -29,7 +29,7 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <button class="btn btn-success mr-10"> <a href="{{route('repair-service-add')}}">Thêm dịch vụ sửa chữa</a> </button>
+                <button class="btn btn-success mr-10"> <a href="{{route('repair-service-add')}}">Thêm dịch vụ sửa chữa <img style ="width: 40px;" src="{{asset('frontend/images/plus.png')}}"></a> </button>
                 <div class="row">
                     <!-- column -->
                     <div class="col-12">
@@ -52,14 +52,14 @@
                                             <tr>
                                                 <td>{{ $key+1 }}</td>
                                                 <td>{{ $val['name'] }}</td>
-                                                <td>{{ $val['price'] }}</td>
+                                                <td>{{ number_format($val['price'])}} đ</td>
 
                                                 <td>
-                                                    <a  href="{{route('repair-service-edit',$val['id'])}}" ><button class='btn btn-primary'>Sửa</button></a>
+                                                    <a  href="{{route('repair-service-edit',$val['id'])}}" ><button class='btn btn-primary'><img style ="width: 40px;" src="{{asset('frontend/images/edit.png')}}"></button></a>
                                                     <form method="POST" action="{{route('repair-service-delete',$val['id'])}}">  
                                                         @method('DELETE')
                                                         @csrf
-                                                        <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn btn-danger mt-2'>Xóa</button>
+                                                        <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn btn-danger mt-2'><img style ="width: 40px;" src="{{asset('frontend/images/remove.png')}}"></button>
                                                     </form>
                                                 </td>
                                             </tr>
