@@ -59,23 +59,23 @@
                                                 <td>{{$val['customer_name']}}</td>
                                                 <!-- <td><?php if($val['status'] === 0){ echo "Chưa xử lý"; }else if($val['status'] === 1){ echo "Đã giao công việc"; }else if($val['status'] === 2){ echo "Đồng ý bảo hành"; }else{echo "Từ chối bảo hành";} ?></td> -->
                                                 <td><?php if($val['status'] === 0){?>
-                                                   <p><img style ="width: 40px;" src="{{asset('frontend/images/new.png')}}"> Chưa xử lý </p>
+                                                   <p><img style ="width: 30px;" src="{{asset('frontend/images/new.png')}}"> Chưa xử lý </p>
                                                     <?php } elseif($val['status'] === 1 ){?>
-                                                  <p><img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"> Đã giao công việc  </p>
+                                                  <p><img style ="width: 30px;" src="{{asset('frontend/images/fix.png')}}"> Đã giao công việc  </p>
                                                     <?php }elseif($val['status'] === 2 ){?>
-                                                  <p><img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"> Đang sửa (Bảo hành) </p>
+                                                  <p><img style ="width: 30px;" src="{{asset('frontend/images/fix.png')}}"> Đang sửa (Bảo hành) </p>
                                                     <?php }elseif($val['status'] === 3){?>
-                                                  <p><img style ="width: 40px;" src="{{asset('frontend/images/cancel.png')}}"> Từ chối bảo hành</p>
+                                                  <p><img style ="width: 30px;" src="{{asset('frontend/images/cancel.png')}}"> Từ chối bảo hành</p>
                                                     <?php }elseif($val['status'] === 4){?> 
-                                                  <p><img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"> Đang sửa (Dịch vụ) </p>
+                                                  <p><img style ="width: 30px;" src="{{asset('frontend/images/fix.png')}}"> Đang sửa (Dịch vụ) </p>
                                                   <?php }else {?> 
-                                                  <p><img style ="width: 40px;" src="{{asset('frontend/images/checkmark.png')}}"> Hoàn thành</p>
+                                                  <p><img style ="width: 30px;" src="{{asset('frontend/images/checkmark.png')}}"> Hoàn thành</p>
                                                     <?php } ?> 
                                                 
                                                 </td>
                                                 <td>{{date('d/m/Y' , strtotime($val['created_at']))}}</td>
                                                 <td>
-                                                <a  href="{{route('claimwarranty-view-detail',$val['claim_code'])}}" ><button class='btn btn-primary'><img style ="width: 40px;" src="{{asset('frontend/images/eye.png')}}"></button></a>
+                                                <a  href="{{route('claimwarranty-view-detail',$val['claim_code'])}}" ><button class='btn btn-primary'><img style ="width: 30px;" src="{{asset('frontend/images/eye.png')}}"></button></a>
                                                     
                                                 
                                                 </td>               

@@ -60,11 +60,11 @@
                                                 <td>{{ $val['created_at'] }}</td>
                                                 <td>{{ $val['updated_at'] }}</td>
                                                 <td>
-                                                    <a  href="{{route('product-edit',$val['id'])}}" ><button class='btn btn-primary'><img style ="width: 40px;" src="{{asset('frontend/images/edit.png')}}"></button></a>
+                                                    <a  href="{{route('product-edit',$val['id'])}}" ><button class='btn btn-primary'><img style ="width: 30px;" src="{{asset('frontend/images/edit.png')}}"></button></a>
                                                     <form method="POST" action="{{route('product-delete',$val['id'])}}">  
                                                         @method('DELETE')
                                                         @csrf
-                                                        <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn btn-danger mt-2'><img style ="width: 40px;" src="{{asset('frontend/images/remove.png')}}"></button>
+                                                        <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn btn-danger mt-2'><img style ="width: 30px;" src="{{asset('frontend/images/remove.png')}}"></button>
                                                     </form>
                                                 </td>
                                             </tr>

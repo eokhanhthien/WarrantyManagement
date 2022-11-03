@@ -107,7 +107,7 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown u-pro">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="#"
-                                id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img style ="width: 40px;" src="{{asset('frontend/images/admin.png')}}"> <span
+                                id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/admin.png')}}"> <span
                                     class="hidden-md-down">{{Session::get('admin')['username']}} &nbsp;</span> </a>
                                     <a href="{{route('logout')}}"><button class='btn-custom m-2' style ="
                                                 background-color: cornflowerblue !important;
@@ -135,16 +135,16 @@
                     <ul id="sidebarnav">
                          <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý sản phẩm</div></li>
 
-                        <li> <a class="waves-effect waves-dark" href="{{route('manufacturer')}} " aria-expanded="false"><img style ="width: 40px;" src="{{asset('frontend/images/brand.png')}}"> <span class="hide-menu">Quản lý hãng</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{route('manufacturer')}} " aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/brand.png')}}"> <span class="hide-menu">Quản lý hãng</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="{{route('product')}} " aria-expanded="false"> <img style ="width: 40px;" src="{{asset('frontend/images/bill.png')}}"> <span class="hide-menu">Quản lý sản phẩm</span></a>
                         </li>
 
                         <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Kích hoạt bảo hành</div></li>
-                        <li> <a class="waves-effect waves-dark" href="{{route('order')}} "aria-expanded="false"><img style ="width: 40px;" src="{{asset('frontend/images/bill.png')}}"> <span class="hide-menu">Hóa đơn mua hàng</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{route('order')}} "aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/bill.png')}}"> <span class="hide-menu">Hóa đơn mua hàng</span></a>
                         </li>
 
-                        <li> <a class="waves-effect waves-dark" href="{{route('serial')}} " aria-expanded="false"><img style ="width: 40px;" src="{{asset('frontend/images/seri.png')}}"> <span class="hide-menu">Quản lý Serial</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{route('serial')}} " aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/seri.png')}}"> <span class="hide-menu">Quản lý Serial</span></a>
                         </li>
 <!-- 
                         <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
@@ -152,22 +152,22 @@
                         </li> -->
                         <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Yêu cầu bảo hành, bảo trì</div></li>
                     
-                        <li> <a class="waves-effect waves-dark" href="{{route('claim-warranty-show')}}" aria-expanded="false"><img style ="width: 40px;" src="{{asset('frontend/images/claim.png')}}"> <span class="hide-menu">Bảo hành</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{route('claim-warranty-show')}}" aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/claim.png')}}"> <span class="hide-menu">Bảo hành</span></a>
                         </li>
                         <!-- <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
                                     class="fa fa-globe"></i><span class="hide-menu">Bảo trì</span></a>
                         </li> -->
                         <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý nhân sự</div></li>
                        
-                        <li> <a class="waves-effect waves-dark" href="{{route('technicians')}}" aria-expanded="false"><img style ="width: 40px;" src="{{asset('frontend/images/member.png')}}"><span class="hide-menu"> Thành viên</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{route('technicians')}}" aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/member.png')}}"><span class="hide-menu"> Thành viên</span></a>
                         </li>
 
                         <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý dịch vụ</div></li>
-                        <li> <a class="waves-effect waves-dark" href="{{route('repair-service')}}" aria-expanded="false"><img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"><span class="hide-menu"> Sữa chữa</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{route('repair-service')}}" aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/fix.png')}}"><span class="hide-menu"> Sữa chữa</span></a>
                         </li>
 
                         <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Thống kê</div></li>
-                        <li> <a class="waves-effect waves-dark" href="{{route('statistical')}}" aria-expanded="false"><img style ="width: 40px;" src="{{asset('frontend/images/statistical.png')}}"> <span class="hide-menu">Tổng quan</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{route('statistical')}}" aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/statistical.png')}}"> <span class="hide-menu">Tổng quan</span></a>
                         </li>
 
                     </ul>
