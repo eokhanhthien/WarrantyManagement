@@ -57,13 +57,14 @@ class IndexController extends Controller
 
         // date('d/m/Y' , strtotime($findOrder['created_at'])); 
         // echo "<pre>";
-        // print_r($findOrder);die;
+        // print_r($data);die;
         if(isset($findOrder) && $findOrder != NULL){
             if( date('d/m/Y' , strtotime($findOrder[0]['created_at'])) === date('d/m/Y' , strtotime($data['date-buy']))){
                 $product = OrderDetail::where(['order_code'=> $data['order_code'] ,'product_id' => $data['product_id'] , 'product_serial' => $data['product_serial'] ])->get()->toArray();
                 if(isset($product) && $product != NULL){
                 $findSerial= Serial::where(['id_product'=> $data['product_id'], 'serial_number' => $data['product_serial']])->get()->first()->toArray();
                 // print_r($findSerial);die;
+                if(isset($findSerial) && $findSerial != NULL){
                  if($findSerial['status'] === 0){
                       Session::put('isWarranty', [
                     'status' => 0,
@@ -78,7 +79,11 @@ class IndexController extends Controller
                  else{
                     return redirect()->route('register-warranty')->with('message','sản phẩm đã được kích hoạt bảo hành');
                  }
-                
+
+                }else{
+                    return redirect()->route('register-warranty')->with('message','Không có số serial tương ứng');
+
+                }
            
                 }
                 else{

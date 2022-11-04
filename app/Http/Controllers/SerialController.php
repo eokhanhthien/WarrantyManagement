@@ -14,7 +14,7 @@ class SerialController extends Controller
         if(Session::get('admin') != NULL && Session::get('admin')['role'] === 1){
             // $claimwarranty = ClaimWarranty::paginate(5);;
 
-            $serial = Serial::get()->toArray();
+            $serial = Serial::orderBy('id','desc')->get()->toArray();
             $serial_active = Serial::where(['status'=> 1])->get()->toArray();
             $serial_not_active = Serial::where(['status'=> 0])->get()->toArray();
             

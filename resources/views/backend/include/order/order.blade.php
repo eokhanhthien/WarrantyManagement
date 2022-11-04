@@ -45,6 +45,8 @@
                                             <tr>
                                                 <th>STT</th>
                                                 <th>Mã đơn hàng</th>
+                                                <th>Tên khách hàng</th>
+                                                <th>Số điện thoại</th>
                                                 <th>Ngày tạo</th>
                                                 <th>action</th>
                                             </tr>
@@ -54,14 +56,16 @@
                                             <tr>
                                                 <td>{{$key+1}}</td>
                                                 <td>{{$val['order_code']}}</td>
+                                                <td>{{$val['name_customer']}}</td>
+                                                <td>{{$val['phone_customer']}}</td>
                                                 <td>{{date('d/m/Y' , strtotime($val['created_at']))}}</td>
                                                 <td>
                                                 <a  href="{{route('order-view-detail',$val['order_code'])}}" ><button class='btn btn-primary'><img style ="width: 30px;" src="{{asset('frontend/images/eye.png')}}"></button></a>
-                                                    <form method="POST" action="{{route('order-delete',$val['order_code'])}}">  
+                                                    <!-- <form method="POST" action="{{route('order-delete',$val['order_code'])}}">  
                                                         @method('DELETE')
                                                         @csrf
                                                         <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn btn-danger mt-2'><img style ="width: 30px;" src="{{asset('frontend/images/remove.png')}}"></button>
-                                                    </form>
+                                                    </form> -->
                                                 
                                                 </td>               
                                             </tr>
