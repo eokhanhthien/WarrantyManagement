@@ -17,30 +17,30 @@
                 <div class = "panel-heading ">Các thông tin trên hóa đơn mua hàng</div>
                 
                 <div class="row mb-3">
-                    <div class="col col-2 lable-input" >Tên khách hàng  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input name='customer_name' type='text' class="input-register-warranty" placeholder = "Ex. Nguyễn Văn A" required /></div>
+                    <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-4 lable-input" >Tên khách hàng  <span class='text-danger'>*</span> </div>
+                    <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8"><input name='customer_name' type='text' class="input-register-warranty" placeholder = "Ex. Nguyễn Văn A" required /></div>
                 </div>
 
               
                 <div class="row mb-3">
-                    <div class="col col-2 lable-input" >Email  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input  name='customer_email' type='text' class="input-register-warranty" placeholder = "Ex. thien123@gmail.com" required /></div>
+                    <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-4 lable-input" >Email  <span class='text-danger'>*</span> </div>
+                    <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8"><input  name='customer_email' type='text' class="input-register-warranty" placeholder = "Ex. thien123@gmail.com" required /></div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col col-2 lable-input" >Số điện thoại  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input  name='customer_phone' type='text' class="input-register-warranty" placeholder = "Ex. 0946144333" required /></div>
+                    <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-4 lable-input" >Số điện thoại  <span class='text-danger'>*</span> </div>
+                    <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8"><input  name='customer_phone' type='text' class="input-register-warranty" placeholder = "Ex. 0946144333" required /></div>
                 </div>
 
                 <div class="row mb-3">
-                    <div class="col col-2 lable-input" >Số serial  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input name='product_serial' type='text' class="input-register-warranty" placeholder = "Ex. RV123123123" required /></div>
+                    <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-4 lable-input" >Số serial  <span class='text-danger'>*</span> </div>
+                    <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8"><input name='product_serial' type='text' class="input-register-warranty" placeholder = "Ex. RV123123123" required /></div>
                 </div>
 
                 <div class="row mb-10">
-                                                <div class="col col-2 lable-input">
+                                                <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-4 lable-input">
                                                     <p class="address-tag">Hãng <span class='text-danger'>*</span></p> 
                                                 </div>
-                                                <div class="col col-3 ">
+                                                <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8 ">
                                                     <select  id="manu" class="address-main choose-product manu input-register-warranty" name="product_manu" required >
                                                     <option value="">Chọn hãng</option>
                                                     <?php if(isset($manufacturer) && $manufacturer != NULL){ ?>
@@ -53,10 +53,10 @@
                                                 </div>
 
                                             <div class="row mb-10">
-                                                <div class="col col-2 lable-input">
+                                                <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-4 lable-input">
                                                     <p class="address-tag">Sản phẩm <span class='text-danger'>*</span></p> 
                                                 </div>
-                                                <div class="col col-3">
+                                                <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8">
                                                     <select  id="product" class="address-main  product0 input-register-warranty" name="product_id"  required>
                                                         <option value="">Chọn sản phẩm</option>
                                                     </select>
@@ -64,10 +64,10 @@
                                             </div>
                 
                 <div class="row  mb-10">
-                    <div class="col col-xl-2  lable-input">
+                    <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-4  lable-input">
                         <p class="address-tag">Tỉnh/thành phố: <span class='text-danger'>*</span></p> 
                     </div>
-                    <div class="col col-xl-3 ">
+                    <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8 ">
                         <select name="address_city" id="city" class="address-main choose city input-register-warranty" >
                         <option value="">Chọn tỉnh / Thành phố</option>
                         <?php if(isset($data) && $data != NULL){ ?>
@@ -80,10 +80,10 @@
                     </div>
 
                 <div class="row  mb-10">
-                    <div class="col col-xl-2  lable-input">
+                    <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-4  lable-input">
                         <p class="address-tag">Quận/huyện: <span class='text-danger'>*</span></p> 
                     </div>
-                    <div class="col col-xl-3">
+                    <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8">
                         <select name="address_province" id="province" class="address-main choose province input-register-warranty" >
                             <option value="">Chọn quận / huyện</option>
                         </select>
@@ -91,10 +91,10 @@
                 </div>
 
                 <div class="row  mb-10">
-                    <div class="col col-xl-2  lable-input">
+                    <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-4  lable-input">
                         <p class="address-tag">Xã phường/thị trấn: <span class='text-danger'>*</span></p> 
                     </div>
-                    <div class="col col-xl-3">
+                    <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8">
                         <select name="address_wards" id="wards" class="address-main wards input-register-warranty" >
                             <option value="">Chọn xã phường / thị trấn</option>
                         </select>

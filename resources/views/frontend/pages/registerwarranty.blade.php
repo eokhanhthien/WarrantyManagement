@@ -17,15 +17,15 @@
                 <div class = "panel-heading ">Các thông tin trên hóa đơn mua hàng</div>
                 
                 <div class="row mb-3">
-                    <div class="col col-2 lable-input" >Số serial  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input name='product_serial' type='text' class="input-register-warranty" placeholder = "Ex. RV123123123" required /></div>
+                    <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-4 lable-input" >Số serial  <span class='text-danger'>*</span> </div>
+                    <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8"><input name='product_serial' type='text' class="input-register-warranty" placeholder = "Ex. RV123123123" required /></div>
                 </div>
 
                 <div class="row mb-10">
-                    <div class="col col-2 lable-input">
+                    <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-4 lable-input">
                         <p class="address-tag">Hãng <span class='text-danger'>*</span></p> 
                     </div>
-                    <div class="col col-3 ">
+                    <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8 ">
                         <select  id="city" class="address-main choose city input-register-warranty" required >
                         <option value="">Chọn hãng</option>
                         <?php if(isset($manufacturer) && $manufacturer != NULL){ ?>
@@ -38,30 +38,30 @@
                     </div>
 
                 <div class="row mb-10">
-                    <div class="col col-2 lable-input">
+                    <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-4 lable-input">
                         <p class="address-tag">Sản phẩm <span class='text-danger'>*</span></p> 
                     </div>
-                    <div class="col col-3">
+                    <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8">
                         <select name="product_id" id="province" class="address-main choose province input-register-warranty" required>
                             <option value="">Chọn sản phẩm</option>
                         </select>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col col-2 lable-input" >Mã đơn  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input  name='order_code' type='text' class="input-register-warranty" required /></div>
+                    <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-4 lable-input" >Mã đơn  <span class='text-danger'>*</span> </div>
+                    <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8"><input  name='order_code' type='text' class="input-register-warranty" required /></div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col col-2 lable-input" >Ngày mua  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input  name='date-buy' type='date' class="input-register-warranty" required /></div>
+                    <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-4 lable-input" >Ngày mua  <span class='text-danger'>*</span> </div>
+                    <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8"><input  name='date-buy' type='date' class="input-register-warranty" required /></div>
                 </div>
 
                 <!-- <div class="row mb-3">
-                    <div class="col col-2 lable-input" >Chứng từ mua hàng  <span class='text-danger'>*</span> </div>
-                    <div class="col col-3"><input name='attach' type='file' class="input-register-warranty" required /></div>
+                    <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-8 lable-input" >Chứng từ mua hàng  <span class='text-danger'>*</span> </div>
+                    <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8"><input name='attach' type='file' class="input-register-warranty" required /></div>
                 </div> -->
                 <div class="row mb-3">
-                    <div class="col col-5 text-end"><button type='submit' class='btn btn-primary'>Tiếp theo</button></div>
+                    <div class="col col-xl-5 col-lg-6 col-md-6 col-sm-6 col-8 text-end"><button type='submit' class='btn btn-primary'>Tiếp theo</button></div>
                 </div>
                 @if (session('message'))
                     <div class="panel-heading text-error-ct">
@@ -87,7 +87,7 @@
                     <p >Số sê-ri có thể được tìm thấy trên nhãn dán * nằm ở mặt sau, mặt bên hoặc mặt dưới của sản phẩm.</p>
                     <p class="check-note">* Hình ảnh nhãn dán có thể trông khác nhau trên một sản phẩm thực tế.</p>
                     <div class="row">
-                        <div class="col col-3">
+                        <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-7">
                             <img class='check-img' src="{{asset('frontend/images/check1.jpg')}}" alt="">
                         </div>
                         <div class="col col-5">
@@ -97,7 +97,7 @@
                     </div>
 
                     <div class="row mt-3">
-                        <div class="col col-3">
+                        <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-7">
                             <img class='check-img' src="{{asset('frontend/images/check2.jpg')}}" alt="">
                         </div>
                         <div class="col col-5">

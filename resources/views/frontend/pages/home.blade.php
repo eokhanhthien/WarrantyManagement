@@ -68,7 +68,7 @@
                     <p >Số sê-ri có thể được tìm thấy trên nhãn dán * nằm ở mặt sau, mặt bên hoặc mặt dưới của sản phẩm.</p>
                     <p class="check-note">* Hình ảnh nhãn dán có thể trông khác nhau trên một sản phẩm thực tế.</p>
                     <div class="row">
-                        <div class="col col-3">
+                        <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-7">
                             <img class='check-img' src="{{asset('frontend/images/check1.jpg')}}" alt="">
                         </div>
                         <div class="col col-5">
@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="row mt-3">
-                        <div class="col col-3">
+                        <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-7">
                             <img class='check-img' src="{{asset('frontend/images/check2.jpg')}}" alt="">
                         </div>
                         <div class="col col-5">

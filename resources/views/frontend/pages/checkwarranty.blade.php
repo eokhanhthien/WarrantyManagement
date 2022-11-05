@@ -45,7 +45,7 @@
                 </div>
           
                 <div class="row">
-                    <div class="col col-8"> 
+                    <div class="col col-12 col-xl-8 col-lg-8 col-md-8 col-sm-8 "> 
 
                         <form action="{{route('check-serial')}}" method="post" >
                         @csrf 
@@ -110,7 +110,7 @@
 
 
                     </div>
-                    <div class="col col-4">
+                    <div class="col col-12 col-xl-4 col-lg-4 col-md-4 col-sm-4">
                         <h5 class='text-primary'>Tổng đài hỗ trợ Epson</h5>
                         <p class='text-check-war'>Liên hệ với chúng tôi qua trang phản hồi tại đây hoặc email hỗ trợ: support@epson.com.vn để biết thêm thông tin</p>
 
