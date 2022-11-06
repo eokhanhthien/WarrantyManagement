@@ -99,7 +99,7 @@ class OrderController extends Controller
         //         print_r( $_POST);die;
         // }
         $data = $request->all();
-        
+
         $checkout_code = substr(md5(microtime()),rand(0,26),5);
         $order = new Order();
         $order->order_code = $checkout_code;
@@ -122,7 +122,23 @@ class OrderController extends Controller
         }
 
         $arr_product = Product::whereIn('id', $array)->get()->toArray();
-        if(isset($arr_product) && $arr_product != NULL){
+        // echo "<pre>";
+        // print_r( $arr_product);die;
+        if(count($array) > count($arr_product)){
+            for($i = 0 ; $i < count($array) ; $i ++){
+                foreach($arr_product as $key => $val){
+                    $order_detail= new OrderDetail();
+                    $order_detail->order_code = $checkout_code;
+                    $order_detail->product_id = $val['id']; 
+                    $order_detail->product_name = $val['name']; 
+                    $order_detail->product_price = $val['price']; 
+                    $order_detail->product_image = $val['image']; 
+                    $order_detail->product_serial = $data['data_option'][$i]['serial']; 
+                    $order_detail->save();
+                }  
+            }
+        }else{
+            if(isset($arr_product) && $arr_product != NULL){
             foreach($arr_product as $key => $val){
                 $order_detail= new OrderDetail();
                 $order_detail->order_code = $checkout_code;
@@ -133,7 +149,9 @@ class OrderController extends Controller
                 $order_detail->product_serial = $data['data_option'][$key]['serial']; 
                 $order_detail->save();
             }
+        }  
         }
+
 
 
         foreach($data['data_option'] as $key => $val){
