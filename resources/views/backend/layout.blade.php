@@ -133,6 +133,10 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
+                    <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Thông tin</div></li>
+                        <li> <a class="waves-effect waves-dark" href="{{route('infomationAdmin')}} " aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/infouser.png')}}"><span class="hide-menu">Thông tin cá nhân</span></a>
+                        </li>
+
                          <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý sản phẩm</div></li>
 
                         <li> <a class="waves-effect waves-dark" href="{{route('manufacturer')}} " aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/brand.png')}}"> <span class="hide-menu">Quản lý hãng</span></a>

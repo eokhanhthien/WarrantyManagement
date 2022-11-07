@@ -42,12 +42,15 @@ Route::post('/send-claim-warranty', [IndexController::class, 'sendClaimWarranty'
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::post('/checklogin', [AdminController::class, 'checklogin'])->name('checklogin');
 Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
+Route::get('/infomationAdmin', [AdminController::class, 'infomationAdmin'])->name('infomationAdmin');
 
 // Technicians
 Route::get('/employee', [EmployeeController::class, 'index'])->name('employee');
 Route::get('/employee-view-detail/{order_code}', [EmployeeController::class, 'viewDtail'])->name('employee-view-detail');
 Route::post('/solution', [EmployeeController::class, 'solution'])->name('solution');
 Route::get('/comfirm-fisnish/{order_code}', [EmployeeController::class, 'comfirmFisnish'])->name('comfirm-fisnish');
+Route::get('/infomationTaff', [EmployeeController::class, 'infomationTaff'])->name('infomationTaff');
+Route::get('/map', [EmployeeController::class, 'map'])->name('map');
 
 
 // ORDER

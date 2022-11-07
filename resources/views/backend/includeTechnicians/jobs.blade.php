@@ -39,7 +39,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Danh sách sản phẩm</h4>
+                                <h4 class="card-title">Danh sách công việc</h4>
                       
                                 <div class="table-responsive">
                                     <table class="table mb-3" id='productTable'>

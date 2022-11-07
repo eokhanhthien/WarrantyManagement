@@ -6093,3 +6093,15 @@ td {
     font-size: 18px;
 }
 
+.avatar{
+  border:  3px solid #007bb6;
+  text-align: center;
+  width: 140px;
+  height: 140px;
+  line-height: 140px;
+  border-radius: 50%;
+}
+
+.text-ct {
+  font-size: 20px;
+}

@@ -22,6 +22,7 @@ class AdminController extends Controller
             Session::put('admin', [
                 'id'  => $data_admin[0]['id'],
                 'username'  => $data_admin[0]['username'],
+                'fullname'  => $data_admin[0]['fullname'],
                 'email'  => $data_admin[0]['email'],
                 'password'  => $data_admin[0]['password'],
                 'role'  => $data_admin[0]['role'],
@@ -62,5 +63,9 @@ class AdminController extends Controller
 
     }
 
+    function infomationAdmin(){
+        return view('backend.include.infoAdmin.infomationAdmin');
+
+    }
 
 }

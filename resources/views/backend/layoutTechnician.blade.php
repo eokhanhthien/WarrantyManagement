@@ -1,3 +1,7 @@
+<?php
+// echo "<pre>";
+// print_r(Session::get('admin'));die;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -133,19 +137,26 @@
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
+                    
                     <ul id="sidebarnav">
+                    <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Thông tin</div></li>
+                        <li> <a class="waves-effect waves-dark" href="{{route('infomationTaff')}} " aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/infouser.png')}}"><span class="hide-menu">Thông tin cá nhân</span></a>
+                        </li>
+
                          <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Công việc</div></li>
 
-                        <li> <a class="waves-effect waves-dark" href="{{route('manufacturer')}} " aria-expanded="false"><i
-                                    class="fa fa-user-circle-o"></i><span class="hide-menu">Công việc được giao</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{route('manufacturer')}} " aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/fix.png')}}"><span class="hide-menu">Công việc được giao</span></a>
+                        </li>
+
+                        <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Bản đồ</div></li>
+                        <li> <a class="waves-effect waves-dark" href="{{route('map')}} " aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/map.png')}}"><span class="hide-menu">Bản đồ khu vực</span></a>
                         </li>
                        
 <!-- 
                         <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
                                     class="fa fa-globe"></i><span class="hide-menu">Kích hoạt online</span></a>
                         </li> -->
-                        <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Yêu cầu bảo hành, bảo trì</div></li>
-                    
+
                        
 
                     </ul>

@@ -72,4 +72,12 @@ class EmployeeController extends Controller
     
             return redirect()->back();
     }
+
+    function infomationTaff(){
+        return view('backend.includeTechnicians.infomationTaff' );
+    }
+
+    function map(){
+        return view('backend.includeTechnicians.map' );
+    }
 }
