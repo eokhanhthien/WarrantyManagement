@@ -60,13 +60,13 @@
                                                 <td>{{ $val['created_at'] }}</td>
                                                 <td><?php if($val['status'] === 1){?>
                                                    <p><img style ="width: 30px;" src="{{asset('frontend/images/new.png')}}"> Chưa xử lý </p>
-                                                    <?php } elseif($val['status'] === 2 ){?>
+                                                    <?php } elseif($val['status'] === 2 && $val['type'] != 10){?>
                                                   <p><img style ="width: 30px;" src="{{asset('frontend/images/fix.png')}}"> Đang sửa (Bảo hành)</p>
-                                                    <?php }elseif($val['status'] === 3){?>
+                                                    <?php }elseif($val['status'] === 3 && $val['type'] != 10){?>
                                                   <p><img style ="width: 30px;" src="{{asset('frontend/images/cancel.png')}}"> Từ chối bảo hành</p>
-                                                    <?php }elseif($val['status'] === 4){?> 
+                                                    <?php }elseif($val['status'] === 4 && $val['type'] != 10){?> 
                                                   <p><img style ="width: 30px;" src="{{asset('frontend/images/fix.png')}}"> Đang sửa (Dịch vụ) </p>
-                                                  <?php }else {?> 
+                                                  <?php } elseif( $val['type'] == 10){?> 
                                                   <p><img style ="width: 30px;" src="{{asset('frontend/images/checkmark.png')}}"> Hoàn thành</p>
                                                     <?php } ?> 
                                                 

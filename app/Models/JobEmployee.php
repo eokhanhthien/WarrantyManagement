@@ -11,6 +11,6 @@ class JobEmployee extends Model
     public $timestamps = false;
     protected $table = 'tbl_job_employee';
     protected $fillable = [
-        'id_technician', 'order_code' , 'status' ,'created_at' 
+        'id_technician', 'order_code' , 'status', 'type' ,'created_at' 
     ];
 }

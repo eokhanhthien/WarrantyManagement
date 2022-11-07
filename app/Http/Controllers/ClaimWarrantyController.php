@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\ClaimWarranty;
 use App\Models\ClaimWarrantyDetail;
 use App\Models\JobEmployee;
+use App\Models\JobDetail;
 
 // Nhân viên
 use App\Models\Admin;
@@ -17,7 +18,7 @@ class ClaimWarrantyController extends Controller
     public function index(){
         if(Session::get('admin') != NULL && Session::get('admin')['role'] === 1){
             // $claimwarranty = ClaimWarranty::paginate(5);;
-            $claimwarranty = ClaimWarranty::where(['type'=>1])->orderBy('id', 'DESC')->paginate(5); 
+            $claimwarranty = ClaimWarranty::orderBy('id', 'DESC')->paginate(5); 
 
             return view('backend.include.claimwarranty.index', ['claimwarranty' => $claimwarranty]);
         }
@@ -37,12 +38,13 @@ class ClaimWarrantyController extends Controller
         $claimDetail = ClaimWarrantyDetail::where(['claim_code'=> $claim_code])->get()->first()->toArray();
         $claimwarranty = ClaimWarranty::where(['claim_code'=> $claim_code])->get()->first()->toArray();
         $job = JobEmployee::where(['order_code'=> $claim_code])->get()->toArray();
+        $jobdetail = JobDetail::where(['order_code'=> $claim_code])->get()->toArray();
         $employees=  Admin::where(['role'=> 2])->get()->toArray();
         // $info_order = Order::where(['claim_code'=> $claim_code])->get()->first()->toArray();
         // echo "<pre>";
-        // print_r($job);die;
+        // print_r($jobdetail);die;
 
-        return view('backend.include.claimwarranty.claimwarranty_detail',['claimDetail' =>  $claimDetail , 'employees' => $employees ,'claimwarranty' => $claimwarranty ,'job' => $job]);
+        return view('backend.include.claimwarranty.claimwarranty_detail',['claimDetail' =>  $claimDetail , 'employees' => $employees ,'claimwarranty' => $claimwarranty ,'job' => $job, 'JobDetail' => $jobdetail ]);
 
     }
 
@@ -52,6 +54,7 @@ class ClaimWarrantyController extends Controller
         $JobEmployee->id_technician = $data['id_technician'];
         $JobEmployee->order_code = $data['claim_code'];
         $JobEmployee->status = 1;
+        $JobEmployee->type = 1;
         $JobEmployee->created_at = gmdate('Y-m-d H:i:s', time() + 7*3600);
         $JobEmployee->save();
 

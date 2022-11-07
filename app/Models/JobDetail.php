@@ -11,6 +11,6 @@ class JobDetail extends Model
     public $timestamps = false;
     protected $table = 'tbl_job_employee_detail';
     protected $fillable = [
-        'repair', 'note' ,
+        'order_code','repair', 'note' ,
     ];
 }

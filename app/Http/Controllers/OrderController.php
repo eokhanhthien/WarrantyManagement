@@ -123,7 +123,7 @@ class OrderController extends Controller
 
         $arr_product = Product::whereIn('id', $array)->get()->toArray();
         // echo "<pre>";
-        // print_r( $arr_product);die;
+        // print_r( $data['data_option']);die;
         if(count($array) > count($arr_product)){
             for($i = 0 ; $i < count($array) ; $i ++){
                 foreach($arr_product as $key => $val){

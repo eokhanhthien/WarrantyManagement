@@ -28,12 +28,13 @@ class EmployeeController extends Controller
         // print_r($claimDetail);die;
         $jobemployee = JobEmployee::where(['order_code'=> $claim_code])->get()->first()->toArray();
         $repairservice = RepairService::get()->toArray();
+        $claimwarranty = ClaimWarranty::where(['claim_code'=> $claim_code])->get()->first()->toArray();
 
         $JobDetail = JobDetail::where(['order_code'=> $claim_code])->get()->toArray();;
         if(isset($JobDetail) && $JobDetail != '' ){
-            return view('backend.includeTechnicians.claimwarranty_detail',['claimDetail' =>  $claimDetail ,'repairservice'=> $repairservice,'jobemployee'=> $jobemployee , 'JobDetail' => $JobDetail]);
+            return view('backend.includeTechnicians.claimwarranty_detail',['claimDetail' =>  $claimDetail ,'repairservice'=> $repairservice,'jobemployee'=> $jobemployee , 'JobDetail' => $JobDetail ,'claimwarranty'=> $claimwarranty]);
         }
-        return view('backend.includeTechnicians.claimwarranty_detail',['claimDetail' =>  $claimDetail ,'repairservice'=> $repairservice,'jobemployee'=> $jobemployee]);
+        return view('backend.includeTechnicians.claimwarranty_detail',['claimDetail' =>  $claimDetail ,'repairservice'=> $repairservice,'jobemployee'=> $jobemployee , 'claimwarranty'=> $claimwarranty]);
 
     }
 
@@ -65,8 +66,9 @@ class EmployeeController extends Controller
             $jobemployee = JobEmployee::where(['order_code'=> $claim_code])->get()->first();
             $claimWarranty = ClaimWarranty::where(['claim_code'=> $claim_code])->get()->first();
             // print_r($claimWarranty);die;
-            $claimWarranty->status = 5;
-            $jobemployee->status = 5;
+            // $claimWarranty->status = 5;
+            $claimWarranty->type = 10;
+            $jobemployee->type = 10;
             $claimWarranty->save();
             $jobemployee->save();
     
