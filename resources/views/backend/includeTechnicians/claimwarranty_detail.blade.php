@@ -180,7 +180,7 @@ table td:nth-child(4) {
                 </div>
 
                 <div class= "solution_No">
-                        <input type="checkbox" id="NoRepair" name="repair[]" value="0">
+                        <input type="checkbox" id="NoRepair" name="repair[]" value="9">
                         <label for="NoRepair"  style = "color: red"> Xác nhận từ chối bảo hành</label><br>  
                 </div>
 
@@ -227,7 +227,7 @@ table td:nth-child(4) {
 
                     <div class="row">
                     <h4 class="col col-12">Mục sữa chữa:</h4>
-                    <div class="col col-6">
+                    <div class="col col-4">
                     <table>
                     <thead>
                         <tr>
@@ -305,12 +305,14 @@ table td:nth-child(4) {
                         <?php }?>    
                      </div>
 
-                    <div class="row"> 
+                     <?php  if($claimwarranty['type'] === 9){ ?> 
+                        
                         <h3 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/moneytotal.png')}}">Trạng thái:</h3>
                         <h3 class="col col-10 " style="color : red;    
-                                                font-size: 28px;
+                                                font-size: 26px;
                                                 font-weight: 500;" >Yêu cầu bảo hành đã bị từ chối <img style ="width: 30px;" src="{{asset('frontend/images/close.gif')}}"></h3>
-                    </div>
+                    
+                    <?php } ?>
 
                     </div>
                     </div>
@@ -329,7 +331,7 @@ table td:nth-child(4) {
 
                     <div class="row">
                     <h4 class="col col-12">Mục sữa chữa:</h4>
-                    <div class="col col-6">
+                    <div class="col col-4">
                     <table>
                     <thead>
                         <tr>

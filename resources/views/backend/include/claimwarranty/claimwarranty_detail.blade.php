@@ -190,12 +190,17 @@ table td:nth-child(4) {
 
                 <?php  if($claimwarranty['type'] === 10){ ?> 
                     <h3 class="col col-10 " style="color : green;    
-                                                font-size: 28px;
+                                                font-size: 26px;
                                                 font-weight: 500;" >Yêu cầu bảo hành đã hoàn thành <img style ="width: 30px;" src="{{asset('frontend/images/check.gif')}}"></h3>
-                <?php }?>
+                <?php }else{?>
+                        <h3 class="col col-10 " style="color : blue;    
+                                                font-size: 26px;
+                                                font-weight: 500;" >Yêu cầu bảo hành đang được thực hiện <img style ="width: 30px;" src="{{asset('frontend/images/fix.gif')}}"></h3>
+                    <?php }?>
+
             <?php }elseif($claimwarranty['status'] === 4){ ?>
                 <div class="row">
-                <h4 class="col-4" style=" color : blue" >Đơn đang được thực hiện bởi kỹ thuật viên:</h4>
+                <h4 class="col-2" style=" color : blue" >Đơn đang được thực hiện bởi kỹ thuật viên:</h4>
                 <div class="col-2">
                 <select class="input-add-order" name="id_technician">
                                         @foreach($employees as $key => $val)
@@ -217,7 +222,7 @@ table td:nth-child(4) {
 
                     <div class="row">
                     <h4 class="col col-12">Mục sữa chữa:</h4>
-                    <div class="col col-6">
+                    <div class="col col-4">
                     <table>
                     <thead>
                         <tr>
@@ -254,7 +259,7 @@ table td:nth-child(4) {
                     <div class="row"> 
                         <h3 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/moneytotal.png')}}">Tổng tiền:</h3>
                         <h3 class="col col-10 " style="color : red;    
-                                                font-size: 28px;
+                                                font-size: 26px;
                                                 font-weight: 500;" ><?=number_format($totalMoney) ?> đ</h3>
                     </div>
 
@@ -264,12 +269,16 @@ table td:nth-child(4) {
 
                     <?php  if($claimwarranty['type'] === 10){ ?> 
                     <h3 class="col col-10 " style="color : green;    
-                                                font-size: 28px;
+                                                font-size: 26px;
                                                 font-weight: 500;" >Yêu cầu bảo hành đã hoàn thành <img style ="width: 30px;" src="{{asset('frontend/images/check.gif')}}"></h3>
-                <?php }?>
+                <?php }else{?>
+                        <h3 class="col col-10 " style="color : blue;    
+                                                font-size: 26px;
+                                                font-weight: 500;" >Yêu cầu bảo hành đang được thực hiện <img style ="width: 30px;" src="{{asset('frontend/images/fix.gif')}}"></h3>
+                    <?php }?>
             <?php }elseif($claimwarranty['status'] === 2){?>
                 <div class="row">
-                <h4 class="col-4" style=" color : blue" >Đơn đang được thực hiện bởi kỹ thuật viên:</h4>
+                <h4 class="col-2" style=" color : blue" >Đơn đang được thực hiện bởi kỹ thuật viên:</h4>
                 <div class="col-2">
                 <select class="input-add-order" name="id_technician">
                                         @foreach($employees as $key => $val)
@@ -291,7 +300,7 @@ table td:nth-child(4) {
 
                     <div class="row">
                     <h4 class="col col-12">Mục sữa chữa:</h4>
-                    <div class="col col-6">
+                    <div class="col col-4">
                     <table>
                     <thead>
                         <tr>
@@ -328,7 +337,7 @@ table td:nth-child(4) {
                     <div class="row"> 
                         <h3 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/moneytotal.png')}}">Tổng tiền:</h3>
                         <h3 class="col col-10 " style="color : red;    
-                                                font-size: 28px;
+                                                font-size: 26px;
                                                 font-weight: 500;" >0đ (Free)</h3>
                     </div>
 
@@ -338,13 +347,17 @@ table td:nth-child(4) {
 
                     <?php  if($claimwarranty['type'] === 10){ ?> 
                     <h3 class="col col-10 " style="color : green;    
-                                                font-size: 28px;
+                                                font-size: 26px;
                                                 font-weight: 500;" >Yêu cầu bảo hành đã hoàn thành <img style ="width: 30px;" src="{{asset('frontend/images/check.gif')}}"></h3>
-                <?php }?>
+                    <?php }else{?>
+                        <h3 class="col col-10 " style="color : blue;    
+                                                font-size: 26px;
+                                                font-weight: 500;" >Yêu cầu bảo hành đang được thực hiện <img style ="width: 30px;" src="{{asset('frontend/images/fix.gif')}}"></h3>
+                    <?php }?>
 
             <?php }elseif($claimwarranty['status'] === 3){?>
                 <div class="row">
-                <h4 class="col-4" style=" color : blue" >Đơn đang được thực hiện bởi kỹ thuật viên:</h4>
+                <h4 class="col-2" style=" color : blue" >Đơn đang được thực hiện bởi kỹ thuật viên:</h4>
                 <div class="col-2">
                 <select class="input-add-order" name="id_technician">
                                         @foreach($employees as $key => $val)
@@ -376,12 +389,15 @@ table td:nth-child(4) {
                         <?php }?>    
                      </div>
 
-                    <div class="row"> 
+                     <?php  if($claimwarranty['type'] === 9){ ?> 
+                        
                         <h3 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/moneytotal.png')}}">Trạng thái:</h3>
                         <h3 class="col col-10 " style="color : red;    
-                                                font-size: 28px;
+                                                font-size: 26px;
                                                 font-weight: 500;" >Yêu cầu bảo hành đã bị từ chối <img style ="width: 30px;" src="{{asset('frontend/images/close.gif')}}"></h3>
-                    </div>
+                    
+                    <?php } ?>
+
 
                     </div>
                     </div>

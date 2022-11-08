@@ -123,31 +123,39 @@ class OrderController extends Controller
 
         $arr_product = Product::whereIn('id', $array)->get()->toArray();
         // echo "<pre>";
+        // print_r( $array);
+        // print_r( $arr_product);
         // print_r( $data['data_option']);die;
         if(count($array) > count($arr_product)){
             for($i = 0 ; $i < count($array) ; $i ++){
                 foreach($arr_product as $key => $val){
+                    if($val['id'] == $data['data_option'][$i]['name-product']){
                     $order_detail= new OrderDetail();
                     $order_detail->order_code = $checkout_code;
                     $order_detail->product_id = $val['id']; 
                     $order_detail->product_name = $val['name']; 
                     $order_detail->product_price = $val['price']; 
-                    $order_detail->product_image = $val['image']; 
+                    $order_detail->product_image = $val['image'];
                     $order_detail->product_serial = $data['data_option'][$i]['serial']; 
                     $order_detail->save();
+                }
                 }  
             }
         }else{
             if(isset($arr_product) && $arr_product != NULL){
             foreach($arr_product as $key => $val){
+                for($i = 0 ; $i < count($arr_product) ; $i ++){
+                if($val['id'] == $data['data_option'][$i]['name-product']){
                 $order_detail= new OrderDetail();
                 $order_detail->order_code = $checkout_code;
                 $order_detail->product_id = $val['id']; 
                 $order_detail->product_name = $val['name']; 
                 $order_detail->product_price = $val['price']; 
                 $order_detail->product_image = $val['image']; 
-                $order_detail->product_serial = $data['data_option'][$key]['serial']; 
+                $order_detail->product_serial = $data['data_option'][$i]['serial']; 
                 $order_detail->save();
+            }
+        }
             }
         }  
         }

@@ -18,7 +18,7 @@ class EmployeeController extends Controller
             return view('backend.login');
 
         } 
-        $jobemployee = JobEmployee::where(['id_technician' => Session::get('admin')['id']])->orderBy('id', 'DESC')->paginate(5);
+        $jobemployee = JobEmployee::where(['id_technician' => Session::get('admin')['id']])->orderBy('id', 'DESC')->paginate(10);
 
         return view('backend.includeTechnicians.jobs',['jobemployee'=> $jobemployee] );
     }
@@ -40,8 +40,8 @@ class EmployeeController extends Controller
 
     function solution(Request $request){
         $data =  $request->all();
-        echo "<pre>";
-        // print_r($data);die;
+        // echo "<pre>";
+        // print_r($data['repair'][0]);die;
         $repairservice = RepairService::whereIn('id', $data['repair'])->get()->toArray();
         $repair = json_encode($repairservice);
         $JobDetail = new JobDetail();
@@ -56,6 +56,10 @@ class EmployeeController extends Controller
             $JobEmployee->status = $data['solution'];
             $claimWarranty = ClaimWarranty::where(['claim_code'=> $JobEmployee['order_code']])->get()->first();
             $claimWarranty->status = $data['solution'];
+            if( $data['solution'] == 3 && $data['repair'][0] == 9){
+                $JobEmployee->type = 9;
+                $claimWarranty->type = 9;
+            }
             $claimWarranty->save();
             $JobEmployee->save();
     

@@ -141,7 +141,7 @@
 
                         <li> <a class="waves-effect waves-dark" href="{{route('manufacturer')}} " aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/brand.png')}}"> <span class="hide-menu">Quản lý hãng</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="{{route('product')}} " aria-expanded="false"> <img style ="width: 40px;" src="{{asset('frontend/images/bill.png')}}"> <span class="hide-menu">Quản lý sản phẩm</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{route('product')}} " aria-expanded="false"> <img style ="width: 40px;" src="{{asset('frontend/images/product.png')}}"> <span class="hide-menu">Quản lý sản phẩm</span></a>
                         </li>
 
                         <li > <div class='' style='background-color: #00bfd9;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Kích hoạt bảo hành</div></li>

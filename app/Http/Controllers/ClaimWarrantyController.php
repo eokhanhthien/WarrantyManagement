@@ -18,7 +18,7 @@ class ClaimWarrantyController extends Controller
     public function index(){
         if(Session::get('admin') != NULL && Session::get('admin')['role'] === 1){
             // $claimwarranty = ClaimWarranty::paginate(5);;
-            $claimwarranty = ClaimWarranty::orderBy('id', 'DESC')->paginate(5); 
+            $claimwarranty = ClaimWarranty::orderBy('id', 'DESC')->paginate(10); 
 
             return view('backend.include.claimwarranty.index', ['claimwarranty' => $claimwarranty]);
         }
