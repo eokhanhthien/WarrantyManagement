@@ -247,11 +247,11 @@ table td:nth-child(4) {
                     </table>
                     </div>
                     </div>
-                    <div class="row"> 
-                    <h4 class="col col-2">Ghi chú:</h4>
+                    <div class="row mt-3"> 
+                    <h4 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/note.png')}}">Ghi chú:</h4>
                     <?php if(isset($JobDetail[0]['note']) && $JobDetail[0]['note'] != '' ){?>
                     
-                            <p class="col col-10 " >{{$JobDetail[0]['note']}}</p>
+                            <p class="col col-2 " >{{$JobDetail[0]['note']}}</p>
                        
                         <?php }?>    
                      </div>
@@ -325,11 +325,11 @@ table td:nth-child(4) {
                     </table>
                     </div>
                     </div>
-                    <div class="row"> 
-                    <h4 class="col col-2">Ghi chú:</h4>
+                    <div class="row mt-3"> 
+                    <h4 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/note.png')}}">Ghi chú:</h4>
                     <?php if(isset($JobDetail[0]['note']) && $JobDetail[0]['note'] != '' ){?>
                     
-                            <p class="col col-10 " >{{$JobDetail[0]['note']}}</p>
+                            <p class="col col-2 " >{{$JobDetail[0]['note']}}</p>
                        
                         <?php }?>    
                      </div>
@@ -380,11 +380,11 @@ table td:nth-child(4) {
                     <div class="row">
                  
                     </div>
-                    <div class="row"> 
-                    <h4 class="col col-2">Ghi chú :</h4>
+                    <div class="row mt-3"> 
+                    <h4 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/note.png')}}">Ghi chú :</h4>
                     <?php if(isset($JobDetail[0]['note']) && $JobDetail[0]['note'] != '' ){?>
                     
-                            <p class="col col-10 " >{{$JobDetail[0]['note']}}</p>
+                            <p class="col col-2 " >{{$JobDetail[0]['note']}}</p>
                        
                         <?php }?>    
                      </div>

@@ -32,7 +32,7 @@
                 ?>
 
                @foreach($jobemployee as $key => $val) 
-                  <?php if( $val['status'] == 5 || $val['status'] == 3){ 
+                  <?php if( $val['type'] == 10 || $val['type'] == 9){ 
                     $totalFinal ++;
                   }
                   ?>
@@ -125,11 +125,11 @@
                 ?>  
                 
                 @foreach($jobemployee as $key => $val)
-                    @if($idEmployee===$val['id_technician'] && $val['status'] === 5 )
+                    @if($idEmployee===$val['id_technician'] && $val['type'] === 10 )
                     <?php 
                         $totalJob ++;
                     ?>
-                    @elseif($idEmployee===$val['id_technician'] && $val['status'] === 3 )
+                    @elseif($idEmployee===$val['id_technician'] && $val['type'] === 9 )
                     <?php 
                         $totalJob ++;
                     ?>
@@ -170,18 +170,11 @@
                 ?>  
                 
                 @foreach($jobemployee as $key => $val)
-                    @if($idEmployee===$val['id_technician'] && $val['status'] === 1 )
+                    @if($idEmployee===$val['id_technician'] && $val['type'] === 1 )
                     <?php 
                         $totalJob ++;
                     ?>
-                    @elseif($idEmployee===$val['id_technician'] && $val['status'] === 2 )
-                    <?php 
-                        $totalJob ++;
-                    ?>
-                    @elseif($idEmployee===$val['id_technician'] && $val['status'] === 4 )
-                    <?php 
-                        $totalJob ++;
-                    ?>
+                  
                     @endif
                 @endforeach
 

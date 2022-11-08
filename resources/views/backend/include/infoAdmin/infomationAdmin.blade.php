@@ -35,23 +35,23 @@
                     </div>
                     <div class="col col-8">
                         <div class="row g-0">
-                            <div class="text-ct col col-3"><strong>Họ và tên:</strong>  </div>
+                            <div class="text-ct col col-3"><strong><img style ="width: 30px;" src="{{asset('frontend/images/id.png')}}"> Họ và tên:</strong>  </div>
                             <div class="text-ct-1 col col-6">{{Session::get('admin')['fullname'] }}</div>
                         </div>
                         <div class="row g-0">
-                            <div class="text-ct col col-3"><strong>Email:</strong>  </div>
+                            <div class="text-ct col col-3"><strong><img style ="width: 30px;" src="{{asset('frontend/images/mail.png')}}"> Email:</strong>  </div>
                             <div class="text-ct-1 col col-6">{{Session::get('admin')['email'] }}</div>
                         </div>
                         <div class="row g-0">
-                            <div class="text-ct col col-3"><strong>Chức vụ:</strong>  </div>
+                            <div class="text-ct col col-3"><strong><img style ="width: 30px;" src="{{asset('frontend/images/role.png')}}"> Chức vụ:</strong>  </div>
                             <div class="text-ct-1 col col-6"><?php echo Session::get('admin')['role'] == 1? "Quản trị viên": " Khác" ?></div>
                         </div>
                         <div class="row g-0">
-                            <div class="text-ct col col-3"><strong>Số điện thoại:</strong>  </div>
+                            <div class="text-ct col col-3"><strong><img style ="width: 30px;" src="{{asset('frontend/images/phone.png')}}"> Số điện thoại:</strong>  </div>
                             <div class="text-ct-1 col col-6">0946144333</div>
                         </div>
                         <div class="row g-0">
-                            <div class="text-ct col col-3"><strong>Địa chỉ:</strong>  </div>
+                            <div class="text-ct col col-3"><strong><img style ="width: 30px;" src="{{asset('frontend/images/positon.png')}}"> Địa chỉ:</strong>  </div>
                             <div class="text-ct-1 col col-8">Ấp Đá Bạc, xã Khánh Bình Tây, huyện Trần Văn Thời, tỉnh Cà Mau</div>
                         </div>
                     </div>
