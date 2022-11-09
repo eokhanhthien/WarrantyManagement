@@ -118,34 +118,37 @@ table td:nth-child(4) {
                     <!-- column -->
                     <div class="col-12">
                         <div class="info-customer-order-detail">
-                        <h3 class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}"> Thông tin khách hàng</h3>
+                        <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}"> Thông tin khách hàng</h3>
                         <div class="row">
-                            <p class="col col-2">Tên khách hàng:</p>
+                            <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/id.png')}}"> Tên khách hàng:</p>
                             <p class="col col-10">{{$claimDetail['customer_name']}}</p>
                         </div>
                         <div class="row">
-                            <p class="col col-2">Số điện thoại:</p>
+                            <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/phone.png')}}"> Số điện thoại:</p>
                             <p class="col col-10">{{$claimDetail['customer_phone']}}</p>
                         </div>
                         <div class="row">
-                            <p class="col col-2">Email:</p>
+                            <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/mail.png')}}"> Email:</p>
                             <p class="col col-10">{{$claimDetail['customer_email']}}</p>
                         </div>
                         <div class="row">
-                            <p class="col col-2">Thành phố:</p>
+                            <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/positon.png')}}"> Địa chỉ:</p>
+                        </div>
+                        <div class="row" style="margin-left: 16px;">
+                            <p class="col col-2" >Thành phố:</p>
                             <p class="col col-10">{{$claimDetail['address_city']}}</p>
                         </div>
-                        <div class="row">
-                            <p class="col col-2">Quận huyện:</p>
+                        <div class="row" style="margin-left: 16px;">
+                            <p class="col col-2" >Quận huyện:</p>
                             <p class="col col-10">{{$claimDetail['address_province']}}</p>
                         </div>
-                        <div class="row">
-                            <p class="col col-2">Thị trấn:</p>
+                        <div class="row" style="margin-left: 16px;">
+                            <p class="col col-2" >Thị trấn:</p>
                             <p class="col col-10">{{$claimDetail['address_wards']}}</p>
                         </div>
                      
                         <div class="row">
-                            <p class="col col-2">Mã đơn :</p>
+                            <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/order.png')}}"> Mã đơn :</p>
                             <p class="col col-10">{{$claimDetail['claim_code']}}</p>
                         </div>
                       
@@ -157,7 +160,7 @@ table td:nth-child(4) {
                 <form method='post' action="{{route('claim-warranty-job')}}">
                 @csrf
                 <div class="row">
-                            <div class="col-2"> <p class="label-add-order">Phân công nhân viên</p> </div>
+                            <div class="col-2"> <p class="label-add-order"><img style ="width: 30px;" src="{{asset('frontend/images/avatar.png')}}"> Phân công nhân viên</p> </div>
                                 <div class="col-2">
                                     <select class="input-add-order" name="id_technician">
                                     <option value=''> Chọn nhân viên</option>
@@ -174,7 +177,7 @@ table td:nth-child(4) {
                 <form method='post' action="{{route('claim-warranty-job-turn',$job[0]['id'])}}">
                 @csrf
                 <div class="row">
-                            <div class="col-2"> <p class="label-add-order">Phân công nhân viên</p> </div>
+                            <div class="col-2"> <p class="label-add-order"><img style ="width: 30px;" src="{{asset('frontend/images/avatar.png')}}"> Phân công nhân viên</p> </div>
                                 <div class="col-2">
                                     <select class="input-add-order" name="id_technician">
                                     <option value=''> Chọn nhân viên</option>
@@ -200,7 +203,7 @@ table td:nth-child(4) {
 
             <?php }elseif($claimwarranty['status'] === 4){ ?>
                 <div class="row">
-                <h4 class="col-2" style=" color : blue" >Đơn đang được thực hiện bởi kỹ thuật viên:</h4>
+                <h4 class="col-2" style=" color : blue" ><img style ="width: 30px;" src="{{asset('frontend/images/avatar.png')}}"> Đơn đang được thực hiện bởi kỹ thuật viên:</h4>
                 <div class="col-2">
                 <select class="input-add-order" name="id_technician">
                                         @foreach($employees as $key => $val)
@@ -213,7 +216,7 @@ table td:nth-child(4) {
                     <!-- column -->
                     <div class="col-12">
                         <div class="info-customer-order-detail">
-                        <h3 class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
+                        <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
                        
                         <?php if(isset($JobDetail[0]['repair']) && $JobDetail[0]['repair'] != '') 
                         $repair =json_decode($JobDetail[0]['repair'], true);
@@ -221,7 +224,7 @@ table td:nth-child(4) {
                         ?>
 
                     <div class="row">
-                    <h4 class="col col-12">Mục sữa chữa:</h4>
+                    <h4 class="col col-12"><img style ="width: 30px;" src="{{asset('frontend/images/soluton.png')}}"> Mục sữa chữa:</h4>
                     <div class="col col-4">
                     <table>
                     <thead>
@@ -278,7 +281,7 @@ table td:nth-child(4) {
                     <?php }?>
             <?php }elseif($claimwarranty['status'] === 2){?>
                 <div class="row">
-                <h4 class="col-2" style=" color : blue" >Đơn đang được thực hiện bởi kỹ thuật viên:</h4>
+                <h4 class="col-2" style=" color : blue" ><img style ="width: 30px;" src="{{asset('frontend/images/avatar.png')}}"> Đơn đang được thực hiện bởi kỹ thuật viên:</h4>
                 <div class="col-2">
                 <select class="input-add-order" name="id_technician">
                                         @foreach($employees as $key => $val)
@@ -291,7 +294,7 @@ table td:nth-child(4) {
                     <!-- column -->
                     <div class="col-12">
                         <div class="info-customer-order-detail">
-                        <h2 class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h2>
+                        <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
                        
                         <?php if(isset($JobDetail[0]['repair']) && $JobDetail[0]['repair'] != '') 
                         $repair =json_decode($JobDetail[0]['repair'], true);
@@ -299,7 +302,7 @@ table td:nth-child(4) {
                         ?>
 
                     <div class="row">
-                    <h4 class="col col-12">Mục sữa chữa:</h4>
+                    <h4 class="col col-12"><img style ="width: 30px;" src="{{asset('frontend/images/soluton.png')}}"> Mục sữa chữa:</h4>
                     <div class="col col-4">
                     <table>
                     <thead>
@@ -357,7 +360,7 @@ table td:nth-child(4) {
 
             <?php }elseif($claimwarranty['status'] === 3){?>
                 <div class="row">
-                <h4 class="col-2" style=" color : blue" >Đơn đang được thực hiện bởi kỹ thuật viên:</h4>
+                <h4 class="col-2" style=" color : blue" ><img style ="width: 30px;" src="{{asset('frontend/images/avatar.png')}}"> Đơn đang được thực hiện bởi kỹ thuật viên:</h4>
                 <div class="col-2">
                 <select class="input-add-order" name="id_technician">
                                         @foreach($employees as $key => $val)
@@ -370,7 +373,7 @@ table td:nth-child(4) {
                     <!-- column -->
                     <div class="col-12">
                         <div class="info-customer-order-detail">
-                        <h2 class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h2>
+                        <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
                        
                         <?php if(isset($JobDetail[0]['repair']) && $JobDetail[0]['repair'] != '') 
                         $repair =json_decode($JobDetail[0]['repair'], true);

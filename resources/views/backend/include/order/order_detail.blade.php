@@ -40,45 +40,48 @@
                         <div class="info-customer-order-detail">
                         <h4 class="">Thông tin khách hàng</h4>
                         <div class="row">
-                            <p class="col col-2">Tên khách hàng:</p>
+                            <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/id.png')}}"> Tên khách hàng:</p>
                             <p class="col col-10">{{$info_order['name_customer']}}</p>
                         </div>
                         <div class="row">
-                            <p class="col col-2">Số điện thoại:</p>
+                            <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/phone.png')}}"> Số điện thoại:</p>
                             <p class="col col-10">{{$info_order['phone_customer']}}</p>
                         </div>
                         <div class="row">
-                            <p class="col col-2">Email:</p>
+                            <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/mail.png')}}"> Email:</p>
                             <p class="col col-10">{{$info_order['email_customer']}}</p>
                         </div>
                         <div class="row">
+                            <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/positon.png')}}"> Địa chỉ:</p>
+                        </div>
+                        <div class="row" style="margin-left: 16px;">
                             <p class="col col-2">Thành phố:</p>
                             <p class="col col-10">{{$info_order['address_city']}}</p>
                         </div>
-                        <div class="row">
+                        <div class="row" style="margin-left: 16px;">
                             <p class="col col-2">Quận huyện:</p>
                             <p class="col col-10">{{$info_order['address_province']}}</p>
                         </div>
-                        <div class="row">
+                        <div class="row" style="margin-left: 16px;">
                             <p class="col col-2">Thị trấn:</p>
                             <p class="col col-10">{{$info_order['address_wards']}}</p>
                         </div>
                         <div class="row">
-                            <p class="col col-2">Ghi chú:</p>
+                            <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/note.png')}}"> Ghi chú:</p>
                             <p class="col col-10">{{$info_order['note']}}</p>
                         </div>
                         <div class="row">
-                            <p class="col col-2">Mã đơn (order_code):</p>
+                            <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/order.png')}}"> Mã đơn:</p>
                             <p class="col col-10">{{$info_order['order_code']}}</p>
                         </div>
                         <div class="row">
-                            <p class="col col-2">Ngày mua:</p>
+                            <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/date.png')}}"> Ngày mua:</p>
                             <p class="col col-10">{{$info_order['created_at']}}</p>
                         </div>
                     </div>
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Danh sách sản phẩm</h4>
+                                <h4 class="card-title"><img style ="width: 30px;" src="{{asset('frontend/images/product.gif')}}"> Danh sách sản phẩm</h4>
                       
                                 <div class="table-responsive">
                                     <table class="table">
