@@ -10,6 +10,52 @@
                             <li class="breadcrumb-item active">Thống kê công việc</li>
                         </ol>
                     </div>
+
+                    <div class="row">
+                        <div class="col col-2">
+                            <div class="stasitical-order">
+                                <div class="stasitical-number">{{count($product)}}</div>
+                                <div class="stasitical-tag">sản phẩm hiện có</div>
+                            </div>
+                        </div>
+
+                        <div class="col col-2">
+                            <div class="stasitical-order">
+                                <div class="stasitical-number">{{count($serial)}}</div>
+                                <div class="stasitical-tag">Sản phẩm đã bán</div>
+                            </div>
+                        </div>
+                        <div class="col col-2">
+                            <div class="stasitical-order">
+                                <div class="stasitical-number">{{count($employee)}}</div>
+                                <div class="stasitical-tag">Kỹ thuật viên</div>
+                            </div>
+                        </div>                        
+                        
+
+                        <div class="col col-2">
+                            <div class="stasitical-order">
+                                <div class="stasitical-number">{{count($repairService)}}</div>
+                                <div class="stasitical-tag">Dịch vụ sửa chữa</div>
+                            </div>
+                        </div>
+
+                        <div class="col col-2">
+                            <div class="stasitical-order">
+                                <div class="stasitical-number">{{count($jobemployee)}}</div>
+                                <div class="stasitical-tag">Yêu cầu bảo hành</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col col-2">
+                            <div class="stasitical-order">
+                                <div class="stasitical-number">{{count($infoCustomerRegister)}}</div>
+                                <div class="stasitical-tag">Kích hoạt BH online</div>
+                            </div>
+                        </div>
+
+                    </div>
+
                     <h3>Tất cả công việc<img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"></h3>
                     <div class="col-md-7 align-self-center">
                     </div>
