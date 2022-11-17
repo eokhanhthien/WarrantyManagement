@@ -4,12 +4,13 @@
 <div class="container-fluid">
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Thống kê công việc</h3>
+                        <h3 class="text-themecolor">Thống kê tổng quan</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Thống kê công việc</li>
+                            <li class="breadcrumb-item active">Thống kê tổng quan</li>
                         </ol>
                     </div>
+                    <h3 class="mt-3"><img style ="width: 40px;" src="{{asset('frontend/images/thongke.png')}}"> Tổng quan</h3>
 
                     <div class="row">
                         <div class="col col-2">
@@ -56,7 +57,7 @@
 
                     </div>
 
-                    <h3>Tất cả công việc<img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"></h3>
+                    <h3 class="mt-5"><img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"> Tất cả công việc</h3>
                     <div class="col-md-7 align-self-center">
                     </div>
                 </div>
@@ -115,7 +116,7 @@
 
 
 
-            <h3 class="mt-5">Công việc theo từng nhân viên <img style ="width: 40px;" src="{{asset('frontend/images/member.png')}}"></h3>
+            <h3 class="mt-5"><img style ="width: 40px;" src="{{asset('frontend/images/member.png')}}"> Công việc theo từng nhân viên </h3>
 
                 <div style="color: #00a924;
                             font-weight: 600;">Tất cả công việc</div>
@@ -154,7 +155,7 @@
                         <div class="col col-5  ">
                             <div class="graph" style ="width: <?php echo $width ?>%"  ></div>
                         </div>
-                        <div class="col col-2  point_employee"><strong><strong><?php echo $totalJob ?> đơn</strong></strong> </div>
+                        <div class="col col-2  point_employee"><strong><strong><?php echo $totalJob ?> công việc</strong></strong> </div>
                         </div>
                     </div>  
                 @endforeach
@@ -201,7 +202,7 @@
                         <div class="col col-5  ">
                             <div class="graph" style ="width: <?php echo $width ?>%"  ></div>
                         </div>
-                        <div class="col col-2  point_employee"><strong><strong><?php echo $totalJob ?> đơn</strong></strong> </div>
+                        <div class="col col-2  point_employee"><strong><strong><?php echo $totalJob ?> công việc</strong></strong> </div>
                         </div>
                     </div>  
                 @endforeach
@@ -243,7 +244,7 @@
                         <div class="col col-5  ">
                             <div class="graph" style ="width: <?php echo $width ?>%"  ></div>
                         </div>
-                        <div class="col col-2  point_employee"><strong><strong><?php echo $totalJob ?> đơn</strong></strong> </div>
+                        <div class="col col-2  point_employee"><strong><strong><?php echo $totalJob ?> công việc</strong></strong> </div>
                         </div>
                     </div>  
                 @endforeach
@@ -284,12 +285,12 @@
                         <div class="col col-5  ">
                             <div class="graph" style ="width: <?php echo $width ?>%; background-color: #ff4c4c;"  ></div>
                         </div>
-                        <div class="col col-2  point_employee"><strong><strong><?php echo $totalJob ?> đơn</strong></strong> </div>
+                        <div class="col col-2  point_employee"><strong><strong><?php echo $totalJob ?> sản phẩm</strong></strong> </div>
                         </div>
                     </div>  
                 @endforeach
 
-                <h3 class="mt-5">Thống kê số serial <img style ="width: 40px;" src="{{asset('frontend/images/seri.png')}}"></h3>
+                <h3 class="mt-5"><img style ="width: 40px;" src="{{asset('frontend/images/seri.png')}}"> Thống kê số serial </h3>
                 <?php 
                 $totalSeri = count($serial);
                 $active = 0;
@@ -340,7 +341,7 @@
 
               
                 
-                <h3 class="mt-5">Sản phẩm <img style ="width: 40px;" src="{{asset('frontend/images/product.png')}}"></h3>
+                <h3 class="mt-5"><img style ="width: 40px;" src="{{asset('frontend/images/product.png')}}"> Sản phẩm </h3>
                 @foreach($manufacturer as $keyid => $idManufacturer)
                 <?php 
                 $totalproduct=0;

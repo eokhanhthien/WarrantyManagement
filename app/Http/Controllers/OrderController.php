@@ -22,7 +22,7 @@ class OrderController extends Controller
         if(Session::get('admin') != NULL && Session::get('admin')['role'] === 1){
             // $claimwarranty = ClaimWarranty::paginate(5);;
 
-            $order = Order::orderBy('id','desc')->get()->toArray();
+            $order = Order::orderBy('id','desc')->paginate(10);
             return view('backend.include.order.order', ['order' => $order]);
         }
         else if(Session::get('admin') != NULL && Session::get('admin')['role'] === 2){

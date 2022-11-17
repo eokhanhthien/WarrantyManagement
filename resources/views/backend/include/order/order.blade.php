@@ -40,7 +40,7 @@
                                 <h4 class="card-title">Danh sách đơn hàng</h4>
                       
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="table" id='productTable'>
                                         <thead>
                                             <tr>
                                                 <th>STT</th>
@@ -74,6 +74,7 @@
                                           
                                         </tbody>
                                     </table>
+                                    {{$order->links('pagination::bootstrap-4')}}
                                 </div>
                             </div>
                         </div>
@@ -84,4 +85,17 @@
                 <!-- ============================================================== -->
             </div>
 
+            <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+            <br><script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js" defer ></script>            
+            <script>
+                $(document).ready( function () {
+                    $('#productTable').DataTable({
+                        paging: false,
+                        ordering: false,
+                        info: false,
+                    });
+                    
+                    // $('#productTable').DataTable();
+                } );
+            </script>
 @endsection
