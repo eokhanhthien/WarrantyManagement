@@ -1,7 +1,9 @@
 # Bước 1:
     + Tải code về thư mục httdoc của Xampp
 # Bước 2
-    + Cài composer sau đó mở thư mục code ở trên chạy lệnh " composer i " để cài các gói
+    + 1* : Mở php.ini hoặc định vị nó trong máy của bạn (C: / xampp / php / php.ini)
+    + 2* : Bỏ ghi chú phần mở rộng dòng = gd bằng cách xóa dấu chấm phẩy --> extension=gd    
+    + 3* :Cài composer sau đó mở thư mục code ở trên chạy lệnh " composer i " để cài các gói
 # Bước 3
     + Trong thư mục code vừa tải về cáo file sql " web_warrantymanagement.sql " 
     hãy import lên CSDL MySQL ( VD CSDL tên là "warrantymanagement" )
