@@ -8,6 +8,7 @@ use App\Models\ClaimWarrantyDetail;
 use App\Models\ClaimWarranty;
 use App\Models\RepairService;
 use App\Models\JobDetail;
+use App\Models\Revenue;
 use Session;
 
 class EmployeeController extends Controller
@@ -66,7 +67,14 @@ class EmployeeController extends Controller
             return redirect()->back();
     }
 
-    function comfirmFisnish($claim_code){
+    function comfirmFisnish(Request $request,$claim_code){
+            $data =  $request->all();
+            // print_r("<pre>");
+            // print_r($data);
+            // print_r($claim_code);
+            // die;
+
+
             $jobemployee = JobEmployee::where(['order_code'=> $claim_code])->get()->first();
             $claimWarranty = ClaimWarranty::where(['claim_code'=> $claim_code])->get()->first();
             // print_r($claimWarranty);die;
@@ -76,6 +84,13 @@ class EmployeeController extends Controller
             $claimWarranty->save();
             $jobemployee->save();
     
+            $revenue = new Revenue();
+            $revenue->claim_code = $data['order_code'];
+            $revenue->sort = $data['sort'];
+            $revenue->total_money = $data['totalMoney'];
+            $revenue->created_at = gmdate('Y-m-d H:i:s', time() + 7*3600);;
+            $revenue->save();
+
             return redirect()->back();
     }
 

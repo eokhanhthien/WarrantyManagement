@@ -6151,3 +6151,25 @@ p.col.col-2 {
   color: white;
   width: 100%;
 }
+
+.card-body {
+  padding: 1.25rem;
+  box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
+  border-radius: 8px;
+}
+.form-border{
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 8px;
+  background-color: white;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.form-border-5 {
+  box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+  border-radius: 8px;
+  background-color: white;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+}

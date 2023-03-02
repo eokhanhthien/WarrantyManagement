@@ -32,7 +32,7 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <button class="btn btn-primary mr-10"> <a href="{{route('technicians')}}">Quay lại</a> </button>
-                <form action="{{route('technicians-update',$data['id'])}}" method="post">
+                <form action="{{route('technicians-update',$data['id'])}}" method="post" class="col-5 form-border">
                 @csrf
                 <div class="wide">
                     <div class="row mt-2">

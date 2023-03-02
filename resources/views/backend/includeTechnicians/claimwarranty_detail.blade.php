@@ -1,7 +1,7 @@
 @extends('backend.layoutTechnician')
 @section('includeTechnicians')
 <?php
-// print_r($job);die;
+// print_r($claimDetail);die;
 ?>
 <style>
     table {
@@ -114,7 +114,7 @@ table td:nth-child(4) {
 
                 <!-- ============================================================== -->
                 <!-- <button class="btn btn-primary mr-10"> <a href="{{route('order-add')}}">Lập đơn mới</a> </button> -->
-                <div class="row">
+                <div class="row form-border">
                     <!-- column -->
                     <div class="col-12">
                         <div class="info-customer-order-detail">
@@ -173,21 +173,29 @@ table td:nth-child(4) {
                         <strong><p class="address-tag"><img style ="width: 30px;" src="{{asset('frontend/images/soluton.png')}}"> Hướng xử lý:</p> </strong>
                     </div>
                     <div class="col col-xl-8">
+                        <?php if($claimDetail['product_serial']== "NO") {?>
+                            <select name='solution' class="address-main wards" id="choose_solution" required>
+                            <option value="">----Chọn hướng xử lý----</option>
+                            <option value="4">Sửa dịch vụ</option>
+                        </select>
+                        <?php }else{?>
                         <select name='solution' class="address-main wards" id="choose_solution" required>
                             <option value="">----Chọn hướng xử lý----</option>
                             <option value="2">Đồng ý bảo hành</option>
                             <option value="3">Từ chối bảo hành</option>
                             <option value="4">Sửa dịch vụ</option>
                         </select>
+                        <?php }?>
+
                     </div>
                 </div>
 
-                <div class= "solution_No">
+                <div class= "solution_No form-border">
                         <input type="checkbox" id="NoRepair" name="repair[]" value="9">
                         <label for="NoRepair"  style = "color: red"> Xác nhận từ chối bảo hành</label><br>  
                 </div>
 
-                <div class= "solution_Yes">
+                <div class= "solution_Yes form-border">
                 @foreach($repairservice as $key => $val)
                 <input type="checkbox" id="{{$key}}" name="repair[]" value="{{$val['id']}}" >
                 <label for="{{$key}}"> {{$val['name']}}</label><br>    
@@ -217,10 +225,10 @@ table td:nth-child(4) {
                 <button type='submit' class ='btn btn-success'>Xác nhận</button>
                 </form>
                 <?php } elseif($jobemployee['status']===2){?>
-                    <div class="row">
+                    <div class="row ">
                     <!-- column -->
                     <div class="col-12">
-                        <div class="info-customer-order-detail">
+                        <div class="info-customer-order-detail form-border">
                         <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
                        
                         <?php if(isset($JobDetail[0]['repair']) && $JobDetail[0]['repair'] != '') 
@@ -230,7 +238,7 @@ table td:nth-child(4) {
 
                     <div class="row">
                     <h4 class="col col-12">Mục sữa chữa:</h4>
-                    <div class="col col-4">
+                    <div class="col col-12">
                     <table>
                     <thead>
                         <tr>
@@ -243,7 +251,7 @@ table td:nth-child(4) {
                         $totalMoney =0;
                         ?>
                         <?php foreach($repair as $key => $val) {
-                            $totalMoney +=$val['price'];
+                            // $totalMoney +=$val['price'];
                             ?>        
                                 <tr>
                                     <td data-label="Projeto"><?= $val['name'] ?></td>
@@ -280,15 +288,22 @@ table td:nth-child(4) {
                                                 font-size: 28px;
                                                 font-weight: 500;" >Yêu cầu bảo hành đã hoàn thành <img style ="width: 30px;" src="{{asset('frontend/images/check.gif')}}"></h3>
                 <?php }else{?>
-                    <a  href="{{route('comfirm-fisnish',$jobemployee['order_code'])}}" ><button class='btn btn-success'>Xác nhận đã hoàn thành</button></a>
-                
+                    <!-- <a  href="{{route('comfirm-fisnish',$jobemployee['order_code'])}}" ><button class='btn btn-success'>Xác nhận đã hoàn thành</button></a> -->
+                    <form method='post' action="{{route('comfirm-fisnish',$jobemployee['order_code'])}}">
+                    @csrf
+                    <input type="hidden" value="{{$totalMoney}}" name="totalMoney">
+                    <input type="hidden" value="warranty" name="sort">
+                    <input type="hidden" value="{{$jobemployee['order_code']}}" name="order_code">
+
+                    <button class='btn btn-success' type="submit">Xác nhận đã hoàn thành</button>
+                    </form>
                     <?php }?>
                     
                 <?php }elseif($jobemployee['status']===3){?> 
                     <div class="row">
                     <!-- column -->
                     <div class="col-12">
-                        <div class="info-customer-order-detail">
+                        <div class="info-customer-order-detail form-border">
                         <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
                        
                         <?php if(isset($JobDetail[0]['repair']) && $JobDetail[0]['repair'] != '') 
@@ -324,7 +339,7 @@ table td:nth-child(4) {
                     <div class="row">
                     <!-- column -->
                     <div class="col-12">
-                        <div class="info-customer-order-detail">
+                        <div class="info-customer-order-detail form-border">
                         <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
                        
                         <?php if(isset($JobDetail[0]['repair']) && $JobDetail[0]['repair'] != '') 
@@ -334,7 +349,7 @@ table td:nth-child(4) {
 
                     <div class="row">
                     <h4 class="col col-12">Mục sữa chữa:</h4>
-                    <div class="col col-4">
+                    <div class="col col-12">
                     <table>
                     <thead>
                         <tr>
@@ -384,8 +399,16 @@ table td:nth-child(4) {
                                                 font-size: 28px;
                                                 font-weight: 500;" >Yêu cầu bảo hành đã hoàn thành <img style ="width: 30px;" src="{{asset('frontend/images/check.gif')}}"></h3>
                 <?php }else{?>
-                    <a  href="{{route('comfirm-fisnish',$jobemployee['order_code'])}}" ><button class='btn btn-success'>Xác nhận đã hoàn thành</button></a>
+                    <!-- <a  href="{{route('comfirm-fisnish',$jobemployee['order_code'])}}" ><button class='btn btn-success'>Xác nhận đã hoàn thành</button></a> -->
                 
+                    <form method='post' action="{{route('comfirm-fisnish',$jobemployee['order_code'])}}">
+                    @csrf
+                    <input type="hidden" value="{{$totalMoney}}" name="totalMoney">
+                    <input type="hidden" value="fix" name="sort">
+                    <input type="hidden" value="{{$jobemployee['order_code']}}" name="order_code">
+                    <button class='btn btn-success' type="submit">Xác nhận đã hoàn thành</button>
+                    </form>
+
                     <?php }?>
 
 

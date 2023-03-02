@@ -25,7 +25,7 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <button class="btn btn-primary mr-10"> <a href="{{route('manufacturer')}}">Quay lại</a> </button>
-                <form action="{{route('add-manufacturer')}}" method="post">
+                <form action="{{route('add-manufacturer')}}" method="post" class="col-5 form-border-5">
                 @csrf
                 <div class="wide">
                     <div class="row">
@@ -33,7 +33,7 @@
                         <div class="col-8"><input class="input-add-order" type="text" placeholder="Manufacturer name" name="name" required></div>
                     </div>
                 </div>
-                <button type='submit' class='btn btn-success'>Thêm</button>
+                <button type='submit' class='btn btn-success mt-3'>Thêm</button>
                 </form>
 
                 <!-- ============================================================== -->

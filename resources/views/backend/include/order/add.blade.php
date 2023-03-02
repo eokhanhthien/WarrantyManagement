@@ -40,6 +40,7 @@
                 <form action="{{route('add-order')}}" method="post">
                 @csrf
                 <div class="wide">
+                    <div class="form-border">
                     <div class="row g-0">
                         <div class="col-4"> <p class="label-add-order"><img style ="width: 30px;" src="{{asset('frontend/images/id.png')}}"> Tên khách hàng:</p> </div>
                         <div class="col-8"><input class="input-add-order" type="text" placeholder="Full name" name="data_order[name_customer]" required></div>
@@ -54,8 +55,8 @@
                         <div class="col-4"> <p class="label-add-order"><img style ="width: 30px;" src="{{asset('frontend/images/mail.png')}}"> Email:</p> </div>
                         <div class="col-8"><input class="input-add-order" type="text" placeholder="Email" name="data_order[email_customer]" required></div>
                     </div>
-                   
-                    <div class="row g-0">
+                    </div>
+                    <div class="row g-0 form-border">
                 <h4 class="col col-xl-12 infor-pay-name mt-3"><img style ="width: 30px;" src="{{asset('frontend/images/positon.png')}}"> Địa chỉ nhận hàng:</h4>
                 <div class="row g-0 mb-10">
                     <div class="col col-xl-4">

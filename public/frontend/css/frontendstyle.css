@@ -1,5 +1,6 @@
 :root {
     --blue-color: #1587eb;
+    --blue2-color: #5e8530;
   }
 
 *{
@@ -91,6 +92,20 @@ position: relative;
     padding: 10px;
     background-color: var(--blue-color);
     color: white;
+}
+.panel-title-guest {
+    padding: 10px;
+    background-color: var(--blue2-color);
+    color: white;
+}
+.guest{
+    background-color: var(--blue2-color);
+    border: 1px solid var(--blue2-color);
+}
+.guest:hover{
+    background-color: var(--blue2-color);
+    border: 1px solid var(--blue2-color);
+    opacity: 0.9;
 }
 .panel-heading{
     padding: 10px;

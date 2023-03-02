@@ -32,7 +32,7 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <button class="btn btn-primary mr-10"> <a href="{{route('technicians')}}">Quay lại</a> </button>
-                <form action="{{route('repair-service-update',$data['id'])}}" method="post">
+                <form action="{{route('repair-service-update',$data['id'])}}" method="post" class="col-5 form-border">
                 @csrf
                 <div class="wide">
                     <div class="row mt-2">
@@ -45,7 +45,7 @@
                     </div>
                   
                 </div>
-                <button type='submit' class='btn btn-success'>Sửa</button>
+                <button type='submit' class='btn btn-success m-3'>Sửa</button>
                 </form>
 
                 <!-- ============================================================== -->

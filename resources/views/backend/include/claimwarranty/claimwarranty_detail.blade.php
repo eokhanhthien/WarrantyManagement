@@ -114,7 +114,7 @@ table td:nth-child(4) {
 
                 <!-- ============================================================== -->
                 <!-- <button class="btn btn-primary mr-10"> <a href="{{route('order-add')}}">Lập đơn mới</a> </button> -->
-                <div class="row">
+                <div class="row form-border">
                     <!-- column -->
                     <div class="col-12">
                         <div class="info-customer-order-detail">
@@ -202,8 +202,8 @@ table td:nth-child(4) {
                     <?php }?>
 
             <?php }elseif($claimwarranty['status'] === 4){ ?>
-                <div class="row">
-                <h4 class="col-2" style=" color : blue" ><img style ="width: 30px;" src="{{asset('frontend/images/avatar.png')}}"> Đơn đang được thực hiện bởi kỹ thuật viên:</h4>
+                <div class="row form-border">
+                <h4 class="col-2" style="color: blue;font-weight: 600;" ><img style ="width: 30px;" src="{{asset('frontend/images/avatar.png')}}"> Nhân viên: :</h4>
                 <div class="col-2">
                 <select class="input-add-order" name="id_technician">
                                         @foreach($employees as $key => $val)
@@ -212,20 +212,22 @@ table td:nth-child(4) {
                 </select>
                 </div>
                 </div>
+                
                 <div class="row">
                     <!-- column -->
                     <div class="col-12">
                         <div class="info-customer-order-detail">
-                        <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
                        
                         <?php if(isset($JobDetail[0]['repair']) && $JobDetail[0]['repair'] != '') 
                         $repair =json_decode($JobDetail[0]['repair'], true);
 
                         ?>
 
-                    <div class="row">
+                    <div class="row form-border">
+                    <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
+
                     <h4 class="col col-12"><img style ="width: 30px;" src="{{asset('frontend/images/soluton.png')}}"> Mục sữa chữa:</h4>
-                    <div class="col col-4">
+                    <div class="col col-12">
                     <table>
                     <thead>
                         <tr>
@@ -250,17 +252,17 @@ table td:nth-child(4) {
                     </table>
                     </div>
                     </div>
-                    <div class="row mt-3"> 
-                    <h4 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/note.png')}}">Ghi chú:</h4>
+                    <div class="row mt-3 form-border"> 
+                    <h4 class="col col-12"><img style ="width: 30px;" src="{{asset('frontend/images/note.png')}}"><span style="color: blue;font-weight: 600;">Ghi chú :</span></h4>
                     <?php if(isset($JobDetail[0]['note']) && $JobDetail[0]['note'] != '' ){?>
                     
-                            <p class="col col-2 " >{{$JobDetail[0]['note']}}</p>
+                            <p class="col col-12 " >{{$JobDetail[0]['note']}}</p>
                        
                         <?php }?>    
                      </div>
 
-                    <div class="row"> 
-                        <h3 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/moneytotal.png')}}">Tổng tiền:</h3>
+                    <div class="row form-border"> 
+                        <h3 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/moneytotal.png')}}"><span style="color: blue;font-weight: 600;">Tổng tiền: </span></h3>
                         <h3 class="col col-10 " style="color : red;    
                                                 font-size: 26px;
                                                 font-weight: 500;" ><?=number_format($totalMoney) ?> đ</h3>
@@ -280,8 +282,8 @@ table td:nth-child(4) {
                                                 font-weight: 500;" >Yêu cầu bảo hành đang được thực hiện <img style ="width: 30px;" src="{{asset('frontend/images/fix.gif')}}"></h3>
                     <?php }?>
             <?php }elseif($claimwarranty['status'] === 2){?>
-                <div class="row">
-                <h4 class="col-2" style=" color : blue" ><img style ="width: 30px;" src="{{asset('frontend/images/avatar.png')}}"> Đơn đang được thực hiện bởi kỹ thuật viên:</h4>
+                <div class="row form-border">
+                <h4 class="col-2" style="color: blue;font-weight: 600;" ><img style ="width: 30px;" src="{{asset('frontend/images/avatar.png')}}"> Nhân viên: :</h4>
                 <div class="col-2">
                 <select class="input-add-order" name="id_technician">
                                         @foreach($employees as $key => $val)
@@ -294,16 +296,17 @@ table td:nth-child(4) {
                     <!-- column -->
                     <div class="col-12">
                         <div class="info-customer-order-detail">
-                        <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
                        
                         <?php if(isset($JobDetail[0]['repair']) && $JobDetail[0]['repair'] != '') 
                         $repair =json_decode($JobDetail[0]['repair'], true);
 
                         ?>
 
-                    <div class="row">
+                    <div class="row form-border">
+                    <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
+
                     <h4 class="col col-12"><img style ="width: 30px;" src="{{asset('frontend/images/soluton.png')}}"> Mục sữa chữa:</h4>
-                    <div class="col col-4">
+                    <div class="col col-12">
                     <table>
                     <thead>
                         <tr>
@@ -328,17 +331,17 @@ table td:nth-child(4) {
                     </table>
                     </div>
                     </div>
-                    <div class="row mt-3"> 
-                    <h4 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/note.png')}}">Ghi chú:</h4>
+                    <div class="row mt-3 form-border"> 
+                    <h4 class="col col-12"><img style ="width: 30px;" src="{{asset('frontend/images/note.png')}}"><span style="color: blue;font-weight: 600;">Ghi chú :</span></h4>
                     <?php if(isset($JobDetail[0]['note']) && $JobDetail[0]['note'] != '' ){?>
                     
-                            <p class="col col-2 " >{{$JobDetail[0]['note']}}</p>
+                            <p class="col col-12 " >{{$JobDetail[0]['note']}}</p>
                        
                         <?php }?>    
                      </div>
 
-                    <div class="row"> 
-                        <h3 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/moneytotal.png')}}">Tổng tiền:</h3>
+                    <div class="row form-border"> 
+                        <h3 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/moneytotal.png')}}"><span style="color: blue;font-weight: 600;">Tổng tiền: </span></h3>
                         <h3 class="col col-10 " style="color : red;    
                                                 font-size: 26px;
                                                 font-weight: 500;" >0đ (Free)</h3>
@@ -359,8 +362,8 @@ table td:nth-child(4) {
                     <?php }?>
 
             <?php }elseif($claimwarranty['status'] === 3){?>
-                <div class="row">
-                <h4 class="col-2" style=" color : blue" ><img style ="width: 30px;" src="{{asset('frontend/images/avatar.png')}}"> Đơn đang được thực hiện bởi kỹ thuật viên:</h4>
+                <div class="row form-border">
+                <h4 class="col-2" style="color: blue;font-weight: 600;" ><img style ="width: 30px;" src="{{asset('frontend/images/avatar.png')}}"> Nhân viên: :</h4>
                 <div class="col-2">
                 <select class="input-add-order" name="id_technician">
                                         @foreach($employees as $key => $val)
@@ -383,11 +386,11 @@ table td:nth-child(4) {
                     <div class="row">
                  
                     </div>
-                    <div class="row mt-3"> 
-                    <h4 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/note.png')}}">Ghi chú :</h4>
+                    <div class="row mt-3 v"> 
+                    <h4 class="col col-12"><img style ="width: 30px;" src="{{asset('frontend/images/note.png')}}"><span style="color: blue;font-weight: 600;">Ghi chú :</span></h4>
                     <?php if(isset($JobDetail[0]['note']) && $JobDetail[0]['note'] != '' ){?>
                     
-                            <p class="col col-2 " >{{$JobDetail[0]['note']}}</p>
+                            <p class="col col-12 " >{{$JobDetail[0]['note']}}</p>
                        
                         <?php }?>    
                      </div>

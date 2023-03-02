@@ -10,9 +10,10 @@
                             <li class="breadcrumb-item active">Thống kê tổng quan</li>
                         </ol>
                     </div>
+                    <div class="row form-border">
                     <h3 class="mt-3"><img style ="width: 40px;" src="{{asset('frontend/images/thongke.png')}}"> Tổng quan</h3>
 
-                    <div class="row">
+                    
                         <div class="col col-2">
                             <div class="stasitical-order">
                                 <div class="stasitical-number">{{count($product)}}</div>
@@ -57,10 +58,11 @@
 
                     </div>
 
+                    <div class="form-border">
                     <h3 class="mt-5"><img style ="width: 40px;" src="{{asset('frontend/images/fix.png')}}"> Tất cả công việc</h3>
                     <div class="col-md-7 align-self-center">
                     </div>
-                </div>
+                
 
                 <div class="row"> 
                
@@ -114,8 +116,10 @@
                <div class="col col-2  point_employee"><strong><strong>{{$totalJob - $totalFinal}} công việc</strong></strong> </div>
             </div>
 
+            </div>
 
-
+            <div class="form-border">
+         
             <h3 class="mt-5"><img style ="width: 40px;" src="{{asset('frontend/images/member.png')}}"> Công việc theo từng nhân viên </h3>
 
                 <div style="color: #00a924;
@@ -289,7 +293,9 @@
                         </div>
                     </div>  
                 @endforeach
+                </div>  
 
+            <div class="form-border">
                 <h3 class="mt-5"><img style ="width: 40px;" src="{{asset('frontend/images/seri.png')}}"> Thống kê số serial </h3>
                 <?php 
                 $totalSeri = count($serial);
@@ -305,6 +311,9 @@
                 }
                 ?>          
                 @endforeach
+            
+
+            
 
                 <div class="row mt-2"> 
                 <div class="col col-1 name_employee">Tổng sổ serial</div>
@@ -339,8 +348,10 @@
                         <div class="col col-2  point_employee"><strong> <strong><?php echo $notActive ?> serial </strong></strong> </div>    
                 </div> 
 
-              
+            </div>
                 
+            <div class="form-border">
+
                 <h3 class="mt-5"><img style ="width: 40px;" src="{{asset('frontend/images/product.png')}}"> Sản phẩm </h3>
                 @foreach($manufacturer as $keyid => $idManufacturer)
                 <?php 
@@ -379,6 +390,9 @@
                         </div>
                     </div>  
                 @endforeach
+                            </div>
 </div>
+</div>
+
 
 @endsection

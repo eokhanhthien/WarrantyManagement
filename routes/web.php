@@ -12,6 +12,7 @@ use App\Http\Controllers\Technicianstroller;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\RepairServiceController;
 use App\Http\Controllers\StatisticalController;
+use App\Http\Controllers\ClaimFixController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +33,8 @@ Route::get('/register-warranty-info-customer', [IndexController::class, 'Registe
 Route::post('/comfirm-register-warranty', [IndexController::class, 'comfirmRegisterWarranty'])->name('comfirm-register-warranty');
 Route::get('/claim-warranty', [IndexController::class, 'claimWarranty'])->name('claim-warranty');
 Route::post('/send-claim-warranty', [IndexController::class, 'sendClaimWarranty'])->name('send-claim-warranty');
+Route::get('/claim-fix', [IndexController::class, 'claimfix'])->name('claim-fix');
+Route::post('/send-claim-fix', [IndexController::class, 'sendClaimfix'])->name('send-claim-fix');
 
 
 
@@ -48,7 +51,8 @@ Route::get('/infomationAdmin', [AdminController::class, 'infomationAdmin'])->nam
 Route::get('/employee', [EmployeeController::class, 'index'])->name('employee');
 Route::get('/employee-view-detail/{order_code}', [EmployeeController::class, 'viewDtail'])->name('employee-view-detail');
 Route::post('/solution', [EmployeeController::class, 'solution'])->name('solution');
-Route::get('/comfirm-fisnish/{order_code}', [EmployeeController::class, 'comfirmFisnish'])->name('comfirm-fisnish');
+// Route::get('/comfirm-fisnish/{order_code}', [EmployeeController::class, 'comfirmFisnish'])->name('comfirm-fisnish');
+Route::post('/comfirm-fisnish/{order_code}', [EmployeeController::class, 'comfirmFisnish'])->name('comfirm-fisnish');
 Route::get('/infomationTaff', [EmployeeController::class, 'infomationTaff'])->name('infomationTaff');
 Route::get('/map', [EmployeeController::class, 'map'])->name('map');
 
@@ -96,6 +100,8 @@ Route::get('/claim-warranty-show', [ClaimWarrantyController::class, 'index'])->n
 Route::get('/claimwarranty-view-detail/{claim_code}', [ClaimWarrantyController::class, 'ClaimWarrantyViewDetail'])->name('claimwarranty-view-detail');
 Route::post('/claim-warranty-job', [ClaimWarrantyController::class, 'job'])->name('claim-warranty-job');
 Route::post('/claim-warranty-job/{id}/edit', [ClaimWarrantyController::class, 'jobTurn'])->name('claim-warranty-job-turn');
+
+// // cLAIM FIX
 
 
 // TECHNICIAN

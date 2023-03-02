@@ -10,6 +10,9 @@ use App\Models\Product;
 use App\Models\Manufacturer;
 use App\Models\RepairService;
 use App\Models\InfoCustomerRegister;
+
+use App\Models\Revenue;
+
 use Session;
 
 class StatisticalController extends Controller
@@ -23,6 +26,7 @@ class StatisticalController extends Controller
         $jobemployee = JobEmployee::get()->toArray();
         $employee = Admin::get()->toArray();
         $serial = Serial::get()->toArray();
+        $revenue = Revenue::get()->toArray();
         
         $array = [];
         foreach($employee as $value){
@@ -43,6 +47,6 @@ class StatisticalController extends Controller
 
         // echo "<pre>";
         // print_r($arrayManu);die;
-        return view('backend.include.statistical.statistical',['jobemployee'=> $jobemployee , 'employee' => $array ,'name' => $employee ,'serial'=>$serial ,'product'=> $product , 'manufacturer' => $arrayManu ,'manufacturerName' => $manufacturer , 'repairService' => $repairService , 'infoCustomerRegister' => $infoCustomerRegister] );
+        return view('backend.include.statistical.statistical',['jobemployee'=> $jobemployee , 'employee' => $array ,'name' => $employee ,'serial'=>$serial ,'product'=> $product , 'manufacturer' => $arrayManu ,'manufacturerName' => $manufacturer , 'repairService' => $repairService , 'infoCustomerRegister' => $infoCustomerRegister, 'revenue' => $revenue] );
     }
 }

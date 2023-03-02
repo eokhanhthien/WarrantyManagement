@@ -34,7 +34,7 @@
 
                 <!-- ============================================================== -->
                 <!-- <button class="btn btn-primary mr-10"> <a href="{{route('order-add')}}">Lập đơn mới</a> </button> -->
-                <div class="row">
+                <div class="row form-border">
                     <!-- column -->
                     <div class="col-12">
                         <div class="info-customer-order-detail">

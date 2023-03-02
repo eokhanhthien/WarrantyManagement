@@ -13,6 +13,9 @@ use App\Models\Serial;
 use App\Models\InfoCustomerRegister;
 use App\Models\ClaimWarrantyDetail;
 use App\Models\ClaimWarranty;
+use App\Models\ClaimFix;
+use App\Models\ClaimFixDetail;
+
 use Session;
 
 use App\Http\Controllers\MailerPHP; 
@@ -135,7 +138,13 @@ class IndexController extends Controller
         $city = City::get()->toArray();
         $manufacturer = Manufacturer::get()->toArray();
         return view('frontend.pages.claimwarranty',["data"=>$city , 'manufacturer' => $manufacturer]);
+    }
 
+    public function claimfix()
+    {
+        $city = City::get()->toArray();
+        $manufacturer = Manufacturer::get()->toArray();
+        return view('frontend.pages.claimfix',["data"=>$city , 'manufacturer' => $manufacturer]);
     }
 
     function sendClaimWarranty(Request $request){
@@ -210,6 +219,50 @@ class IndexController extends Controller
 
         // if($product[0]['id']);
         
+    }
+
+    public function sendClaimfix(Request $request)
+    {
+        $data =  $request->all();
+        $checkout_code = substr(md5(microtime()),rand(0,26),5);
+                    
+        $claimwarrantydetail = new ClaimWarrantyDetail();
+        $claimwarranty = new ClaimWarranty();
+
+
+        $claimwarranty->customer_name = $data['customer_name']; 
+        $claimwarranty->claim_code = $checkout_code;
+        $claimwarranty->status = 0;
+        $claimwarranty->type = 1;
+        $claimwarranty->created_at = gmdate('Y-m-d H:i:s', time() + 7*3600);
+        $claimwarranty->save();
+
+
+        $claimwarrantydetail->customer_name = $data['customer_name'];
+        $claimwarrantydetail->claim_code = $checkout_code;
+        $claimwarrantydetail->type = 1;
+        $claimwarrantydetail->customer_email = $data['customer_email'];
+        $claimwarrantydetail->customer_phone = $data['customer_phone'];
+        $claimwarrantydetail->product_serial = 'NO';
+        $claimwarrantydetail->product_id = $data['product_id'];
+        $claimwarrantydetail->address_city = $data['address_city'];
+        $claimwarrantydetail->address_province = $data['address_province'];
+        $claimwarrantydetail->address_wards = $data['address_wards'];
+
+        $claimwarrantydetail->save();
+
+        // $noidung ="";
+        // $tieude = 'Yêu cầu bảo hành';
+        // $noidung .="<p>Yêu cầu bảo hành của quý khách đã được tiếp nhận thành công với mã yêu cầu là: ".$checkout_code."</p>";
+        // $noidung .="<p>Kỹ thuật viên sẽ đến kiểm tra tình trạng máy của bạn (trễ nhất một tuần)</p>";
+        // $emailyeucau = $data['customer_email'];
+
+        // $mail= new MailerPHP();
+        // $mail->sendMail( $tieude,$noidung,$emailyeucau);
+
+        return redirect()->route('claim-warranty')->with('register-success','Gửi yêu cầu sửa chữa thành công, kết quả sẽ sớm được gửi qua mail của bạn');
+
+    
     }
 
 }

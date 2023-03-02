@@ -27,7 +27,7 @@
 
                     </div>
                 </div>
-                <div class="row">
+                <div class="row form-border">
                     <div class="col col-2">
                         <div class="avatar">
                             <img  src="{{asset('frontend/images/avatar.png')}}">

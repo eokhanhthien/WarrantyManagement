@@ -25,7 +25,7 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <button class="btn btn-primary mr-10"> <a href="{{route('product')}}">Quay lại</a> </button>
-                <form action="{{route('product-update',$data['id'])}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('product-update',$data['id'])}}" method="post" enctype="multipart/form-data" class="col-5 form-border">
                 @csrf
                 <div class="wide">
                     <div class="row">

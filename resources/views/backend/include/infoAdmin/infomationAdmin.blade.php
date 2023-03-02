@@ -15,7 +15,7 @@
                     </div>
                 @endif
 
-                <div class="row page-titles">
+                <div class="row page-titles ">
                     <div class="col-md-5 align-self-center">
                         <h3 class="text-themecolor">Thông tin cá nhân</h3>
                         <ol class="breadcrumb">
@@ -27,7 +27,7 @@
 
                     </div>
                 </div>
-                <div class="row">
+                <div class="row form-border">
                     <div class="col col-2">
                         <div class="avatar">
                             <img  src="{{asset('frontend/images/avatarAdmin.png')}}">

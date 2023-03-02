@@ -32,7 +32,7 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <button class="btn btn-primary mr-10"> <a href="{{route('technicians')}}">Quay lại</a> </button>
-                <form action="{{route('add-technicians')}}" method="post">
+                <form action="{{route('add-technicians')}}" method="post" class="col-5 form-border-5">
                 @csrf
                 <div class="wide">
                     <div class="row mt-2">
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                 </div>
-                <button type='submit' class='btn btn-success'>Đăng ký</button>
+                <button type='submit' class='btn btn-success mt-3'>Đăng ký</button>
                 </form>
 
                 <!-- ============================================================== -->
