@@ -6126,7 +6126,7 @@ p.col.col-2 {
   position: relative;
 }
 .stasitical-number{
-  width: 70px;
+  /* width: 70px; */
   height: 70px;
   font-size: 62px;
   font-weight: 500;
@@ -6141,6 +6141,23 @@ p.col.col-2 {
   /* background-color: #5aa9ed; */
   color: white;
 }
+.stasitical-icon {
+  width: 70px;
+  height: 70px;
+  font-size: 62px;
+  font-weight: 500;
+  /* border: 3px solid #5aa9ed; */
+  position: absolute;
+  left: 8%;
+  top: 9%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  text-align: center;
+  /* line-height: 52px; */
+  /* background-color: #5aa9ed; */
+  color: white;
+}
+
 .stasitical-tag {
   font-size: 20px;
   font-weight: 600;
