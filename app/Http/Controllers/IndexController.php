@@ -26,6 +26,12 @@ class IndexController extends Controller
         return view('frontend.pages.home');
     }
 
+    public function recommentProduct()
+    {
+        $product = Product::orderBy('id','desc')->paginate(12); 
+
+        return view('frontend.pages.recommentproduct',['product'=>$product]);
+    }
     public function registerWarranty(){
         // Xóa đi Session nếu quay lại trang trước
         Session::forget('isWarranty')  ;

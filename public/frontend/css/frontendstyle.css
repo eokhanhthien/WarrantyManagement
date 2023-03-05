@@ -65,6 +65,15 @@ background-repeat: no-repeat;
 background-attachment: fixed;
 position: relative;
 }
+
+.banner-product{
+    height: 330px;
+    background-image: url("https://giavan.com.vn/wp-content/uploads/2019/01/banner-photocopy-gia-van.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    }
+
 .baner-content{
     position: absolute;
     top: 50%;
@@ -229,4 +238,14 @@ body::-webkit-scrollbar-thumb
 }
 .statistical_employee{
     line-height: 32px;
+}
+.size-banner-home{
+    width: 100%;
+}
+.size-banner-home img{
+    width: 100%;
+}
+
+.col-3.border-product {
+    padding: 20px;
 }

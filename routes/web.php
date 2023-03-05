@@ -25,6 +25,7 @@ use App\Http\Controllers\ClaimFixController;
 */
 // ----------------------------FRONTEND----------------------------------
 Route::get('/', [IndexController::class, 'home'])->name('/');
+Route::get('/recomment-product', [IndexController::class, 'recommentProduct'])->name('recomment-product');
 Route::get('/register-warranty', [IndexController::class, 'registerWarranty'])->name('register-warranty');
 Route::get('/check-warranty', [IndexController::class, 'checkWarranty'])->name('check-warranty');
 Route::post('/check-serial', [IndexController::class, 'checkSerial'])->name('check-serial');

@@ -6158,6 +6158,23 @@ p.col.col-2 {
   color: white;
 }
 
+.stasitical-icon-6 {
+  width: 70px;
+  height: 70px;
+  font-size: 62px;
+  font-weight: 500;
+  /* border: 3px solid #5aa9ed; */
+  position: absolute;
+  left: 6%;
+  top: 9%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  text-align: center;
+  /* line-height: 52px; */
+  /* background-color: #5aa9ed; */
+  color: white;
+}
+
 .stasitical-tag {
   font-size: 20px;
   font-weight: 600;

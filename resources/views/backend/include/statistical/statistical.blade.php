@@ -61,7 +61,7 @@
             <div class="col col-4">
                 <div class="stasitical-order">
                     <div class="stasitical-number">{{count($infoCustomerRegister)}}</div>
-                    <div class="stasitical-icon"><img style="width: 40px;" src="{{asset('frontend/images/checkmark.png')}}"></div>
+                    <div class="stasitical-icon-6"><img style="width: 40px;" src="{{asset('frontend/images/checkmark.png')}}"></div>
                     <div class="stasitical-tag">Kích hoạt BH online</div>
                 </div>
             </div>
@@ -79,7 +79,7 @@
             <div class="col col-6">
                 <div class="stasitical-order">
                     <div class="stasitical-number">{{number_format($totalRevenue)}}đ</div>
-                    <div class="stasitical-icon"><img style="width: 40px;" src="{{asset('frontend/images/money.png')}}"></div>
+                    <div class="stasitical-icon-6"><img style="width: 40px;" src="{{asset('frontend/images/money.png')}}"></div>
                     <div class="stasitical-tag">Tổng doanh thu</div>
                 </div>
             </div>

@@ -60,7 +60,7 @@
                                                 <td>{{$val['phone_customer']}}</td>
                                                 <td>{{date('d/m/Y' , strtotime($val['created_at']))}}</td>
                                                 <td>
-                                                <a  href="{{route('order-view-detail',$val['order_code'])}}" ><button class='btn btn-primary'><img style ="width: 30px;" src="{{asset('frontend/images/eye.png')}}"></button></a>
+                                                <a  href="{{route('order-view-detail',$val['order_code'])}}" title="Xem chi tiết" ><button class='btn btn-primary'><img style ="width: 30px;" src="{{asset('frontend/images/bill.png')}}"></button></a>
                                                     <!-- <form method="POST" action="{{route('order-delete',$val['order_code'])}}">  
                                                         @method('DELETE')
                                                         @csrf

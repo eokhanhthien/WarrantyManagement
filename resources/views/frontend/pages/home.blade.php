@@ -63,6 +63,27 @@
                 </div>
 
 
+                <div class = "panel">
+                <div class = "panel-title">Sản phẩm mới nhất</div>
+               <div class="row">
+                <div class="col-6">
+                    <div class="size-banner-home">
+                    <img src="{{asset('frontend/images/banner-toshiba.jpg')}}" alt="">
+
+                    </div>
+                </div>
+                <div class="col-6 p-3">
+                    <div>Máy photocopy được thiết kế để sao chép nhanh chóng các tài liệu từ các nguồn khác nhau</div><hr>
+                    <div>Máy photocopy có nhiều tính năng hữu ích để giúp nâng cao hiệu suất làm việc của bạn</div><hr>
+                    <div>Máy photocopy đơn giản và dễ sử dụng, có thể giúp tiết kiệm thời gian và năng suất cho công việc văn phòng của bạn</div><hr>
+                    <a href="/recomment-product">Xem ngay</a>
+                </div>
+               </div>
+                
+                </div>
+
+
+
                 <div class="check-serial">
                     <div class="check-title">Làm thế nào để bạn tìm thấy số sê-ri của bạn?</div>
                     <p >Số sê-ri có thể được tìm thấy trên nhãn dán * nằm ở mặt sau, mặt bên hoặc mặt dưới của sản phẩm.</p>

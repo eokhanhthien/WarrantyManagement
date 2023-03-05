@@ -75,7 +75,7 @@
                                                 </td>
                                                 <td>{{date('d/m/Y' , strtotime($val['created_at']))}}</td>
                                                 <td>
-                                                <a  href="{{route('claimwarranty-view-detail',$val['claim_code'])}}" ><button class='btn btn-primary'><img style ="width: 30px;" src="{{asset('frontend/images/eye.png')}}"></button></a>
+                                                <a  href="{{route('claimwarranty-view-detail',$val['claim_code'])}}" title="Xem chi tiết" ><button class='btn btn-primary'><img style ="width: 30px;" src="{{asset('frontend/images/bill.png')}}"></button></a>
                                                     
                                                 
                                                 </td>               

@@ -72,7 +72,7 @@
                                                 
                                                 </td>
                                                 <td>
-                                                    <a  href="{{route('employee-view-detail',$val['order_code'])}}" ><button class='btn btn-primary'><img style ="width: 30px;" src="{{asset('frontend/images/eye.png')}}"></button></a>
+                                                    <a  href="{{route('employee-view-detail',$val['order_code'])}}" ><button class='btn btn-primary'><img style ="width: 30px;" src="{{asset('frontend/images/bill.png')}}"></button></a>
                                                  
                                                 </td>
                                             </tr>
