@@ -134,10 +134,14 @@ table td:nth-child(4) {
                         <div class="row">
                             <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/positon.png')}}"> Địa chỉ:</p>
                         </div>
-                        <div class="row" style="margin-left: 16px;">
-                            <p class="col col-2">Thành phố:</p>
+                        <div class="row">
+                            <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/mail.png')}}"> Thành phố:</p>
                             <p class="col col-10">{{$claimDetail['address_city']}}</p>
                         </div>
+                        <!-- <div class="row" style="margin-left: 16px;">
+                            <p class="col col-2">Thành phố:</p>
+                            <p class="col col-10">{{$claimDetail['address_city']}}</p>
+                        </div> -->
                         <div class="row" style="margin-left: 16px;">
                             <p class="col col-2">Quận huyện:</p>
                             <p class="col col-10">{{$claimDetail['address_province']}}</p>
@@ -154,10 +158,10 @@ table td:nth-child(4) {
                       
                                              
                         <div class="row">
-                            <p class="col col-2" style= "font-weight: bold">Loại yêu cầu :</p>
-                            <p class="col col-10" style= "font-weight: bold"><?php echo $claimDetail['type'] === 1 ? 'Bảo hành': 'Bảo trì, bảo dưỡng' ?></p>
-                        </div>
-
+                    <p class="col col-2"><img style="width: 30px;" src="{{asset('frontend/images/purchase.png')}}"> Phân loại:</p>
+                    <p class="col col-10"><?php echo $claimDetail['product_serial'] == "NO"?"Bảo trì, sửa chữa":"Bảo hành" ?>
+                    </p>
+                </div>
                     </div>
                         
                     </div>
@@ -170,7 +174,7 @@ table td:nth-child(4) {
 
                 <div class="row g-0 mb-10 mt-5">
                     <div class="col col-xl-2">
-                        <strong><p class="address-tag"><img style ="width: 30px;" src="{{asset('frontend/images/soluton.png')}}"> Hướng xử lý:</p> </strong>
+                        <strong><p class="address-tag"><img style ="width: 22px;" src="{{asset('frontend/images/soluton.png')}}"> Hướng xử lý:</p> </strong>
                     </div>
                     <div class="col col-xl-8">
                         <?php if($claimDetail['product_serial']== "NO") {?>
@@ -204,7 +208,7 @@ table td:nth-child(4) {
                 
                 <div class="row g-0 mb-10 mt-4">
                     <div class="col col-xl-2">
-                        <strong><p class="address-tag"><img style ="width: 30px;" src="{{asset('frontend/images/note.png')}}"> Ghi chú:</p> </strong>
+                        <strong><p class="address-tag"><img style ="width: 22px;" src="{{asset('frontend/images/note.png')}}"> Ghi chú:</p> </strong>
                     </div>
                     <div class="col col-xl-2">
                        <textarea name="note" id="" cols="30" rows="10" placeholder='Ghi chú cho sản phẩm' ></textarea>
@@ -229,7 +233,7 @@ table td:nth-child(4) {
                     <!-- column -->
                     <div class="col-12">
                         <div class="info-customer-order-detail form-border">
-                        <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
+                        <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 22px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
                        
                         <?php if(isset($JobDetail[0]['repair']) && $JobDetail[0]['repair'] != '') 
                         $repair =json_decode($JobDetail[0]['repair'], true);
@@ -264,7 +268,7 @@ table td:nth-child(4) {
                     </div>
                     </div>
                     <div class="row mt-3"> 
-                    <h4 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/note.png')}}"> Ghi chú:</h4>
+                    <h4 class="col col-2"><img style ="width: 22px;" src="{{asset('frontend/images/note.png')}}"> Ghi chú:</h4>
                     <?php if(isset($JobDetail[0]['note']) && $JobDetail[0]['note'] != '' ){?>
                     
                             <p class="col col-2 " >{{$JobDetail[0]['note']}}</p>
@@ -273,10 +277,10 @@ table td:nth-child(4) {
                      </div>
 
                     <div class="row"> 
-                        <h3 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/moneytotal.png')}}">Tổng tiền:</h3>
+                        <h3 class="col col-2"><img style ="width: 22px;" src="{{asset('frontend/images/moneytotal.png')}}">Tổng tiền:</h3>
                         <h3 class="col col-10 " style="color : red;    
                                                 font-size: 28px;
-                                                font-weight: 500;" >0đ (Free)</h3>
+                                                font-weight: 500;" >0 VNĐ</h3>
                     </div>
 
                     </div>
@@ -286,7 +290,7 @@ table td:nth-child(4) {
                     <?php  if($jobemployee['type'] === 10){ ?> 
                     <h3 class="col col-10 " style="color : green;    
                                                 font-size: 28px;
-                                                font-weight: 500;" >Yêu cầu bảo hành đã hoàn thành <img style ="width: 30px;" src="{{asset('frontend/images/check.gif')}}"></h3>
+                                                font-weight: 500;" >Yêu cầu bảo hành đã hoàn thành <img style ="width: 22px;" src="{{asset('frontend/images/check.gif')}}"></h3>
                 <?php }else{?>
                     <!-- <a  href="{{route('comfirm-fisnish',$jobemployee['order_code'])}}" ><button class='btn btn-success'>Xác nhận đã hoàn thành</button></a> -->
                     <form method='post' action="{{route('comfirm-fisnish',$jobemployee['order_code'])}}">
@@ -304,7 +308,7 @@ table td:nth-child(4) {
                     <!-- column -->
                     <div class="col-12">
                         <div class="info-customer-order-detail form-border">
-                        <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
+                        <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 22px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
                        
                         <?php if(isset($JobDetail[0]['repair']) && $JobDetail[0]['repair'] != '') 
                         $repair =json_decode($JobDetail[0]['repair'], true);
@@ -315,7 +319,7 @@ table td:nth-child(4) {
                  
                     </div>
                     <div class="row mt-3"> 
-                    <h4 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/note.png')}}"> Ghi chú :</h4>
+                    <h4 class="col col-2"><img style ="width: 22px;" src="{{asset('frontend/images/note.png')}}"> Ghi chú :</h4>
                     <?php if(isset($JobDetail[0]['note']) && $JobDetail[0]['note'] != '' ){?>
                     
                             <p class="col col-2 " >{{$JobDetail[0]['note']}}</p>
@@ -325,10 +329,10 @@ table td:nth-child(4) {
 
                      <?php  if($claimwarranty['type'] === 9){ ?> 
                         
-                        <h3 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/moneytotal.png')}}">Trạng thái:</h3>
+                        <h3 class="col col-2"><img style ="width: 22px;" src="{{asset('frontend/images/moneytotal.png')}}">Trạng thái:</h3>
                         <h3 class="col col-10 " style="color : red;    
                                                 font-size: 26px;
-                                                font-weight: 500;" >Yêu cầu bảo hành đã bị từ chối <img style ="width: 30px;" src="{{asset('frontend/images/close.gif')}}"></h3>
+                                                font-weight: 500;" >Yêu cầu bảo hành đã bị từ chối <img style ="width: 22px;" src="{{asset('frontend/images/close.gif')}}"></h3>
                     
                     <?php } ?>
 
@@ -340,7 +344,7 @@ table td:nth-child(4) {
                     <!-- column -->
                     <div class="col-12">
                         <div class="info-customer-order-detail form-border">
-                        <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 30px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
+                        <h3 style="color: blue;font-weight: 600;" class=""><img style ="width: 22px;" src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
                        
                         <?php if(isset($JobDetail[0]['repair']) && $JobDetail[0]['repair'] != '') 
                         $repair =json_decode($JobDetail[0]['repair'], true);
@@ -375,7 +379,7 @@ table td:nth-child(4) {
                     </div>
                     </div>
                     <div class="row mt-3"> 
-                    <h4 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/note.png')}}"> Ghi chú:</h4>
+                    <h4 class="col col-2"><img style ="width: 22px;" src="{{asset('frontend/images/note.png')}}"> Ghi chú:</h4>
                     <?php if(isset($JobDetail[0]['note']) && $JobDetail[0]['note'] != '' ){?>
                     
                             <p class="col col-2 " >{{$JobDetail[0]['note']}}</p>
@@ -384,10 +388,10 @@ table td:nth-child(4) {
                      </div>
 
                     <div class="row"> 
-                        <h3 class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/moneytotal.png')}}">Tổng tiền:</h3>
+                        <h3 class="col col-2"><img style ="width: 22px;" src="{{asset('frontend/images/moneytotal.png')}}">Tổng tiền:</h3>
                         <h3 class="col col-10 " style="color : red;    
                                                 font-size: 28px;
-                                                font-weight: 500;" ><?=number_format($totalMoney) ?> đ</h3>
+                                                font-weight: 500;" ><?=number_format($totalMoney) ?> VNĐ</h3>
                     </div>
 
                     </div>
@@ -397,7 +401,7 @@ table td:nth-child(4) {
                     <?php  if($jobemployee['type'] === 10){ ?> 
                     <h3 class="col col-10 " style="color : green;    
                                                 font-size: 28px;
-                                                font-weight: 500;" >Yêu cầu bảo hành đã hoàn thành <img style ="width: 30px;" src="{{asset('frontend/images/check.gif')}}"></h3>
+                                                font-weight: 500;" >Yêu cầu bảo hành đã hoàn thành <img style ="width: 22px;" src="{{asset('frontend/images/check.gif')}}"></h3>
                 <?php }else{?>
                     <!-- <a  href="{{route('comfirm-fisnish',$jobemployee['order_code'])}}" ><button class='btn btn-success'>Xác nhận đã hoàn thành</button></a> -->
                 

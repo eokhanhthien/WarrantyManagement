@@ -114,7 +114,7 @@
                                                 padding: 6px;
                                                 border: none;
                                                 border-radius: 4px;
-                                                color: white;">  Đăng xuất <img style ="width: 40px;" src="{{asset('frontend/images/logout.png')}}"></button></a>
+                                                color: white;">  Đăng xuất <img style ="width: 30px;" src="{{asset('frontend/images/logout.png')}}"></button></a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
                         </li>
                     </ul>
@@ -141,7 +141,7 @@
 
                         <li> <a class="waves-effect waves-dark" href="{{route('manufacturer')}} " aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/brand.png')}}"> <span class="hide-menu">Quản lý hãng</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="{{route('product')}} " aria-expanded="false"> <img style ="width: 40px;" src="{{asset('frontend/images/product.png')}}"> <span class="hide-menu">Quản lý sản phẩm</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{route('product')}} " aria-expanded="false"> <img style ="width: 30px;" src="{{asset('frontend/images/product.png')}}"> <span class="hide-menu">Quản lý sản phẩm</span></a>
                         </li>
 
                         <!-- <li > <div class='' style='background-color: #00b6cf;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Kích hoạt bảo hành</div></li> -->

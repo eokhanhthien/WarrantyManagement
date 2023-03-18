@@ -1,7 +1,7 @@
 @extends('backend.layout')
 @section('order')
 <?php
-// print_r($claimwarranty);die;
+// print_r($claimDetail);die;
 ?>
 <style>
 table {
@@ -139,23 +139,28 @@ table td:nth-child(4) {
                     <p class="col col-2"><img style="width: 30px;" src="{{asset('frontend/images/positon.png')}}"> Địa
                         chỉ:</p>
                 </div>
-                <div class="row" style="margin-left: 16px;">
-                    <p class="col col-2">Thành phố:</p>
-                    <p class="col col-10">{{$claimDetail['address_city']}}</p>
+                <div class="row" style="margin-left: 0px;">
+                    <p class="col col-2 p-0">Thành phố:</p>
+                    <p class="col col-10 p-0">{{$claimDetail['address_city']}}</p>
                 </div>
-                <div class="row" style="margin-left: 16px;">
-                    <p class="col col-2">Quận huyện:</p>
-                    <p class="col col-10">{{$claimDetail['address_province']}}</p>
+                <div class="row" style="margin-left: 0px;">
+                    <p class="col col-2 p-0">Quận huyện:</p>
+                    <p class="col col-10 p-0">{{$claimDetail['address_province']}}</p>
                 </div>
-                <div class="row" style="margin-left: 16px;">
-                    <p class="col col-2">Thị trấn:</p>
-                    <p class="col col-10">{{$claimDetail['address_wards']}}</p>
+                <div class="row" style="margin-left: 0px;">
+                    <p class="col col-2 p-0">Thị trấn:</p>
+                    <p class="col col-10 p-0">{{$claimDetail['address_wards']}}</p>
                 </div>
 
                 <div class="row">
                     <p class="col col-2"><img style="width: 30px;" src="{{asset('frontend/images/order.png')}}"> Mã đơn
                         :</p>
                     <p class="col col-10">{{$claimDetail['claim_code']}}</p>
+                </div>
+                <div class="row">
+                    <p class="col col-2"><img style="width: 30px;" src="{{asset('frontend/images/purchase.png')}}"> Phân loại:</p>
+                    <p class="col col-10"><?php echo $claimDetail['product_serial'] == "NO"?"Bảo trì, sửa chữa":"Bảo hành" ?>
+                    </p>
                 </div>
 
             </div>
@@ -288,7 +293,7 @@ table td:nth-child(4) {
                             style="color: blue;font-weight: 600;">Tổng tiền: </span></h3>
                     <h3 class="col col-10 " style="color : red;    
                                                 font-size: 26px;
-                                                font-weight: 500;"><?=number_format($totalMoney) ?> đ</h3>
+                                                font-weight: 500;"><?=number_format($totalMoney) ?> VNĐ</h3>
                 </div>
 
             </div>
@@ -376,7 +381,7 @@ table td:nth-child(4) {
                             style="color: blue;font-weight: 600;">Tổng tiền: </span></h3>
                     <h3 class="col col-10 " style="color : red;    
                                                 font-size: 26px;
-                                                font-weight: 500;">0đ (Free)</h3>
+                                                font-weight: 500;">0 VNĐ</h3>
                 </div>
 
             </div>

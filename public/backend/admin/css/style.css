@@ -6090,7 +6090,7 @@ label {
 }
 td {
     color: black;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .avatar{
@@ -6111,10 +6111,10 @@ td {
 
 
 p.col.col-10 {
-  font-size: 18px;
+  font-size: 16px;
 }
 p.col.col-2 {
-  font-size: 18px;
+  font-size: 16px;
 }
 .stasitical-order{
   width: 100%;
@@ -6188,11 +6188,11 @@ p.col.col-2 {
 
 .card-body {
   padding: 1.25rem;
-  box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 8px;
 }
 .form-border{
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 8px;
   background-color: white;
   padding: 20px;
@@ -6200,7 +6200,7 @@ p.col.col-2 {
 }
 
 .form-border-5 {
-  box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 8px;
   background-color: white;
   padding: 20px;

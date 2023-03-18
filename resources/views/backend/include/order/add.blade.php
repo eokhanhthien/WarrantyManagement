@@ -42,22 +42,22 @@
                 <div class="wide">
                     <div class="form-border">
                     <div class="row g-0">
-                        <div class="col-4"> <p class="label-add-order"><img style ="width: 30px;" src="{{asset('frontend/images/id.png')}}"> Tên khách hàng:</p> </div>
+                        <div class="col-4"> <p class="label-add-order"><img style ="width: 22px;" src="{{asset('frontend/images/id.png')}}"> Tên khách hàng:</p> </div>
                         <div class="col-8"><input class="input-add-order" type="text" placeholder="Full name" name="data_order[name_customer]" required></div>
                     </div>
 
                    <div class="row mt-3 g-0">
-                        <div class="col-4"> <p class="label-add-order"><img style ="width: 30px;" src="{{asset('frontend/images/phone.png')}}"> Số điện thoại:</p> </div>
+                        <div class="col-4"> <p class="label-add-order"><img style ="width: 22px;" src="{{asset('frontend/images/phone.png')}}"> Số điện thoại:</p> </div>
                         <div class="col-8"><input class="input-add-order" type="text" placeholder="Phone" name="data_order[phone_customer]" required></div>
                     </div>
 
                     <div class="row mt-3 g-0">
-                        <div class="col-4"> <p class="label-add-order"><img style ="width: 30px;" src="{{asset('frontend/images/mail.png')}}"> Email:</p> </div>
+                        <div class="col-4"> <p class="label-add-order"><img style ="width: 22px;" src="{{asset('frontend/images/mail.png')}}"> Email:</p> </div>
                         <div class="col-8"><input class="input-add-order" type="text" placeholder="Email" name="data_order[email_customer]" required></div>
                     </div>
                     </div>
                     <div class="row g-0 form-border">
-                <h4 class="col col-xl-12 infor-pay-name mt-3"><img style ="width: 30px;" src="{{asset('frontend/images/positon.png')}}"> Địa chỉ nhận hàng:</h4>
+                <h4 class="col col-xl-12 infor-pay-name mt-3"><img style ="width: 22px;" src="{{asset('frontend/images/positon.png')}}"> Địa chỉ nhận hàng:</h4>
                 <div class="row g-0 mb-10">
                     <div class="col col-xl-4">
                         <p class="address-tag">Tỉnh/thành phố:</p> 
@@ -102,7 +102,7 @@
                                             <a href="javascript:void(0)" onclick="createOption()" class="btn btn-primary btnADD">Thêm sản phẩm</a>
                                             <div id="multi_option">
                                             <div class="row item_option mt-30">     
-                                            <div class="number-option col-12 text-danger"><img style ="width: 40px;" src="{{asset('frontend/images/product.gif')}}"> Sản phẩm : 1</div>         
+                                            <div class="number-option col-12 text-danger"><img style ="width: 30px;" src="{{asset('frontend/images/product.gif')}}"> Sản phẩm : 1</div>         
                                             <div class="row mb-10">
                                                 <div class="col col-4 lable-input">
                                                     <p class="address-tag">Hãng <span class='text-danger'>*</span></p> 
@@ -155,7 +155,7 @@
                     </div>
 
                     <div class="row mt-3 g-0">
-                        <div class="col-4"> <p class="label-add-order"><img style ="width: 30px;" src="{{asset('frontend/images/note.png')}}"> Ghi chú:</p> </div>
+                        <div class="col-4"> <p class="label-add-order"><img style ="width: 22px;" src="{{asset('frontend/images/note.png')}}"> Ghi chú:</p> </div>
                         <div class="col-8">
                             <textarea name="data_order[note]" id="" cols="50" rows="10" placeholder="Ghi chú cho đơn hàng" required></textarea>
                         </div>
@@ -244,7 +244,7 @@
                   
                      
                                             <div class="row item_option mt-30"> 
-                                            <div class="number-option col-12 text-danger"><img style ="width: 40px;" src="{{asset('frontend/images/product.gif')}}"> Sản phẩm : ${count_items + 1 }</div>         
+                                            <div class="number-option col-12 text-danger"><img style ="width: 30px;" src="{{asset('frontend/images/product.gif')}}"> Sản phẩm : ${count_items + 1 }</div>         
                                             <div class="row mb-10">
                                                 <div class="col col-4 lable-input">
                                                     <p class="address-tag">Hãng <span class='text-danger'>*</span></p> 

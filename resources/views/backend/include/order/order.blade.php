@@ -31,7 +31,7 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <button class="btn btn-primary mr-10"> <a href="{{route('order-add')}}">Lập đơn mới <img style ="width: 40px;" src="{{asset('frontend/images/plus.png')}}"></a> </button>
+                <button class="btn btn-primary mr-10"> <a href="{{route('order-add')}}">Lập đơn mới <img style ="width: 30px;" src="{{asset('frontend/images/plus.png')}}"></a> </button>
                 <div class="row">
                     <!-- column -->
                     <div class="col-12">
@@ -60,11 +60,11 @@
                                                 <td>{{$val['phone_customer']}}</td>
                                                 <td>{{date('d/m/Y' , strtotime($val['created_at']))}}</td>
                                                 <td>
-                                                <a  href="{{route('order-view-detail',$val['order_code'])}}" title="Xem chi tiết" ><button class='btn btn-primary'><img style ="width: 30px;" src="{{asset('frontend/images/bill.png')}}"></button></a>
+                                                <a  href="{{route('order-view-detail',$val['order_code'])}}" title="Xem chi tiết" ><button class='btn btn-primary'><img style ="width: 22px;" src="{{asset('frontend/images/bill.png')}}"></button></a>
                                                     <!-- <form method="POST" action="{{route('order-delete',$val['order_code'])}}">  
                                                         @method('DELETE')
                                                         @csrf
-                                                        <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn btn-danger mt-2'><img style ="width: 30px;" src="{{asset('frontend/images/remove.png')}}"></button>
+                                                        <button type="submit" onclick = "return confirm('Bạn có muốn xóa mục này không ?')" class='btn btn-danger mt-2'><img style ="width: 22px;" src="{{asset('frontend/images/remove.png')}}"></button>
                                                     </form> -->
                                                 
                                                 </td>               
