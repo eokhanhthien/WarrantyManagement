@@ -30,7 +30,13 @@
                 <div class="row form-border">
                     <div class="col col-2">
                         <div class="avatar">
-                            <img  src="{{asset('frontend/images/avatarAdmin.png')}}">
+                        <?php if(Session::get('admin')['image'] != '') {
+                                $img = Session::get('admin')['image'];
+                                ?>
+                                <img  src="/uploads/avatar/{{$img}}">
+                            <?php } else{?>
+                                <img  src="{{asset('frontend/images/avatar.png')}}">
+                               <?php }?> 
                         </div>
                     </div>
                     <div class="col col-8">

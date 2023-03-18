@@ -211,15 +211,15 @@ table td:nth-child(4) {
     </form>
 
     <?php  if($claimwarranty['type'] === 10){ ?>
-    <h3 class="col col-10 " style="color : green;    
-                                                font-size: 26px;
+    <div class="inform-warranty mt-3"> <h3 class="col col-10 " style="color : green;    
+                                                font-size: 22px;
                                                 font-weight: 500;">Yêu cầu bảo hành đã hoàn thành <img
-            style="width: 30px;" src="{{asset('frontend/images/check.gif')}}"></h3>
+            style="width: 30px;" src="{{asset('frontend/images/check.gif')}}"></h3></div>
     <?php }else{?>
-    <h3 class="col col-10 " style="color : blue;    
-                                                font-size: 26px;
+    <div class="inform-warranty mt-3"><h3 class="col col-10 " style="color : blue;    
+                                                font-size: 22px;
                                                 font-weight: 500;">Yêu cầu bảo hành đang được thực hiện <img
-            style="width: 30px;" src="{{asset('frontend/images/fix.gif')}}"></h3>
+            style="width: 30px;" src="{{asset('frontend/images/fix.gif')}}"></h3></div> 
     <?php }?>
 
     <?php }elseif($claimwarranty['status'] === 4){ ?>
@@ -292,7 +292,7 @@ table td:nth-child(4) {
                             src="{{asset('frontend/images/moneytotal.png')}}"><span
                             style="color: blue;font-weight: 600;">Tổng tiền: </span></h3>
                     <h3 class="col col-10 " style="color : red;    
-                                                font-size: 26px;
+                                                font-size: 22px;
                                                 font-weight: 500;"><?=number_format($totalMoney) ?> VNĐ</h3>
                 </div>
 
@@ -301,15 +301,15 @@ table td:nth-child(4) {
     </div>
 
     <?php  if($claimwarranty['type'] === 10){ ?>
-    <h3 class="col col-10 " style="color : green;    
-                                                font-size: 26px;
+        <div class="inform-warranty mt-3">  <h3 class="col col-10 " style="color : green;    
+                                                font-size: 22px;
                                                 font-weight: 500;">Yêu cầu bảo hành đã hoàn thành <img
-            style="width: 30px;" src="{{asset('frontend/images/check.gif')}}"></h3>
+            style="width: 30px;" src="{{asset('frontend/images/check.gif')}}"></h3></div>
     <?php }else{?>
-    <h3 class="col col-10 " style="color : blue;    
-                                                font-size: 26px;
+        <div class="inform-warranty mt-3">  <h3 class="col col-10 " style="color : blue;    
+                                                font-size: 22px;
                                                 font-weight: 500;">Yêu cầu bảo hành đang được thực hiện <img
-            style="width: 30px;" src="{{asset('frontend/images/fix.gif')}}"></h3>
+            style="width: 30px;" src="{{asset('frontend/images/fix.gif')}}"></h3></div>
     <?php }?>
     <?php }elseif($claimwarranty['status'] === 2){?>
     <div class="row form-border">
@@ -380,7 +380,7 @@ table td:nth-child(4) {
                             src="{{asset('frontend/images/moneytotal.png')}}"><span
                             style="color: blue;font-weight: 600;">Tổng tiền: </span></h3>
                     <h3 class="col col-10 " style="color : red;    
-                                                font-size: 26px;
+                                                font-size: 22px;
                                                 font-weight: 500;">0 VNĐ</h3>
                 </div>
 
@@ -389,15 +389,15 @@ table td:nth-child(4) {
     </div>
 
     <?php  if($claimwarranty['type'] === 10){ ?>
-    <h3 class="col col-10 " style="color : green;    
-                                                font-size: 26px;
+        <div class="inform-warranty mt-3">  <h3 class="col col-10 " style="color : green;    
+                                                font-size: 22px;
                                                 font-weight: 500;">Yêu cầu bảo hành đã hoàn thành <img
-            style="width: 30px;" src="{{asset('frontend/images/check.gif')}}"></h3>
+            style="width: 30px;" src="{{asset('frontend/images/check.gif')}}"></h3> </div>
     <?php }else{?>
-    <h3 class="col col-10 " style="color : blue;    
-                                                font-size: 26px;
+        <div class="inform-warranty mt-3"> <h3 class="col col-10 " style="color : blue;    
+                                                font-size: 22px;
                                                 font-weight: 500;">Yêu cầu bảo hành đang được thực hiện <img
-            style="width: 30px;" src="{{asset('frontend/images/fix.gif')}}"></h3>
+            style="width: 30px;" src="{{asset('frontend/images/fix.gif')}}"></h3> </div>
     <?php }?>
 
     <?php }elseif($claimwarranty['status'] === 3){?>
@@ -416,7 +416,7 @@ table td:nth-child(4) {
     <div class="row">
         <!-- column -->
         <div class="col-12">
-            <div class="info-customer-order-detail">
+            <div class="info-customer-order-detail form-border">
                 <h3 style="color: blue;font-weight: 600;" class=""><img style="width: 30px;"
                         src="{{asset('frontend/images/iconinfo.png')}}">Thông tin bảo hành</h3>
 
@@ -428,7 +428,7 @@ table td:nth-child(4) {
                 <div class="row">
 
                 </div>
-                <div class="row mt-3 v">
+                <div class="row mt-3 ">
                     <h4 class="col col-12"><img style="width: 30px;" src="{{asset('frontend/images/note.png')}}"><span
                             style="color: blue;font-weight: 600;">Ghi chú :</span></h4>
                     <?php if(isset($JobDetail[0]['note']) && $JobDetail[0]['note'] != '' ){?>
@@ -442,10 +442,10 @@ table td:nth-child(4) {
 
                 <h3 class="col col-2"><img style="width: 30px;" src="{{asset('frontend/images/moneytotal.png')}}">Trạng
                     thái:</h3>
-                <h3 class="col col-10 " style="color : red;    
-                                                font-size: 26px;
+                    <div class="inform-deline">  <h3 class="col col-10 " style="color : red;    
+                                                font-size: 22px;
                                                 font-weight: 500;">Yêu cầu bảo hành đã bị từ chối <img
-                        style="width: 30px;" src="{{asset('frontend/images/close.gif')}}"></h3>
+                        style="width: 30px;" src="{{asset('frontend/images/close.gif')}}"></h3> </div>
 
                 <?php } ?>
 

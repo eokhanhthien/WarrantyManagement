@@ -45,6 +45,7 @@
                                                 <th>Họ và tên</th>
                                                 <th>Tài khoản</th>
                                                 <th>Email</th>
+                                                <th>Avatar</th>
                                                 <th>Chức vụ</th>
                                                 <th>Action</th>
                                             </tr>
@@ -56,6 +57,7 @@
                                                 <td>{{ $val['fullname'] }}</td>
                                                 <td>{{ $val['username'] }}</td>
                                                 <td>{{ $val['email'] }}</td>
+                                                <td><img src="/uploads/avatar/{{ $val['image']}}" alt="" style="width: 100px"></td>
                                                 <td><?php echo $val['role']===1?'Quản trị viên':'Kỹ thuật viên' ?></td>
 
                                                 <td>

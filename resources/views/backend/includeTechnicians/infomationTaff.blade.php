@@ -2,7 +2,7 @@
 @section('includeTechnicians')
 <?php
 // echo "<pre>";
-//  print_r($jobemployee);die;
+//  print_r(Session::get('admin'));die;
  ?>
 <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.csss">
 <div class="container-fluid">
@@ -30,7 +30,14 @@
                 <div class="row form-border">
                     <div class="col col-2">
                         <div class="avatar">
-                            <img  src="{{asset('frontend/images/avatar.png')}}">
+                            <?php if(Session::get('admin')['image'] != '') {
+                                $img = Session::get('admin')['image'];
+                                ?>
+                                <img  src="/uploads/avatar/{{$img}}">
+                            <?php } else{?>
+                                <img  src="{{asset('frontend/images/avatar.png')}}">
+                               <?php }?> 
+
                         </div>
                     </div>
                     <div class="col col-8">

@@ -103,8 +103,6 @@ Route::post('/claim-warranty-job', [ClaimWarrantyController::class, 'job'])->nam
 Route::post('/claim-warranty-job/{id}/edit', [ClaimWarrantyController::class, 'jobTurn'])->name('claim-warranty-job-turn');
 
 // // cLAIM FIX
-
-
 // TECHNICIAN
 Route::get('/technicians', [Technicianstroller::class, 'index'])->name('technicians');
 Route::get('/technicians-add', [Technicianstroller::class, 'add'])->name('technicians-add');
@@ -124,3 +122,9 @@ Route::delete('/repair-service/{id}/delete', [RepairServiceController::class, 'd
 
 // statistical
 Route::get('/statistical', [StatisticalController::class, 'index'])->name('statistical');
+Route::get('/statistical-detail', [StatisticalController::class, 'statisticalDetail'])->name('statistical-detail');
+
+
+Route::fallback(function () {
+    return view('backend.include.error.pages-error-404');
+});

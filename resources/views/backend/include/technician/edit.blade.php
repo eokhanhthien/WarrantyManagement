@@ -32,7 +32,7 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <button class="btn btn-primary mr-10"> <a href="{{route('technicians')}}">Quay lại</a> </button>
-                <form action="{{route('technicians-update',$data['id'])}}" method="post" class="col-5 form-border">
+                <form action="{{route('technicians-update',$data['id'])}}" enctype="multipart/form-data" method="post" class="col-5 form-border">
                 @csrf
                 <div class="wide">
                     <div class="row mt-2">
@@ -49,6 +49,17 @@
                         <div class="col-4"> <p class="label-add-order">Email</p> </div>
                         <div class="col-8"><input class="input-add-order" type="text" placeholder="email" value="{{$data['email']}}" name="email" required></div>
                     </div>
+                    <div class="row mt-2">
+                        <div class="col-4"> <p class="label-add-order">Ảnh đại diện</p> </div>
+                        <div class="col-8"><input class="" type="file" placeholder="Manufacturer name" name="image" required>
+                    <?php if(isset($data['image']) && $data['image'] != NULL){?>
+                        <img src="/uploads/avatar/{{$data['image']}}" alt="user" class="mt-2 mb-2" style="width: 100px"/> 
+                    <?php }else{?>
+                        <img src="{{asset('frontend/images/technician.png')}}" alt="user" class="mt-2 mb-2" style="width: 100px" /> 
+                    <?php }?>
+                    </div>
+                    </div>
+                   
                     <div class="row mt-2">
                         <div class="col-4"> <p class="label-add-order">Phân quyền</p> </div>
                         <div class="col-8">

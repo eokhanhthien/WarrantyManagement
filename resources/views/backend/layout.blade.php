@@ -61,7 +61,7 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="/infomationAdmin">
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
@@ -107,8 +107,16 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown u-pro">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="#"
-                                id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/admin.png')}}"> <span
-                                    class="hidden-md-down">{{Session::get('admin')['username']}} &nbsp;</span> </a>
+                                id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <!-- <img style ="width: 30px;" src="{{asset('frontend/images/admin.png')}}">  -->
+                                <?php if(Session::get('admin')['image'] != '') {
+                                $img = Session::get('admin')['image'];
+                                ?>
+                                <img src="/uploads/avatar/{{$img}}" alt="user" class="" /> 
+                             <?php } else{?>
+                                <img src="{{asset('frontend/images/technician.png')}}" alt="user" class="" /> 
+                               <?php }?> 
+                                <span class="hidden-md-down">{{Session::get('admin')['username']}} &nbsp;</span> </a>
                                     <a href="{{route('logout')}}"><button class='btn-custom m-2' style ="
                                                 background-color: cornflowerblue !important;
                                                 padding: 6px;
@@ -172,6 +180,7 @@
 
                         <!-- <li > <div class='' style='background-color: #00b6cf;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Thống kê</div></li> -->
                         <li> <a class="waves-effect waves-dark" href="{{route('statistical')}}" aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/statistical.png')}}"> <span class="hide-menu">Tổng quan</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{route('statistical-detail')}}" aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/statisticaldetail.png')}}"> <span class="hide-menu">Chi tiết</span></a>
                         </li>
 
                     </ul>

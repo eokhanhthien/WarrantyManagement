@@ -26,6 +26,7 @@ class AdminController extends Controller
                 'email'  => $data_admin[0]['email'],
                 'password'  => $data_admin[0]['password'],
                 'role'  => $data_admin[0]['role'],
+                'image'  => $data_admin[0]['image'],
             ]);
             // return redirect()->route('order', []);
             if(Session::get('admin') != NULL && Session::get('admin')['role'] === 1){

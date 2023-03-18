@@ -54,17 +54,17 @@
                         <div class="row">
                             <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/positon.png')}}"> Địa chỉ:</p>
                         </div>
-                        <div class="row" style="margin-left: 16px;">
-                            <p class="col col-2">Thành phố:</p>
-                            <p class="col col-10">{{$info_order['address_city']}}</p>
+                        <div class="row" style="margin-left: 0px;">
+                            <p class="col col-2 p-0">Thành phố:</p>
+                            <p class="col col-10 p-0">{{$info_order['address_city']}}</p>
                         </div>
-                        <div class="row" style="margin-left: 16px;">
-                            <p class="col col-2">Quận huyện:</p>
-                            <p class="col col-10">{{$info_order['address_province']}}</p>
+                        <div class="row" style="margin-left: 0px;">
+                            <p class="col col-2 p-0">Quận huyện:</p>
+                            <p class="col col-10 p-0">{{$info_order['address_province']}}</p>
                         </div>
-                        <div class="row" style="margin-left: 16px;">
-                            <p class="col col-2">Thị trấn:</p>
-                            <p class="col col-10">{{$info_order['address_wards']}}</p>
+                        <div class="row" style="margin-left: 0px;">
+                            <p class="col col-2 p-0">Thị trấn:</p>
+                            <p class="col col-10 p-0">{{$info_order['address_wards']}}</p>
                         </div>
                         <div class="row">
                             <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/note.png')}}"> Ghi chú:</p>

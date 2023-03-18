@@ -135,18 +135,18 @@ table td:nth-child(4) {
                             <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/positon.png')}}"> Địa chỉ:</p>
                         </div>
                         <div class="row">
-                            <p class="col col-2"><img style ="width: 30px;" src="{{asset('frontend/images/mail.png')}}"> Thành phố:</p>
+                            <p class="col col-2">Thành phố:</p>
                             <p class="col col-10">{{$claimDetail['address_city']}}</p>
                         </div>
                         <!-- <div class="row" style="margin-left: 16px;">
                             <p class="col col-2">Thành phố:</p>
                             <p class="col col-10">{{$claimDetail['address_city']}}</p>
                         </div> -->
-                        <div class="row" style="margin-left: 16px;">
+                        <div class="row">
                             <p class="col col-2">Quận huyện:</p>
                             <p class="col col-10">{{$claimDetail['address_province']}}</p>
                         </div>
-                        <div class="row" style="margin-left: 16px;">
+                        <div class="row">
                             <p class="col col-2">Thị trấn:</p>
                             <p class="col col-10">{{$claimDetail['address_wards']}}</p>
                         </div>
@@ -279,7 +279,7 @@ table td:nth-child(4) {
                     <div class="row"> 
                         <h3 class="col col-2"><img style ="width: 22px;" src="{{asset('frontend/images/moneytotal.png')}}">Tổng tiền:</h3>
                         <h3 class="col col-10 " style="color : red;    
-                                                font-size: 28px;
+                                                font-size: 22px;
                                                 font-weight: 500;" >0 VNĐ</h3>
                     </div>
 
@@ -288,9 +288,9 @@ table td:nth-child(4) {
                     </div>
 
                     <?php  if($jobemployee['type'] === 10){ ?> 
-                    <h3 class="col col-10 " style="color : green;    
-                                                font-size: 28px;
-                                                font-weight: 500;" >Yêu cầu bảo hành đã hoàn thành <img style ="width: 22px;" src="{{asset('frontend/images/check.gif')}}"></h3>
+                    <div class="inform-warranty mt-3"><h3 class="col col-10 " style="color : green;    
+                                                font-size: 22px;
+                                                font-weight: 500;" >Yêu cầu bảo hành đã hoàn thành <img style ="width: 22px;" src="{{asset('frontend/images/check.gif')}}"></h3></div> 
                 <?php }else{?>
                     <!-- <a  href="{{route('comfirm-fisnish',$jobemployee['order_code'])}}" ><button class='btn btn-success'>Xác nhận đã hoàn thành</button></a> -->
                     <form method='post' action="{{route('comfirm-fisnish',$jobemployee['order_code'])}}">
@@ -330,9 +330,9 @@ table td:nth-child(4) {
                      <?php  if($claimwarranty['type'] === 9){ ?> 
                         
                         <h3 class="col col-2"><img style ="width: 22px;" src="{{asset('frontend/images/moneytotal.png')}}">Trạng thái:</h3>
-                        <h3 class="col col-10 " style="color : red;    
-                                                font-size: 26px;
-                                                font-weight: 500;" >Yêu cầu bảo hành đã bị từ chối <img style ="width: 22px;" src="{{asset('frontend/images/close.gif')}}"></h3>
+                        <div class="inform-deline"> <h3 class="col col-10 " style="color : red;    
+                                                font-size: 22px;
+                                                font-weight: 500;" >Yêu cầu bảo hành đã bị từ chối <img style ="width: 22px;" src="{{asset('frontend/images/close.gif')}}"></h3> </div>
                     
                     <?php } ?>
 
@@ -390,7 +390,7 @@ table td:nth-child(4) {
                     <div class="row"> 
                         <h3 class="col col-2"><img style ="width: 22px;" src="{{asset('frontend/images/moneytotal.png')}}">Tổng tiền:</h3>
                         <h3 class="col col-10 " style="color : red;    
-                                                font-size: 28px;
+                                                font-size: 22px;
                                                 font-weight: 500;" ><?=number_format($totalMoney) ?> VNĐ</h3>
                     </div>
 
@@ -399,9 +399,9 @@ table td:nth-child(4) {
                     </div>
 
                     <?php  if($jobemployee['type'] === 10){ ?> 
-                    <h3 class="col col-10 " style="color : green;    
-                                                font-size: 28px;
-                                                font-weight: 500;" >Yêu cầu bảo hành đã hoàn thành <img style ="width: 22px;" src="{{asset('frontend/images/check.gif')}}"></h3>
+                        <div class="inform-warranty mt-3"><h3 class="col col-10 " style="color : green;    
+                                                font-size: 22px;
+                                                font-weight: 500;" >Yêu cầu bảo hành đã hoàn thành <img style ="width: 22px;" src="{{asset('frontend/images/check.gif')}}"></h3></div>
                 <?php }else{?>
                     <!-- <a  href="{{route('comfirm-fisnish',$jobemployee['order_code'])}}" ><button class='btn btn-success'>Xác nhận đã hoàn thành</button></a> -->
                 

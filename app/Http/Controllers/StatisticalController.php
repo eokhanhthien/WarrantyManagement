@@ -49,4 +49,8 @@ class StatisticalController extends Controller
         // print_r($arrayManu);die;
         return view('backend.include.statistical.statistical',['jobemployee'=> $jobemployee , 'employee' => $array ,'name' => $employee ,'serial'=>$serial ,'product'=> $product , 'manufacturer' => $arrayManu ,'manufacturerName' => $manufacturer , 'repairService' => $repairService , 'infoCustomerRegister' => $infoCustomerRegister, 'revenue' => $revenue] );
     }
+
+    function statisticalDetail(){
+        return view('backend.include.statistical.statisticalDetail');
+    }
 }

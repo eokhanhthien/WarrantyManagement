@@ -6100,8 +6100,12 @@ td {
   height: 140px;
   line-height: 140px;
   border-radius: 50%;
+  overflow: hidden;
 }
-
+.avatar img{
+  width: 100%;
+  object-fit: cover;
+}
 .text-ct {
   font-size: 20px;
 }
@@ -6206,4 +6210,15 @@ p.col.col-2 {
   padding: 20px;
   margin: 20px 0;
   text-align: center;
+}
+.inform-warranty {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #c2ffda;
+}
+
+.inform-deline {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffe0e0;
 }

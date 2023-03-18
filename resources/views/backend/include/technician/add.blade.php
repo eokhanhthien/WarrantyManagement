@@ -32,7 +32,7 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <button class="btn btn-primary mr-10"> <a href="{{route('technicians')}}">Quay lại</a> </button>
-                <form action="{{route('add-technicians')}}" method="post" class="col-5 form-border-5">
+                <form action="{{route('add-technicians')}}" method="post" enctype="multipart/form-data" class="col-5 form-border-5">
                 @csrf
                 <div class="wide">
                     <div class="row mt-2">
@@ -50,6 +50,10 @@
                     <div class="row mt-2">
                         <div class="col-4"> <p class="label-add-order">Email</p> </div>
                         <div class="col-8"><input class="input-add-order" type="text" placeholder="email" name="email" required></div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-4"> <p class="label-add-order">Ảnh đại diện</p> </div>
+                        <div class="col-8"><input class="" type="file" placeholder="Manufacturer name" name="image" required></div>
                     </div>
                     <div class="row mt-2">
                         <div class="col-4"> <p class="label-add-order">Phân quyền</p> </div>

@@ -65,7 +65,7 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="/infomationTaff">
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
@@ -111,9 +111,16 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown u-pro">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="#"
-                                id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                    src="{{asset('frontend/images/technician.png')}}" alt="user" class="" /> <span
-                                    class="hidden-md-down">{{Session::get('admin')['username']}} &nbsp;</span> </a>
+                                id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              
+                                <?php if(Session::get('admin')['image'] != '') {
+                                $img = Session::get('admin')['image'];
+                                ?>
+                                <img src="/uploads/avatar/{{$img}}" alt="user" class="" /> 
+                            <?php } else{?>
+                                <img src="{{asset('frontend/images/technician.png')}}" alt="user" class="" /> 
+                               <?php }?> 
+                                <span class="hidden-md-down">{{Session::get('admin')['username']}} &nbsp;</span> </a>
                                     <a href="{{route('logout')}}"><button class='btncustom m-2' style ="
                                                 background-color: cornflowerblue !important;
                                                 padding: 6px;
@@ -145,7 +152,7 @@
 
                          <!-- <li > <div class='' style='background-color: #00b6cf;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Công việc</div></li> -->
 
-                        <li> <a class="waves-effect waves-dark" href="{{route('manufacturer')}} " aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/fix.png')}}"><span class="hide-menu">Công việc được giao</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{route('employee')}} " aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/fix.png')}}"><span class="hide-menu">Công việc được giao</span></a>
                         </li>
 
                         <!-- <li > <div class='' style='background-color: #00b6cf;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Bản đồ</div></li> -->
