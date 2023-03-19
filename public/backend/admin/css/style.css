@@ -6123,7 +6123,8 @@ p.col.col-2 {
 .stasitical-order{
   width: 100%;
   height: 200px;
-  background-color: #00b15f;
+  background: rgb(167,179,255);
+  background: linear-gradient(146deg, rgba(167,179,255,1) 11%, rgba(0,212,255,1) 100%);
   border-radius: 6px;
   margin: 10px 0;
   text-align: center;

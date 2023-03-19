@@ -358,7 +358,8 @@
                             $width = 100;
                         ?>
                 <div class="col col-5  ">
-                    <div class="graph" style="width: <?php echo $width ?>%;background-color: #51f19c;"></div>
+                    <div class="graph" style="width: <?php echo $width ?>%;background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,126,29,1) 100%, rgba(252,176,69,1) 100%);"></div>
                 </div>
                 <div class="col col-2  point_employee"><strong> <strong><?php echo $totalSeri ?> serial
                         </strong></strong> </div>
@@ -370,7 +371,8 @@
                             $width = ($active/$totalSeri)*100;
                         ?>
                 <div class="col col-5  ">
-                    <div class="graph" style="width: <?php echo $width ?>% ; background-color: #51f19c;"></div>
+                    <div class="graph" style="width: <?php echo $width ?>% ; background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,126,29,1) 100%, rgba(252,176,69,1) 100%);"></div>
                 </div>
                 <div class="col col-2  point_employee"><strong> <strong><?php echo $active ?> serial </strong></strong>
                 </div>
@@ -382,7 +384,8 @@
                             $width = ($notActive/$totalSeri)*100;
                         ?>
                 <div class="col col-5  ">
-                    <div class="graph" style="width: <?php echo $width ?>%;background-color: #51f19c;"></div>
+                    <div class="graph" style="width: <?php echo $width ?>%;background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,126,29,1) 100%, rgba(252,176,69,1) 100%);"></div>
                 </div>
                 <div class="col col-2  point_employee"><strong> <strong><?php echo $notActive ?> serial
                         </strong></strong> </div>
@@ -424,7 +427,8 @@
                             $width = ($totalproduct/$total)*100;
                         ?>
                     <div class="col col-5  ">
-                        <div class="graph" style="width: <?php echo $width ?>% ;background-color: #16d7ff;"></div>
+                        <div class="graph" style="width: <?php echo $width ?>% ;background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(0,243,253,1) 100%, rgba(252,176,69,1) 100%);"></div>
                     </div>
                     <div class="col col-2  point_employee"><strong><strong><?php echo $totalproduct ?> sản
                                 phẩm</strong></strong> </div>

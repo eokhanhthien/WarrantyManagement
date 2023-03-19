@@ -123,6 +123,7 @@ Route::delete('/repair-service/{id}/delete', [RepairServiceController::class, 'd
 // statistical
 Route::get('/statistical', [StatisticalController::class, 'index'])->name('statistical');
 Route::get('/statistical-detail', [StatisticalController::class, 'statisticalDetail'])->name('statistical-detail');
+Route::post('/statistical-detail-get', [StatisticalController::class, 'getStatisticalDetail'])->name('statistical-detail-get');
 
 
 Route::fallback(function () {

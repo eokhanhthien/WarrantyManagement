@@ -39,7 +39,7 @@
                 <button class="btn btn-primary mr-10"> <a href="{{route('order')}}">Quay lại</a> </button>
                 <form action="{{route('add-order')}}" method="post">
                 @csrf
-                <div class="wide">
+                <div class="wide col-5">
                     <div class="form-border">
                     <div class="row g-0">
                         <div class="col-4"> <p class="label-add-order"><img style ="width: 22px;" src="{{asset('frontend/images/id.png')}}"> Tên khách hàng:</p> </div>

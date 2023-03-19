@@ -49,7 +49,7 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-4 lable-input" >Mã đơn  <span class='text-danger'>*</span> </div>
-                    <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8"><input  name='order_code' type='text' class="input-register-warranty" required /></div>
+                    <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-8"><input  name='order_code' type='text' class="input-register-warranty"  placeholder = "Ex. edfỉ4"  required /></div>
                 </div>
                 <div class="row mb-3">
                     <div class="col col-xl-2 col-lg-6 col-md-6 col-sm-6 col-4 lable-input" >Ngày mua  <span class='text-danger'>*</span> </div>

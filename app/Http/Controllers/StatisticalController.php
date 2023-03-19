@@ -53,4 +53,9 @@ class StatisticalController extends Controller
     function statisticalDetail(){
         return view('backend.include.statistical.statisticalDetail');
     }
+
+    function getStatisticalDetail(Request $request){
+        $data = $request->all();
+        print_r($data);
+    }
 }
