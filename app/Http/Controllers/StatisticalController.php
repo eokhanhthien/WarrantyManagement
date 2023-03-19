@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\Manufacturer;
 use App\Models\RepairService;
 use App\Models\InfoCustomerRegister;
+use App\Models\Order;
 
 use App\Models\Revenue;
 
@@ -52,15 +53,20 @@ class StatisticalController extends Controller
 
     function statisticalDetail(){
         $jobemployee = JobEmployee::get()->toArray();
-        return view('backend.include.statistical.statisticalDetail',['jobemployee'=> $jobemployee ] );
+        $order = Order::get()->toArray();
+        $ordertotal = Order::get()->toArray();
+        return view('backend.include.statistical.statisticalDetail',['jobemployee'=> $jobemployee, 'order' => $order, 'ordertotal'=> $ordertotal  ] );
     }
     
 
     function getStatisticalDetail(Request $request){
         $data = $request->all();
             $jobemployee = JobEmployee::whereBetween('created_at', [$data["startDate"], $data["endDate"]])->get()->toArray();
+            $order = Order::whereBetween('created_at', [$data["startDate"], $data["endDate"]])->get()->toArray();
+            $ordertotal = Order::get()->toArray();
+
             // print_r($jobemployee);
-            return view('backend.include.statistical.Loadstatistical',['jobemployee'=> $jobemployee ] );
+            return view('backend.include.statistical.Loadstatistical',['jobemployee'=> $jobemployee, 'order' => $order, 'ordertotal'=> $ordertotal ] );
     }
     
 }

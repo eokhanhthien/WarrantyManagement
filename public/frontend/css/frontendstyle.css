@@ -231,12 +231,22 @@ body::-webkit-scrollbar-thumb
 }
 
 .graph {
-    /* width: 100%; */
+    width: 100%;
     height: 32px;
     background: rgb(176,242,227);
     background: linear-gradient(90deg, rgba(176,242,227,1) 0%, rgba(0,255,171,1) 100%, rgba(252,176,69,1) 100%);
     border-radius: 4px;
+    animation: animation 1s ;
 }
+@keyframes animation {
+    from{
+      width: 0%;
+    }
+    to{
+      /* width: 100%; */
+    }
+  }
+
 .statistical_employee{
     line-height: 32px;
 }
