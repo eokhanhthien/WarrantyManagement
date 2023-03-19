@@ -51,11 +51,16 @@ class StatisticalController extends Controller
     }
 
     function statisticalDetail(){
-        return view('backend.include.statistical.statisticalDetail');
+        $jobemployee = JobEmployee::get()->toArray();
+        return view('backend.include.statistical.statisticalDetail',['jobemployee'=> $jobemployee ] );
     }
+    
 
     function getStatisticalDetail(Request $request){
         $data = $request->all();
-        print_r($data);
+            $jobemployee = JobEmployee::whereBetween('created_at', [$data["startDate"], $data["endDate"]])->get()->toArray();
+            // print_r($jobemployee);
+            return view('backend.include.statistical.Loadstatistical',['jobemployee'=> $jobemployee ] );
     }
+    
 }

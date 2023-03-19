@@ -36,6 +36,9 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">
