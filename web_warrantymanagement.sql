@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 23, 2022 lúc 08:47 AM
--- Phiên bản máy phục vụ: 10.4.24-MariaDB
--- Phiên bản PHP: 8.1.6
+-- Thời gian đã tạo: Th3 20, 2023 lúc 08:18 AM
+-- Phiên bản máy phục vụ: 10.4.27-MariaDB
+-- Phiên bản PHP: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `web_warrantymanagement`
+-- Cơ sở dữ liệu: `warrantymanagement`
 --
 
 -- --------------------------------------------------------
@@ -34,25 +34,26 @@ CREATE TABLE `tbl_claim_warranty` (
   `status` int(10) NOT NULL,
   `type` int(11) NOT NULL,
   `created_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_claim_warranty`
 --
 
 INSERT INTO `tbl_claim_warranty` (`id`, `claim_code`, `customer_name`, `status`, `type`, `created_at`) VALUES
-(21, '38e2d', 'Thien Duong', 3, 9, '2022-10-27 11:37:58'),
-(22, '97be1', 'Thien Duong', 4, 10, '2022-10-27 12:00:54'),
-(23, '20594', 'Thien Duong', 3, 9, '2022-10-30 18:14:22'),
-(24, '5125d', 'Tran Dong', 2, 10, '2022-11-02 16:53:31'),
-(25, 'fb3d4', 'Nguyễn Văn A', 2, 10, '2022-11-02 22:31:14'),
-(26, '01fde', 'Thái Toàn', 4, 10, '2022-11-04 14:43:08'),
-(27, '9308d', 'Trung Trần', 4, 1, '2022-11-07 23:41:01'),
-(28, 'd8a61', 'Thái Toàn', 3, 9, '2022-11-08 14:38:21'),
-(29, 'df5d5', 'Trung Trần', 4, 1, '2022-11-09 23:52:04'),
+(21, '38e2d', 'Thien Duong', 0, 1, '2022-10-27 11:37:58'),
+(22, '97be1', 'Thien Duong', 0, 1, '2022-10-27 12:00:54'),
+(23, '20594', 'Thien Duong', 0, 1, '2022-10-30 18:14:22'),
+(24, '5125d', 'Tran Dong', 0, 1, '2022-11-02 16:53:31'),
+(25, 'fb3d4', 'Nguyễn Văn A', 0, 1, '2022-11-02 22:31:14'),
+(26, '01fde', 'Thái Toàn', 0, 1, '2022-11-04 14:43:08'),
+(27, '9308d', 'Trung Trần', 0, 1, '2022-11-07 23:41:01'),
+(28, 'd8a61', 'Thái Toàn', 0, 1, '2022-11-08 14:38:21'),
+(29, 'df5d5', 'Trung Trần', 3, 9, '2022-11-09 23:52:04'),
 (30, 'fa23b', 'Dương Khánh Thiên', 1, 1, '2022-11-17 16:59:02'),
-(31, '3cb21', 'Thái Toàn', 2, 1, '2022-11-23 11:38:55'),
-(32, 'fae48', 'Tran Dong', 2, 10, '2022-11-23 14:28:21');
+(31, '3cb21', 'Thái Toàn', 2, 10, '2022-11-23 11:38:55'),
+(32, 'fae48', 'Tran Dong', 4, 10, '2022-11-23 14:28:21'),
+(33, '5d298', 'eo', 4, 10, '2023-02-28 23:30:48');
 
 -- --------------------------------------------------------
 
@@ -72,7 +73,7 @@ CREATE TABLE `tbl_claim_warranty_detail` (
   `address_city` varchar(50) NOT NULL,
   `address_province` varchar(50) NOT NULL,
   `address_wards` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_claim_warranty_detail`
@@ -90,7 +91,8 @@ INSERT INTO `tbl_claim_warranty_detail` (`id`, `claim_code`, `type`, `customer_n
 (30, 'df5d5', 1, 'Trung Trần', 'trungtran@gmail.com', '0946144333', 'HJKL12347', 19, 'Tỉnh Cà Mau', 'Huyện Phú Tân', 'Thị trấn Cái Đôi Vàm'),
 (31, 'fa23b', 1, 'Dương Khánh Thiên', 'thienpark.fx@gmail.com', '0946144333', 'TEST01', 5, 'Tỉnh Cà Mau', 'Thành phố Cà Mau', 'Xã Tân Thành'),
 (32, '3cb21', 1, 'Thái Toàn', 'thaitoan@gmail.com', '0946144333', 'TEST03', 13, 'Tỉnh Cà Mau', 'Huyện Phú Tân', 'Xã Việt Thắng'),
-(33, 'fae48', 1, 'Tran Dong', 'thienpark.fx@gmail.com', '0946144333', 'TESTNL01', 15, 'Tỉnh Cà Mau', 'Thành phố Cà Mau', 'Phường 4');
+(33, 'fae48', 1, 'Tran Dong', 'thienpark.fx@gmail.com', '0946144333', 'TESTNL01', 15, 'Tỉnh Cà Mau', 'Thành phố Cà Mau', 'Phường 4'),
+(34, '5d298', 1, 'eo', 'vana@gmail.com', '0946144333', 'NO', 15, 'Tỉnh Thanh Hóa', 'Thị xã Bỉm Sơn', 'Phường Bắc Sơn');
 
 -- --------------------------------------------------------
 
@@ -106,7 +108,7 @@ CREATE TABLE `tbl_info_customer_register` (
   `order_code` varchar(255) NOT NULL,
   `product_id` int(11) NOT NULL,
   `product_serial` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_info_customer_register`
@@ -139,25 +141,18 @@ CREATE TABLE `tbl_job_employee` (
   `status` int(11) NOT NULL,
   `type` int(11) NOT NULL,
   `created_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_job_employee`
 --
 
 INSERT INTO `tbl_job_employee` (`id`, `id_technician`, `order_code`, `status`, `type`, `created_at`) VALUES
-(6, 6, '38e2d', 3, 9, '2022-10-27 11:39:31'),
-(7, 6, '97be1', 4, 10, '2022-10-27 12:06:02'),
-(8, 4, '20594', 3, 9, '2022-10-30 18:15:05'),
-(9, 6, '5125d', 2, 10, '2022-11-02 19:16:18'),
-(10, 7, 'fb3d4', 2, 10, '2022-11-02 22:32:37'),
-(11, 8, '01fde', 4, 10, '2022-11-06 23:25:34'),
-(12, 6, '9308d', 4, 1, '2022-11-07 23:41:23'),
-(13, 7, 'd8a61', 3, 9, '2022-11-08 14:38:44'),
-(14, 7, 'df5d5', 4, 1, '2022-11-09 23:53:10'),
-(15, 6, 'fa23b', 1, 1, '2022-11-17 17:00:49'),
-(16, 7, '3cb21', 2, 1, '2022-11-23 11:41:53'),
-(17, 6, 'fae48', 2, 10, '2022-11-23 14:29:21');
+(19, 6, '5d298', 4, 10, '2023-03-02 22:23:43'),
+(20, 6, 'fae48', 4, 10, '2023-03-02 22:25:10'),
+(21, 6, '3cb21', 2, 10, '2023-03-02 22:25:16'),
+(22, 4, 'fa23b', 1, 1, '2023-03-18 10:41:39'),
+(23, 6, 'df5d5', 3, 9, '2023-03-18 22:30:07');
 
 -- --------------------------------------------------------
 
@@ -170,25 +165,17 @@ CREATE TABLE `tbl_job_employee_detail` (
   `order_code` varchar(255) NOT NULL,
   `repair` longtext NOT NULL,
   `note` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_job_employee_detail`
 --
 
 INSERT INTO `tbl_job_employee_detail` (`id`, `order_code`, `repair`, `note`) VALUES
-(19, '97be1', '[{\"id\":4,\"name\":\"S\\u1eeda r\\u01a1 le m\\u00e1y in\",\"price\":100000},{\"id\":5,\"name\":\"S\\u1eeda l\\u1ed7i m\\u00e1y in b\\u1ecb l\\u1ed7i \\u0111en b\\u1ea3n ch\\u1ee5p\",\"price\":100000},{\"id\":6,\"name\":\"S\\u1eeda ch\\u1eefa m\\u00e1y in b\\u1ecb b\\u00f3ng ch\\u1eef\",\"price\":100000},{\"id\":7,\"name\":\"Thay tr\\u1ed1ng m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":250000}]', 'Sua dich vu'),
-(21, '38e2d', '[{\"id\":2,\"name\":\"\\u0110\\u1ed5 m\\u1ef1c m\\u00e1y in\",\"price\":80000}]', 'ưeqw'),
-(23, '20594', '[]', 'Da tu choi'),
-(25, '5125d', '[{\"id\":4,\"name\":\"S\\u1eeda r\\u01a1 le m\\u00e1y in\",\"price\":100000},{\"id\":5,\"name\":\"S\\u1eeda l\\u1ed7i m\\u00e1y in b\\u1ecb l\\u1ed7i \\u0111en b\\u1ea3n ch\\u1ee5p\",\"price\":100000}]', 'ok'),
-(26, 'fb3d4', '[{\"id\":5,\"name\":\"S\\u1eeda l\\u1ed7i m\\u00e1y in b\\u1ecb l\\u1ed7i \\u0111en b\\u1ea3n ch\\u1ee5p\",\"price\":100000},{\"id\":7,\"name\":\"Thay tr\\u1ed1ng m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":250000},{\"id\":8,\"name\":\"Tr\\u1ee5c s\\u1ea1c cho m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":200000}]', 'Đem về công ty để sửa'),
-(27, '01fde', '[{\"id\":2,\"name\":\"\\u0110\\u1ed5 m\\u1ef1c m\\u00e1y in\",\"price\":80000},{\"id\":3,\"name\":\"S\\u1eeda l\\u1ed7i m\\u00e1y in b\\u1ecb k\\u1eb9t gi\\u1ea5y\",\"price\":150000},{\"id\":4,\"name\":\"S\\u1eeda r\\u01a1 le m\\u00e1y in\",\"price\":100000}]', '3 lỗi được tìm thấy'),
-(28, '9308d', '[{\"id\":5,\"name\":\"S\\u1eeda l\\u1ed7i m\\u00e1y in b\\u1ecb l\\u1ed7i \\u0111en b\\u1ea3n ch\\u1ee5p\",\"price\":100000},{\"id\":6,\"name\":\"S\\u1eeda ch\\u1eefa m\\u00e1y in b\\u1ecb b\\u00f3ng ch\\u1eef\",\"price\":100000},{\"id\":7,\"name\":\"Thay tr\\u1ed1ng m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":250000},{\"id\":9,\"name\":\"G\\u1ea1t m\\u1ef1c cho m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":150000},{\"id\":10,\"name\":\"\\u0110\\u1ed5 m\\u1ef1c cho m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":200000},{\"id\":13,\"name\":\"Qu\\u1ea3 k\\u00e9o gi\\u1ea5y cho m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":350000}]', 'Mang may ve cty'),
-(29, 'd8a61', '[{\"id\":9,\"name\":\"G\\u1ea1t m\\u1ef1c cho m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":150000}]', 'Từ chối vì bị hỏng do người dùng'),
-(30, 'd8a61', '[{\"id\":9,\"name\":\"G\\u1ea1t m\\u1ef1c cho m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":150000}]', 'Tu choi'),
-(31, 'df5d5', '[{\"id\":8,\"name\":\"Tr\\u1ee5c s\\u1ea1c cho m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":200000},{\"id\":9,\"name\":\"G\\u1ea1t m\\u1ef1c cho m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":150000},{\"id\":10,\"name\":\"\\u0110\\u1ed5 m\\u1ef1c cho m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":200000},{\"id\":12,\"name\":\"Thay tr\\u1ed1ng cho m\\u00e1y laser m\\u00e0u\",\"price\":450000},{\"id\":14,\"name\":\"L\\u00f4 s\\u1ea5y cho m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":450000}]', 'Sản phẩm lỗi'),
-(32, '3cb21', '[{\"id\":4,\"name\":\"S\\u1eeda r\\u01a1 le m\\u00e1y in\",\"price\":100000},{\"id\":5,\"name\":\"S\\u1eeda l\\u1ed7i m\\u00e1y in b\\u1ecb l\\u1ed7i \\u0111en b\\u1ea3n ch\\u1ee5p\",\"price\":100000},{\"id\":6,\"name\":\"S\\u1eeda ch\\u1eefa m\\u00e1y in b\\u1ecb b\\u00f3ng ch\\u1eef\",\"price\":100000}]', 'sua 3 loi'),
-(33, 'fae48', '[{\"id\":4,\"name\":\"S\\u1eeda r\\u01a1 le m\\u00e1y in\",\"price\":100000},{\"id\":5,\"name\":\"S\\u1eeda l\\u1ed7i m\\u00e1y in b\\u1ecb l\\u1ed7i \\u0111en b\\u1ea3n ch\\u1ee5p\",\"price\":100000},{\"id\":6,\"name\":\"S\\u1eeda ch\\u1eefa m\\u00e1y in b\\u1ecb b\\u00f3ng ch\\u1eef\",\"price\":100000},{\"id\":7,\"name\":\"Thay tr\\u1ed1ng m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":250000},{\"id\":8,\"name\":\"Tr\\u1ee5c s\\u1ea1c cho m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":200000}]', '5 LOI');
+(38, '3cb21', '[{\"id\":2,\"name\":\"\\u0110\\u1ed5 m\\u1ef1c m\\u00e1y in\",\"price\":80000},{\"id\":3,\"name\":\"S\\u1eeda l\\u1ed7i m\\u00e1y in b\\u1ecb k\\u1eb9t gi\\u1ea5y\",\"price\":150000},{\"id\":4,\"name\":\"S\\u1eeda r\\u01a1 le m\\u00e1y in\",\"price\":100000},{\"id\":5,\"name\":\"S\\u1eeda l\\u1ed7i m\\u00e1y in b\\u1ecb l\\u1ed7i \\u0111en b\\u1ea3n ch\\u1ee5p\",\"price\":100000}]', 'Sửa tại hãng'),
+(39, 'fae48', '[{\"id\":2,\"name\":\"\\u0110\\u1ed5 m\\u1ef1c m\\u00e1y in\",\"price\":80000},{\"id\":3,\"name\":\"S\\u1eeda l\\u1ed7i m\\u00e1y in b\\u1ecb k\\u1eb9t gi\\u1ea5y\",\"price\":150000},{\"id\":4,\"name\":\"S\\u1eeda r\\u01a1 le m\\u00e1y in\",\"price\":100000},{\"id\":5,\"name\":\"S\\u1eeda l\\u1ed7i m\\u00e1y in b\\u1ecb l\\u1ed7i \\u0111en b\\u1ea3n ch\\u1ee5p\",\"price\":100000},{\"id\":6,\"name\":\"S\\u1eeda ch\\u1eefa m\\u00e1y in b\\u1ecb b\\u00f3ng ch\\u1eef\",\"price\":100000},{\"id\":7,\"name\":\"Thay tr\\u1ed1ng m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":250000}]', 'Sửa theo giá dịch vụ'),
+(40, '5d298', '[{\"id\":7,\"name\":\"Thay tr\\u1ed1ng m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":250000},{\"id\":8,\"name\":\"Tr\\u1ee5c s\\u1ea1c cho m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":200000},{\"id\":9,\"name\":\"G\\u1ea1t m\\u1ef1c cho m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":150000},{\"id\":10,\"name\":\"\\u0110\\u1ed5 m\\u1ef1c cho m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":200000},{\"id\":11,\"name\":\"\\u0110\\u1ed5 m\\u1ef1c cho m\\u00e1y in phun m\\u00e0u\",\"price\":120000},{\"id\":12,\"name\":\"Thay tr\\u1ed1ng cho m\\u00e1y laser m\\u00e0u\",\"price\":450000},{\"id\":13,\"name\":\"Qu\\u1ea3 k\\u00e9o gi\\u1ea5y cho m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":350000}]', 'Tổng cộng 6 lỗi'),
+(41, 'df5d5', '[{\"id\":9,\"name\":\"G\\u1ea1t m\\u1ef1c cho m\\u00e1y in laser \\u0111en tr\\u1eafng\",\"price\":150000}]', 'Do lỗi người dùng nên không được bảo hành');
 
 -- --------------------------------------------------------
 
@@ -199,7 +186,7 @@ INSERT INTO `tbl_job_employee_detail` (`id`, `order_code`, `repair`, `note`) VAL
 CREATE TABLE `tbl_manufacturer` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_manufacturer`
@@ -230,7 +217,7 @@ CREATE TABLE `tbl_order` (
   `address_wards` varchar(50) NOT NULL,
   `note` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_order`
@@ -262,7 +249,7 @@ CREATE TABLE `tbl_order_detail` (
   `product_serial` varchar(255) NOT NULL,
   `product_price` double NOT NULL,
   `product_image` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_order_detail`
@@ -315,14 +302,14 @@ CREATE TABLE `tbl_product` (
   `price` double NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_product`
 --
 
 INSERT INTO `tbl_product` (`id`, `id_manu`, `name`, `image`, `price`, `created_at`, `updated_at`) VALUES
-(5, 13, 'Máy in laser đen trắng Canon IR2006N (A3) (Copy/ In mạng, in Wifi/ Scan)', '34170_canon_ir2006n50.png', 23790000, '2022-08-25 10:59:59', '2022-08-27 08:25:00'),
+(5, 13, 'Máy in laser đen trắng Canon IR2006N (A3) (Copy/ In mạng, in Wifi/ Scan)', '34170_canon_ir2006n50.png', 23790000, '2022-08-25 10:59:59', '2023-02-28 17:12:49'),
 (8, 13, 'Máy photocopy Canon IR 2625I (Print, Copy, Scan, Send and Optional Fax)', '38797_canon_ir_2625i_ha464.jpg', 43890000, '2022-08-28 10:08:58', '2022-08-28 10:08:58'),
 (9, 13, 'Máy photocopy Canon IR 2425 + Khay + Mực + Chân kê', '45033_pho_can_ir2425_b23.jpg', 38990000, '2022-08-28 10:09:49', '2022-08-28 10:09:49'),
 (10, 9, 'Máy photocopy đa chức năng đen trắng Ricoh MP 3055', '36039_ricoh_mp_3055sp92.png', 95000000, '2022-08-28 10:11:24', '2022-08-28 10:11:24'),
@@ -344,10 +331,10 @@ INSERT INTO `tbl_product` (`id`, `id_manu`, `name`, `image`, `price`, `created_a
 
 CREATE TABLE `tbl_quanhuyen` (
   `maqh` int(10) NOT NULL,
-  `name_quanhuyen` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `type` varchar(30) CHARACTER SET utf8 NOT NULL,
+  `name_quanhuyen` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `type` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `matp` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_quanhuyen`
@@ -1078,7 +1065,7 @@ CREATE TABLE `tbl_repair_service` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `price` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_repair_service`
@@ -1109,6 +1096,29 @@ INSERT INTO `tbl_repair_service` (`id`, `name`, `price`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `tbl_revenue`
+--
+
+CREATE TABLE `tbl_revenue` (
+  `id` int(11) NOT NULL,
+  `claim_code` varchar(50) NOT NULL,
+  `sort` varchar(50) NOT NULL,
+  `total_money` int(11) NOT NULL,
+  `created_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_revenue`
+--
+
+INSERT INTO `tbl_revenue` (`id`, `claim_code`, `sort`, `total_money`, `created_at`) VALUES
+(1, '3cb21', 'warranty', 0, '2023-03-02 22:44:05'),
+(2, 'fae48', 'fix', 780000, '2023-03-02 22:47:15'),
+(3, '5d298', 'fix', 1720000, '2023-03-06 09:03:09');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `tbl_serial`
 --
 
@@ -1120,7 +1130,7 @@ CREATE TABLE `tbl_serial` (
   `warranty_time` varchar(11) NOT NULL,
   `activate_time` datetime NOT NULL,
   `expired_time` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_serial`
@@ -1158,9 +1168,9 @@ INSERT INTO `tbl_serial` (`id`, `id_product`, `serial_number`, `status`, `warran
 
 CREATE TABLE `tbl_tinhthanhpho` (
   `matp` int(10) NOT NULL,
-  `name_city` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `type` varchar(30) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+  `name_city` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `type` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=COMPACT;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_tinhthanhpho`
@@ -1243,19 +1253,21 @@ CREATE TABLE `tbl_user` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
   `role` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`id`, `fullname`, `username`, `password`, `email`, `role`) VALUES
-(4, 'Thành Nhân', 'nguyenvana', '$2y$10$.gZ/h2KnDUIl2YCpIlYGLOWawyP4vUEhbw2qjj.L00ju3ZifSSXtq', 'vana@gmail.com', 2),
-(5, 'Thien Duong', 'duongkhanhthien', '$2y$10$svkSbBXmLU6rDOo2o6FaBOLAf7OcZqvDeBnveiXFZZko29OhoXwG.', 'thienb1910451@student.ctu.edu.vn', 1),
-(6, 'Hoàng Thanh', 'hoangthanh', '$2y$10$XqRjDEaedB5Es1ZyW/MegedBm5h38XZy9r.nvPKDSM90HmK.yApiK', 'hoangthanh@gmail.com', 2),
-(7, 'Lam Trường', 'lamtruong', '$2y$10$Y4S7dZoRD8/49qTmB0s3tuTUPTTkK7U/w./GU.tJa/UHNbcH.NNPu', 'lamtruong@gmail.com', 2),
-(8, 'Thái Toàn', 'thaitoan', '$2y$10$OkK7CmuAxU7f.ogsJYXhDOVohU8mb.4B21FkcfJ9Ka9qGltrvFiaq', 'thaitoan@gmail.com', 2);
+INSERT INTO `tbl_user` (`id`, `fullname`, `username`, `password`, `email`, `image`, `role`) VALUES
+(4, 'Thành Nhân', 'nguyenvana', '$2y$10$.gZ/h2KnDUIl2YCpIlYGLOWawyP4vUEhbw2qjj.L00ju3ZifSSXtq', 'vana@gmail.com', 'nhan16.jpg', 2),
+(5, 'Thien Duong', 'duongkhanhthien', '$2y$10$svkSbBXmLU6rDOo2o6FaBOLAf7OcZqvDeBnveiXFZZko29OhoXwG.', 'thienb1910451@student.ctu.edu.vn', 'thien94.jpg', 1),
+(6, 'Hoàng Thanh', 'hoangthanh', '$2y$10$XqRjDEaedB5Es1ZyW/MegedBm5h38XZy9r.nvPKDSM90HmK.yApiK', 'hoangthanh@gmail.com', 'thanh47.jpg', 2),
+(7, 'Lam Trường', 'lamtruong', '$2y$10$Y4S7dZoRD8/49qTmB0s3tuTUPTTkK7U/w./GU.tJa/UHNbcH.NNPu', 'lamtruong@gmail.com', 'truong91.jpg', 2),
+(8, 'Thái Toàn', 'thaitoan', '$2y$10$OkK7CmuAxU7f.ogsJYXhDOVohU8mb.4B21FkcfJ9Ka9qGltrvFiaq', 'thaitoan@gmail.com', '', 2),
+(9, 'Nhân Nguyễn', 'nhannguyen', '$2y$10$KA3zI5n6g.XySlJx7Kyt2usyWwltPPNVGTxq5/bP86ewdyLQI3FrW', 'thanhnhan@gmail.com', 'nhan5.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -1264,11 +1276,11 @@ INSERT INTO `tbl_user` (`id`, `fullname`, `username`, `password`, `email`, `role
 --
 
 CREATE TABLE `tbl_xaphuongthitran` (
-  `xaid` varchar(5) CHARACTER SET utf8 NOT NULL,
-  `name_xaphuong` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `type` varchar(30) CHARACTER SET utf8 NOT NULL,
+  `xaid` varchar(5) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `name_xaphuong` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `type` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `maqh` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_xaphuongthitran`
@@ -12454,11 +12466,11 @@ INSERT INTO `tbl_xaphuongthitran` (`xaid`, `name_xaphuong`, `type`, `maqh`) VALU
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -12534,6 +12546,12 @@ ALTER TABLE `tbl_repair_service`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `tbl_revenue`
+--
+ALTER TABLE `tbl_revenue`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `tbl_serial`
 --
 ALTER TABLE `tbl_serial`
@@ -12572,13 +12590,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `tbl_claim_warranty`
 --
 ALTER TABLE `tbl_claim_warranty`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_claim_warranty_detail`
 --
 ALTER TABLE `tbl_claim_warranty_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_info_customer_register`
@@ -12590,13 +12608,13 @@ ALTER TABLE `tbl_info_customer_register`
 -- AUTO_INCREMENT cho bảng `tbl_job_employee`
 --
 ALTER TABLE `tbl_job_employee`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_job_employee_detail`
 --
 ALTER TABLE `tbl_job_employee_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_manufacturer`
@@ -12629,6 +12647,12 @@ ALTER TABLE `tbl_repair_service`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
+-- AUTO_INCREMENT cho bảng `tbl_revenue`
+--
+ALTER TABLE `tbl_revenue`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT cho bảng `tbl_serial`
 --
 ALTER TABLE `tbl_serial`
@@ -12638,7 +12662,7 @@ ALTER TABLE `tbl_serial`
 -- AUTO_INCREMENT cho bảng `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `users`

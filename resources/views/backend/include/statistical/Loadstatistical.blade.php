@@ -1,7 +1,16 @@
    <?php 
-//    print_r($order);die;
+//    print_r($revenue);die;
+   $total_money =0;
+   for($i=0 ; $i< count($revenue); $i++){
+    $total_money += $revenue[$i]['total_money'];
+   }
    ?>
    <div class="form-border text-start">
+            <h3 class="mt-5"><img style="width: 40px;" src="{{asset('frontend/images/money.png')}}"> Doanh thu</h3>
+            <div class="total_money">
+                {{number_format($total_money) }} VNĐ
+            </div>
+
             <h3 class="mt-5"><img style="width: 40px;" src="{{asset('frontend/images/fix.png')}}"> Tất cả công việc</h3>
             <div class="col-md-7 align-self-center">
             </div>

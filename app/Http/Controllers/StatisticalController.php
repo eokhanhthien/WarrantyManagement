@@ -63,7 +63,9 @@ class StatisticalController extends Controller
             }
             
         }
-        return view('backend.include.statistical.statisticalDetail',['jobemployee'=> $jobemployee, 'order' => $order, 'ordertotal'=> $ordertotal,'employee' => $array ,'name' => $employee ] );
+        $revenue = Revenue::get()->toArray();
+
+        return view('backend.include.statistical.statisticalDetail',['jobemployee'=> $jobemployee, 'order' => $order, 'ordertotal'=> $ordertotal,'employee' => $array ,'name' => $employee, 'revenue' => $revenue ] );
     }
     
 
@@ -83,8 +85,10 @@ class StatisticalController extends Controller
                 }
                 
             }
+            $revenue = Revenue::whereBetween('created_at', [$data["startDate"], $data["endDate"]])->get()->toArray();
+
             // print_r($jobemployee);die;
-            return view('backend.include.statistical.Loadstatistical',['jobemployee'=> $jobemployee, 'order' => $order, 'ordertotal'=> $ordertotal,'employee' => $array ,'name' => $employee ] );
+            return view('backend.include.statistical.Loadstatistical',['jobemployee'=> $jobemployee, 'order' => $order, 'ordertotal'=> $ordertotal,'employee' => $array ,'name' => $employee , 'revenue' => $revenue ] );
     }else{
         statisticalDetail();
     }
