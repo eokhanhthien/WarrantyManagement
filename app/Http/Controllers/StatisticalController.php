@@ -55,18 +55,40 @@ class StatisticalController extends Controller
         $jobemployee = JobEmployee::get()->toArray();
         $order = Order::get()->toArray();
         $ordertotal = Order::get()->toArray();
-        return view('backend.include.statistical.statisticalDetail',['jobemployee'=> $jobemployee, 'order' => $order, 'ordertotal'=> $ordertotal  ] );
+        $employee = Admin::get()->toArray();
+        $array = [];
+        foreach($employee as $value){
+            if($value['id'] != 5){
+                $array[] = $value['id'];
+            }
+            
+        }
+        return view('backend.include.statistical.statisticalDetail',['jobemployee'=> $jobemployee, 'order' => $order, 'ordertotal'=> $ordertotal,'employee' => $array ,'name' => $employee ] );
     }
     
 
     function getStatisticalDetail(Request $request){
         $data = $request->all();
+        if(isset($data["startDate"]) != "" && $data["endDate"] != "" ){
+
             $jobemployee = JobEmployee::whereBetween('created_at', [$data["startDate"], $data["endDate"]])->get()->toArray();
             $order = Order::whereBetween('created_at', [$data["startDate"], $data["endDate"]])->get()->toArray();
             $ordertotal = Order::get()->toArray();
 
-            // print_r($jobemployee);
-            return view('backend.include.statistical.Loadstatistical',['jobemployee'=> $jobemployee, 'order' => $order, 'ordertotal'=> $ordertotal ] );
+            $employee = Admin::get()->toArray();
+            $array = [];
+            foreach($employee as $value){
+                if($value['id'] != 5){
+                    $array[] = $value['id'];
+                }
+                
+            }
+            // print_r($jobemployee);die;
+            return view('backend.include.statistical.Loadstatistical',['jobemployee'=> $jobemployee, 'order' => $order, 'ordertotal'=> $ordertotal,'employee' => $array ,'name' => $employee ] );
+    }else{
+        statisticalDetail();
     }
+
+}
     
 }
