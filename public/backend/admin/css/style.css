@@ -2835,7 +2835,7 @@ Form-control
 .form-control {
   color: #67757c;
   min-height: 38px;
-  display: initial;
+  /* display: initial; */
 }
 
 .form-control-sm {
