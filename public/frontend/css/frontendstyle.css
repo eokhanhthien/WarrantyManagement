@@ -60,7 +60,8 @@ p.header-nav {
 }
 .banner{
 height: 330px;
-background-image: url("https://customer.epson.asia/app/img/onlineregistration.jpg");
+/* background-image: url("https://customer.epson.asia/app/img/onlineregistration.jpg"); */
+background-image: url("https://apprada.vn/wp-content/uploads/2020/05/apprada-banner.jpg");
 background-repeat: no-repeat;
 background-attachment: fixed;
 position: relative;
