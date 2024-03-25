@@ -62,9 +62,10 @@
                 <div class="row mt-3">
                     <?php if(isset($manufacturer) && $manufacturer != NULL){ ?>
                         <?php foreach($manufacturer as $key => $val){?>
-                            <div class="col-2 text-center">
+                            <div class="col-2 text-center"><a style="text-decoration: none;" href="{{route('recomment-product-cate', ['id' => $val['id'] ])}}">
                                 <img src="/uploads/category/{{ $val['image']}}" alt="">
                                 <p>{{$val['name']}}</p>
+                            </a>
                             </div>
                         <?php } ?>
                     <?php } ?>

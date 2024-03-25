@@ -36,6 +36,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<script src="https://cdn.ckeditor.com/4.16.1/full/ckeditor.js"></script>
 
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 
@@ -149,7 +150,7 @@
                         </li>
 
                          <!-- <li > <div class='' style='background-color: #00b6cf;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý sản phẩm</div></li> -->
-
+                         <li> <a class="waves-effect waves-dark" href="{{route('service')}} " aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/brand.png')}}"> <span class="hide-menu">Dịch vụ</span></a>
                         <li> <a class="waves-effect waves-dark" href="{{route('manufacturer')}} " aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/brand.png')}}"> <span class="hide-menu">Quản lý hãng</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="{{route('product')}} " aria-expanded="false"> <img style ="width: 30px;" src="{{asset('frontend/images/product.png')}}"> <span class="hide-menu">Quản lý sản phẩm</span></a>

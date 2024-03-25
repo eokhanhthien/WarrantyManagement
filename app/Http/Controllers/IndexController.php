@@ -33,6 +33,13 @@ class IndexController extends Controller
 
         return view('frontend.pages.recommentproduct',['product'=>$product]);
     }
+
+    public function recommentProductCate($id)
+    {
+        $product = Product::orderBy('id','desc')->where('id_manu',$id)->paginate(12);
+
+        return view('frontend.pages.recommentproductcate',['product'=>$product]);
+    }
     public function registerWarranty(){
         // Xóa đi Session nếu quay lại trang trước
         Session::forget('isWarranty')  ;

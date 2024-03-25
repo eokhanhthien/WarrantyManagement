@@ -12,7 +12,7 @@ use App\Http\Controllers\Technicianstroller;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\RepairServiceController;
 use App\Http\Controllers\StatisticalController;
-use App\Http\Controllers\ClaimFixController;
+use App\Http\Controllers\ServiceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +26,7 @@ use App\Http\Controllers\ClaimFixController;
 // ----------------------------FRONTEND----------------------------------
 Route::get('/', [IndexController::class, 'home'])->name('/');
 Route::get('/recomment-product', [IndexController::class, 'recommentProduct'])->name('recomment-product');
+Route::get('/recomment-product-cate/{id}', [IndexController::class, 'recommentProductCate'])->name('recomment-product-cate');
 Route::get('/register-warranty', [IndexController::class, 'registerWarranty'])->name('register-warranty');
 Route::get('/check-warranty', [IndexController::class, 'checkWarranty'])->name('check-warranty');
 Route::post('/check-serial', [IndexController::class, 'checkSerial'])->name('check-serial');
@@ -76,6 +77,15 @@ Route::post('/add-manufacturer', [ManufacturerController::class, 'addManufacture
 Route::get('/manufacturer/{id}/edit', [ManufacturerController::class, 'editManufacturer'])->name('manufacturer-edit');
 Route::post('/manufacturer/{id}/update', [ManufacturerController::class, 'updateManufacturer'])->name('manufacturer-update');
 Route::delete('/manufacturer/{id}/delete', [ManufacturerController::class, 'deleteManufacturer'])->name('manufacturer-delete');
+
+//SERVICE
+Route::get('/service', [ServiceController::class, 'index'])->name('service');
+Route::get('/service-add', [ServiceController::class, 'serviceAdd'])->name('service-add');
+Route::post('/add-service', [ServiceController::class, 'addService'])->name('add-service');
+Route::get('/service/{id}/edit', [ServiceController::class, 'serviceEdit'])->name('service-edit');
+Route::post('/service/{id}/update', [ServiceController::class, 'updateService'])->name('service-update');
+Route::delete('/service/{id}/delete', [ServiceController::class, 'deleteService'])->name('service-delete');
+
 
 
 // PRODUCT

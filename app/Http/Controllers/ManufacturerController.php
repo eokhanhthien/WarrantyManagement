@@ -86,12 +86,11 @@ class ManufacturerController extends Controller
         $manufacturer = Manufacturer::find($id);
         $product = Product::find($id);
         $serial = Serial::find($id);
-        $manufacturer -> delete();
         $path_unlink = 'uploads/category/'.$manufacturer->image;
         if(file_exists($path_unlink)){
             unlink($path_unlink);
         }
-
+        $manufacturer -> delete();
         if($product){
             $product -> delete();
         }
