@@ -156,10 +156,10 @@
                         </li>
 
                         <!-- <li > <div class='' style='background-color: #00b6cf;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Kích hoạt bảo hành</div></li> -->
-                        <li> <a class="waves-effect waves-dark" href="{{route('order')}} "aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/bill.png')}}"> <span class="hide-menu">Hóa đơn mua hàng</span></a>
+                        {{-- <li> <a class="waves-effect waves-dark" href="{{route('order')}} "aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/bill.png')}}"> <span class="hide-menu">Hóa đơn mua hàng</span></a> --}}
                         </li>
 
-                        <li> <a class="waves-effect waves-dark" href="{{route('serial')}} " aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/seri.png')}}"> <span class="hide-menu">Quản lý Serial</span></a>
+                        {{-- <li> <a class="waves-effect waves-dark" href="{{route('serial')}} " aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/seri.png')}}"> <span class="hide-menu">Quản lý Serial</span></a> --}}
                         </li>
 <!-- 
                         <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
@@ -167,14 +167,14 @@
                         </li> -->
                         <!-- <li > <div class='' style='background-color: #00b6cf;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Yêu cầu bảo hành, bảo trì</div></li> -->
                     
-                        <li> <a class="waves-effect waves-dark" href="{{route('claim-warranty-show')}}" aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/claim.png')}}"> <span class="hide-menu">Đơn bảo hành</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{route('claim-warranty-show')}}" aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/claim.png')}}"> <span class="hide-menu">Yêu cầu sửa chữa</span></a>
                         </li>
                         <!-- <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
                                     class="fa fa-globe"></i><span class="hide-menu">Bảo trì</span></a>
                         </li> -->
                         <!-- <li > <div class='' style='background-color: #00b6cf;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý nhân sự</div></li> -->
                        
-                        <li> <a class="waves-effect waves-dark" href="{{route('technicians')}}" aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/member.png')}}"><span class="hide-menu"> Thành viên</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{route('technicians')}}" aria-expanded="false"><img style ="width: 30px;" src="{{asset('frontend/images/member.png')}}"><span class="hide-menu"> Nhân sự</span></a>
                         </li>
 
                         <!-- <li > <div class='' style='background-color: #00b6cf;height: 30px;color: white;text-align: center;font-weight: 600;line-height: 30px;'>Quản lý dịch vụ</div></li> -->

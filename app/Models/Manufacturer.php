@@ -12,5 +12,6 @@ class Manufacturer extends Model
     protected $table = 'tbl_manufacturer';
     protected $fillable = [
         'name', 
+        'image',
     ];
 }

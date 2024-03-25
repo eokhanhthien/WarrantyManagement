@@ -9,8 +9,8 @@
             <div class="container-fluid g-0">
                 <div class="banner">
                     <div class="baner-content">
-                        <h2 class='color-blue'>Thợ sửa chữa</h2>
-                        <p>ỨNG DỤNG ĐẶT DỊCH VỤ TẠI NHÀ</p>
+                        <h2 class='color-blue'>Dịch vụ sửa chữa online</h2>
+                        <p>WEBSITE ĐẶT DỊCH VỤ TẠI NHÀ</p>
                     </div>
                 </div>
             
@@ -60,7 +60,16 @@
 
                 </table> --}}
                 <div class="row mt-3">
-                    <div class="col-2 text-center">
+                    <?php if(isset($manufacturer) && $manufacturer != NULL){ ?>
+                        <?php foreach($manufacturer as $key => $val){?>
+                            <div class="col-2 text-center">
+                                <img src="/uploads/category/{{ $val['image']}}" alt="">
+                                <p>{{$val['name']}}</p>
+                            </div>
+                        <?php } ?>
+                    <?php } ?>
+
+                    {{-- <div class="col-2 text-center">
                         <img src="https://ahangduc.com/wp-content/uploads/2021/10/Sua-may-say-toc.png" alt="">
                         <p>Máy sấy tóc</p>
                     </div>
@@ -123,7 +132,7 @@
                     <div class="col-2 text-center">
                         <img src="https://ahangduc.com/wp-content/uploads/2023/10/sua-may-hut-am.png" alt="">
                         <p>Máy hút ẩm</p>
-                    </div>
+                    </div> --}}
                 </div>
 
                 </div>
@@ -146,6 +155,54 @@
                     </div>
                 </div>
 
+
+                <div class="row mt-5">
+                    <div class="col-6">
+                        <img style="width: 100%;
+                        object-fit: cover; " src="https://img.freepik.com/free-vector/maintenance-concept-illustration_114360-391.jpg?size=626&ext=jpg&ga=GA1.1.735520172.1711065600&semt=sph" alt="">
+                    </div>
+                    <div class="col-6">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Bước 1: Tiếp nhận yêu cầu sửa chữa các thiết bị gia dụng của khách hàng
+                                </button>
+                              </h2>
+                              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <p class="accordion-body">
+                                    Khách hàng khi có nhu cầu sử dụng dịch vụ sửa chữa hãy liên hệ đơn vị chúng tôi theo hotline 0966.100.512 hoặc đặt dịch vụ online trên website Nhân viên đơn vị khi tiếp nhận yêu cầu sẽ hẹn thời gian khảo sát và sửa chữa.
+                                </p>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Bước 2: Kiểm tra và khắc phục sự cố trên thiết bị
+                                </button>
+                              </h2>
+                              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <p class="accordion-body">
+                                    Đến thời gian hẹn nhân viên sẽ trực tiếp tận địa chỉ khách hàng yêu cầu kiểm tra và khắc phục mọi sự cố. Sau khi kiểm tra đơn vị sẽ báo giá chi tiết trọn gói dịch vụ. Nếu khách hàng đồng ý với mức giá trên nhân viên sẽ thực hiện sửa chữa
+
+                                </p>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Bước 3: Tiến hành dịch vụ sửa chữa
+                                </button>
+                              </h2>
+                              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <p class="accordion-body">
+                                    Sau khi hoàn tất quá trình sửa chữa các thiết bị gia dụng đơn vị sẽ báo đến khách hàng. Quý khách cần cùng đơn vị kiểm tra lại một lần nữa. Nếu sản phẩm đã được sửa hoàn tất đơn vị cấp phiếu bảo hành cho quý khách và khách hàng cần thanh toán chi phí cho đơn vị. Dịch vụ từ đó kết thúc.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
                 {{-- <div class = "panel">
                 <div class = "panel-title">Sản phẩm mới nhất</div>
                <div class="row">

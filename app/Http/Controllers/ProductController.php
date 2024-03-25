@@ -98,7 +98,7 @@ class ProductController extends Controller
             unlink($path_unlink);
         }
         $product -> delete();
-        $serial -> delete();
+        // $serial -> delete();
         return redirect()->route('product')->with('message','Xóa sản phẩm thành công');
     }
 

@@ -25,12 +25,20 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <button class="btn btn-primary mr-10"> <a href="{{route('manufacturer')}}">Quay lại</a> </button>
-                <form action="{{route('manufacturer-update', $data['id'] )}}" method="post" class="col-5 form-border-5">
+                <form action="{{route('manufacturer-update', $data['id'] )}}" method="post" class="col-5 form-border-5" enctype="multipart/form-data">
                 @csrf
                 <div class="wide">
                     <div class="row">
                         <div class="col-4"> <p class="label-add-order">Tên hãng</p> </div>
                         <div class="col-8"><input class="input-add-order" type="text" value="<?= $data['name'] ?>" placeholder="Manufacturer name" name="name" required></div>
+                    </div>
+                    {{-- Thêm hình ảnh --}}
+                    <div class="row">
+                        <div class="col-4"> <p class="label-add-order">Hình ảnh</p> </div>
+                        <div class="col-8">
+                            <input type="file" name="image" id="image" class="input-add-order" >
+                            <img src="{{asset('/uploads/category/'.$data['image'])}}" alt="" width="100px" height="100px">
+                        </div>
                     </div>
                 </div>
                 <button type='submit' class='btn btn-success'>Sửa</button>

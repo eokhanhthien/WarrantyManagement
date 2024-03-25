@@ -35,10 +35,20 @@ class ManufacturerController extends Controller
     }
 
     public function addManufacturer(Request $request){
-        // $data = $request -> all();
+        // dd($request -> all());
         // print_r($data['name']);die;
         $manufacturer = new Manufacturer;
         $manufacturer->name = $request-> input('name');
+
+        $get_image = $request->image;
+        $path = 'uploads/category/';
+        $get_name_image = $get_image-> getClientOriginalName();
+        $name_image = current(explode('.',$get_name_image));
+        $new_image = $name_image.rand(0,99).'.'.$get_image -> getClientOriginalExtension();
+        $get_image->move($path,$new_image);
+
+        $manufacturer->image = $new_image;
+
         $manufacturer -> save();
         return redirect()->route('manufacturer')->with('message','Thêm hãng sản xuất thành công');
     }
@@ -51,6 +61,22 @@ class ManufacturerController extends Controller
     public function updateManufacturer(Request $request, $id){
         $manufacturer = Manufacturer::find($id);
         $manufacturer->name = $request-> input('name');
+          // Thêm ảnh vào folder
+          $get_image = $request->image ?? '';
+          if($get_image){
+              // Bỏ hình ảnh cũ
+              $path_unlink = 'uploads/category/'.$manufacturer->image;
+              if(file_exists($path_unlink)){
+                  unlink($path_unlink);
+              }
+              // Thêm mới
+              $path = 'uploads/category/';
+              $get_name_image = $get_image-> getClientOriginalName();
+              $name_image = current(explode('.',$get_name_image));
+              $new_image = $name_image.rand(0,99).'.'.$get_image -> getClientOriginalExtension();
+              $get_image->move($path,$new_image);
+              $manufacturer->image = $new_image;
+          }
         $manufacturer -> save();
         return redirect()->route('manufacturer')->with('message','Sữa hãng sản xuất thành công');
     }
@@ -61,8 +87,18 @@ class ManufacturerController extends Controller
         $product = Product::find($id);
         $serial = Serial::find($id);
         $manufacturer -> delete();
-        $product -> delete();
-        $serial -> delete();
+        $path_unlink = 'uploads/category/'.$manufacturer->image;
+        if(file_exists($path_unlink)){
+            unlink($path_unlink);
+        }
+
+        if($product){
+            $product -> delete();
+        }
+        if( $serial ){
+            $serial -> delete();
+        }
+
         return redirect()->route('manufacturer')->with('message','Xóa hãng sản xuất thành công');
     }
 

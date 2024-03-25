@@ -23,7 +23,8 @@ use App\Http\Controllers\MailerPHP;
 class IndexController extends Controller
 {
     public function home(){
-        return view('frontend.pages.home');
+        $manufacturer = Manufacturer::get()->toArray();
+        return view('frontend.pages.home', compact('manufacturer'));
     }
 
     public function recommentProduct()
